@@ -70,13 +70,15 @@ function showBack(event)
 {
     var front = document.getElementById("front");
     var back = document.getElementById("back");
-
+    var error = document.getElementById("error_pane");
     if (window.widget) {
         widget.prepareForTransition("ToBack");
     }
 
     front.style.display = "none";
+    error.style.display= "none";
     back.style.display = "block";
+
 
     if (window.widget) {
         setTimeout('widget.performTransition();', 0);
@@ -93,6 +95,7 @@ function showFront(event)
 {
     var front = document.getElementById("front");
     var back = document.getElementById("back");
+    var error = document.getElementById("error_pane");
 
     if (window.widget) {
         widget.prepareForTransition("ToFront");
@@ -100,6 +103,28 @@ function showFront(event)
 
     front.style.display="block";
     back.style.display="none";
+    error.style.display="none";
+
+    if (window.widget) {
+        setTimeout('widget.performTransition();', 0);
+    }
+}
+
+function showError(message)
+{
+    var front = document.getElementById("front");
+    var back = document.getElementById("back");
+    var error = document.getElementById("error_pane");
+
+    if (window.widget) {
+        widget.prepareForTransition("ToBack");
+    }
+
+    jQuery('#error_text').val(message);
+
+    front.style.display="none";
+    back.style.display="none";
+    error_pane.style.display="block";
 
     if (window.widget) {
         setTimeout('widget.performTransition();', 0);
@@ -237,6 +262,7 @@ var pingfm = {
             function(data, error) {
                 console.log("Failure on user.post");
                 jQuery('#back_test_output').val( error);
+                showError(error);
             }
         );
    },
@@ -310,11 +336,9 @@ function doPost(event)
 }
 
 
+// this is not a saved pref
 function setPostType(event)
 {
-    console.log("set post type to " + event);
-    console.log("this is " + this);
-    console.log("item is " + this.value);
     pingfm.post_method = event.target.value;
 }
 

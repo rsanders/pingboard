@@ -6,6 +6,7 @@
  */
 var dashcodePartSpecs = {
     "ApiKeyTitle": { "creationFunction": "CreateText", "text": "Enter your personal Ping.FM API Key below; click the button at right if you don't know your API Key." },
+    "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "Done" },
     "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "getApiKey", "rightImageWidth": 5, "text": "Get Key" },
     "button_getKey1": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "validateUser", "rightImageWidth": 5, "text": "Test" },
     "character_count": { "creationFunction": "CreateText", "text": "0" },
@@ -14,6 +15,7 @@ var dashcodePartSpecs = {
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
     "post_submit": { "creationFunction": "CreateButton", "leftImageWidth": 10, "onclick": "doPost", "rightImageWidth": 10, "text": "Post" },
     "post_type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 10, "name": "post_type_button", "onchange": "setPostType", "options": [["Default", "default"], ["Status", "status"], ["Micro-blog", "microblog"], ["Blog", "blog"]], "rightImageWidth": 16 },
+    "text": { "creationFunction": "CreateText", "text": "Error!" },
     "text1": { "creationFunction": "CreateText", "text": "for Ping.fm" },
     "text2": { "creationFunction": "CreateText", "text": "of 160" },
     "title": { "creationFunction": "CreateText", "text": "Pingboard" }

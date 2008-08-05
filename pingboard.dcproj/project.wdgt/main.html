@@ -18,7 +18,7 @@
     <script type="text/javascript" src="Parts/PopupButton.js" charset="utf-8"></script>
     <script type="text/javascript" src="Parts/Button.js" charset="utf-8"></script>
 </head>
-<body onload="load();" apple-part="com.apple.Dashcode.part.StackLayout">
+<body onload="load();" apple-part="com.apple.Dashcode.part.StackLayout" id="error_view">
     <div id="front">
         <img id="frontImg" src="Images/front.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 1; image-shape: 3; image-opacity: 1.00; image-top-color: 1.0000,1.0000,1.0000; image-bottom-color: 0.6154,0.6154,0.6154; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.5294,0.5294,0.5294; image-border-width: 1; shine-strength: 0.9; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
         <div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden"></div>
@@ -43,6 +43,12 @@
             <input type="checkbox" name="Checkbox" checked="checked" id="debug_button" apple-group="checkboxbutton" onchange="doDebugClick(event)">
             <div id="debug_text" onclick="doDebugClick(event)" apple-default-image-visibility="hidden">Debug</div>
         </div>
+    </div>
+    <div id="error_pane" apple-part-locked="true" apple-default-image-visibility="hidden" apple-css-background-fill="blank">
+        <img id="errorImg1" src="Images/front%201.png" alt="" apple-locked="false" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 1; image-shape: 3; image-opacity: 1.00; image-top-color: 1.0000,1.0000,1.0000; image-bottom-color: 0.6154,0.6154,0.6154; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.5294,0.5294,0.5294; image-border-width: 1; shine-strength: 0.9; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="text" apple-style="part-width-dependent: true;part-height-dependent: true;"></div>
+        <textarea apple-part="com.apple.Dashcode.part.textarea" id="error_text"></textarea>
+        <div apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="button"></div>
     </div>
 </body>
 </html>

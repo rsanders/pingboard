@@ -4,13 +4,13 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:301</key>
+		<key>main.js:327</key>
 		<string>-setupPingFM</string>
-		<key>main.js:308</key>
+		<key>main.js:334</key>
 		<string>-doPost</string>
-		<key>main.js:315</key>
+		<key>main.js:342</key>
 		<string>-setPostType</string>
-		<key>main.js:361</key>
+		<key>main.js:385</key>
 		<string>-doDebugClick</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -36,25 +36,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>2c633b7e5c91ac41</string>
+		<string>0f6425d97791ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.pingboard.dcprojcyzvmx/pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.pingboard.dcprojEGbMbk/pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>4</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.3229166567325592</real>
+		<real>0.23472222685813904</real>
 		<key>percent-y</key>
-		<real>0.31555554270744324</real>
+		<real>0.21888889372348785</real>
 		<key>pos-x</key>
-		<integer>465</integer>
+		<integer>616</integer>
 		<key>pos-y</key>
-		<integer>388</integer>
+		<integer>197</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -108,20 +108,25 @@
 		</array>
 		<array>
 			<integer>0</integer>
+			<integer>2</integer>
+		</array>
+		<array>
+			<integer>0</integer>
 			<integer>0</integer>
 		</array>
 		<array>
 			<integer>0</integer>
 			<integer>1</integer>
-		</array>
-		<array>
-			<integer>0</integer>
-			<integer>1</integer>
-			<integer>7</integer>
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>0</integer>
+			<integer>2</integer>
+			<integer>0</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>
@@ -133,7 +138,8 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>front</string>
+		<string>error_pane</string>
+		<string>error_view</string>
 	</array>
 </dict>
 </plist>

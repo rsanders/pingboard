@@ -37,8 +37,8 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    width: auto;
     bottom: 0px;
+    width: auto;
     height: auto;
 }
 
@@ -263,4 +263,72 @@ body {
     word-spacing: 7px;
     left: 26px;
     top: 0px;
+}
+
+#text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    margin-left: 23px;
+    font-size: 21pt;
+    font-family: Georgia;
+    color: rgb(255, 0, 0);
+    text-align: center;
+    margin-right: 129px;
+    margin-top: 7px;
+    width: auto;
+    min-height: 38px;
+    height: auto;
+}
+
+#button {
+    font-family: HelveticaNeue-Bold;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    right: auto;
+    margin-top: 0px;
+    height: 25px;
+    width: 85px;
+    top: 188px;
+    left: 382px;
+}
+
+#error_pane {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 232px;
+    height: auto;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#error_text {
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    display: block;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    height: 166px;
+    position: absolute;
+    top: 45px;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    width: 329px;
+    left: 26px;
+}
+
+#errorImg1 {
+    position: absolute;
+    display: block;
+    width: 495px;
+    height: 247px;
+    left: -4px;
+    top: -11px;
 }
