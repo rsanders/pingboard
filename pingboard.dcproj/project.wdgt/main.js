@@ -192,8 +192,12 @@ function savePrefs()
 
 function configDone(event)
 {
+    // reset custom trigger list
+    handleTriggers(null);
+    
     savePrefs();
     setupPingFM();
+    setupUI();
 
     return showFront(event);
 }
@@ -536,21 +540,23 @@ function handleTriggers(triggers)
             ['Blog', 'blog']
         ];
     
-    jQuery('trigger', triggers).each( function(i) {
-            var id = jQuery(this).attr('id');
-            var method = jQuery(this).attr('method');
-            
-            options.push([id + " [" + method + "]", "#" + id]);
-        }
-    );
-    
+    if (triggers) {
+        jQuery('trigger', triggers).each( function(i) {
+                var id = jQuery(this).attr('id');
+                var method = jQuery(this).attr('method');
+                
+                options.push([id + " [" + method + "]", "#" + id]);
+            }
+        );
+    }
+
     jQuery('#post_type').get(0).object.setOptions(options, false);
     jQuery('#post_type').change();
 }
 
 function setupUI()
 {
-    pingfm.getTriggers(handleTriggers);
+    pingfm.getTriggers(handleTriggers, function() { handleTriggers(null); });
 }
 
 function showPrevHistory()
