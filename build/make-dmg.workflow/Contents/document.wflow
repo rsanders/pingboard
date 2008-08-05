@@ -175,7 +175,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>426.000000:604.000000</string>
+				<string>418.500000:877.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -292,7 +292,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>426.000000:261.000000</string>
+				<string>418.500000:534.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Find Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -400,8 +400,9 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>/Users/Shared/vitrue/src/opensource/pingboard/pingboard.wdgt</string>
 						<string>/Users/Shared/vitrue/src/opensource/pingboard-git/ChangeLog.txt</string>
+						<string>/Users/Shared/vitrue/src/opensource/pingboard-git/CHANGES.txt</string>
+						<string>/Users/Shared/vitrue/src/opensource/pingboard-git/Pingboard.wdgt</string>
 					</array>
 				</dict>
 				<key>Application</key>
@@ -456,14 +457,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>426.000000:177.000000</string>
+				<string>418.500000:450.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -657,7 +658,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>426.000000:135.000000</string>
+				<string>418.500000:52.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Disk Image.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -738,7 +739,7 @@
 		<key>windowFrameTopLeft</key>
 		<string>{{140, 0}, {1189, 845}}</string>
 		<key>workflowViewScrollPosition</key>
-		<string>{{0, 0}, {852, 594}}</string>
+		<string>{{0, 29}, {837, 594}}</string>
 	</dict>
 	<key>variables</key>
 	<array>

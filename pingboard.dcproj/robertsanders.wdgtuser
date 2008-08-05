@@ -71,7 +71,7 @@
 		<key>Save</key>
 		<true/>
 		<key>SavePath</key>
-		<string>/Users/Shared/vitrue/src/opensource/pingboard</string>
+		<string>/Users/Shared/vitrue/src/opensource/pingboard-git</string>
 		<key>WidgetDeployName</key>
 		<string>Pingboard.wdgt</string>
 	</dict>
