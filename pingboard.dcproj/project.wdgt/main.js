@@ -255,6 +255,18 @@ var pingfm = {
      var args = this.getBaseArgs();
      args.post_method = this.post_method;
      args.body = jQuery('#post_text').val();
+
+     // default posting method
+     var apimethod = 'user.post';
+
+     // custom trigger
+     if (this.post_method[0] == '#') {
+        args.trigger = this.post_method.substring(1);
+        apimethod = 'user.tpost';
+     } else {
+        args.post_method = this.post_method;
+        apimethod = 'user.post';
+     }
      
      if (args.post_method == 'blog') {
         args.title = 'Blog Post from Pingboard';
@@ -263,7 +275,7 @@ var pingfm = {
      // keep history
      pingdb.addPing(args.body, args.post_method);
 
-     this.doRequest('user.post', args, 
+     this.doRequest(apimethod, args, 
             function(data) {
                 console.log("Success on user.post");
                 jQuery('#back_test_output').val("Posting succeeded: " + jQuery('message', data).text());
@@ -275,6 +287,26 @@ var pingfm = {
             }
         );
    },
+   
+   getTriggers: function(success, failure) {
+     var args = this.getBaseArgs();
+
+     this.doRequest('user.triggers', args, 
+            function(data) {
+                console.log("Success on user.triggers");
+                success( jQuery('triggers', data).get(0) );
+            },
+            function(data, error) {
+                console.log("Failure on user.triggers");
+                jQuery('#back_test_output').val( error);
+                showError(error);
+                if (failure) {
+                    failure(data, error);
+                }
+            }
+        );
+   },
+   
 
       doRequest: function(method, args, success, failure, httpmethod) {
         if (! httpmethod) {
@@ -479,9 +511,46 @@ function doDebugClick(event)
     pingfm.debug = pingview.getDebug() ? '1' : '0';
 }
 
+/*
+  <triggers>
+    <trigger id="twt" method="microblog">
+      <services>
+        <service id="twitter" name="Twitter"/>
+      </services>
+    </trigger>
+    <trigger id="fb" method="status">
+      <services>
+        <service id="facebook" name="Facebook"/>
+      </services>
+    </trigger>
+    ...
+  </triggers>
+*/
+
+function handleTriggers(triggers)
+{
+    var options = [
+            ['Default', 'default', true],
+            ['Status', 'status'],
+            ['Micro-blog', 'microblog'],
+            ['Blog', 'blog']
+        ];
+    
+    jQuery('trigger', triggers).each( function(i) {
+            var id = jQuery(this).attr('id');
+            var method = jQuery(this).attr('method');
+            
+            options.push([id + " [" + method + "]", "#" + id]);
+        }
+    );
+    
+    jQuery('#post_type').get(0).object.setOptions(options, false);
+    jQuery('#post_type').change();
+}
+
 function setupUI()
 {
-    
+    pingfm.getTriggers(handleTriggers);
 }
 
 function showPrevHistory()

@@ -4,18 +4,22 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:336</key>
+		<key>main.js:368</key>
 		<string>-setupPingFM</string>
-		<key>main.js:343</key>
+		<key>main.js:375</key>
 		<string>-doPost</string>
-		<key>main.js:351</key>
+		<key>main.js:383</key>
 		<string>-setPostType</string>
-		<key>main.js:390</key>
+		<key>main.js:422</key>
 		<string>-setPostMethod</string>
-		<key>main.js:454</key>
+		<key>main.js:486</key>
 		<string>-addPing</string>
-		<key>main.js:479</key>
+		<key>main.js:511</key>
 		<string>-doDebugClick</string>
+		<key>main.js:532</key>
+		<string>-handleTriggers</string>
+		<key>main.js:541</key>
+		<string>-handleTriggers</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
@@ -40,7 +44,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>4d328a21b991ac41</string>
+		<string>3a074f62cb91ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -52,13 +56,13 @@
 		<key>percent-type</key>
 		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.32152777910232544</real>
+		<real>0.3055555522441864</real>
 		<key>percent-y</key>
-		<real>0.16222222149372101</real>
+		<real>0.17777778208255768</real>
 		<key>pos-x</key>
-		<integer>463</integer>
+		<integer>440</integer>
 		<key>pos-y</key>
-		<integer>146</integer>
+		<integer>160</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -72,7 +76,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>533 339 720 539 0 0 1440 878 </string>
+	<string>298 141 720 539 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -129,8 +133,8 @@
 	<array>
 		<array>
 			<integer>0</integer>
-			<integer>1</integer>
-			<integer>2</integer>
+			<integer>0</integer>
+			<integer>4</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
@@ -144,7 +148,7 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>back</string>
+		<string>front</string>
 		<string>error_view</string>
 	</array>
 </dict>
