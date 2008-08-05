@@ -255,7 +255,12 @@ var pingfm = {
      var args = this.getBaseArgs();
      args.post_method = this.post_method;
      args.body = jQuery('#post_text').val();
+     
+     if (args.post_method == 'blog') {
+        args.title = 'Blog Post from Pingboard';
+     }
 
+     // keep history
      pingdb.addPing(args.body, args.post_method);
 
      this.doRequest('user.post', args, 

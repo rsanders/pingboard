@@ -4,17 +4,17 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:331</key>
+		<key>main.js:336</key>
 		<string>-setupPingFM</string>
-		<key>main.js:338</key>
+		<key>main.js:343</key>
 		<string>-doPost</string>
-		<key>main.js:346</key>
+		<key>main.js:351</key>
 		<string>-setPostType</string>
-		<key>main.js:385</key>
+		<key>main.js:390</key>
 		<string>-setPostMethod</string>
-		<key>main.js:449</key>
+		<key>main.js:454</key>
 		<string>-addPing</string>
-		<key>main.js:474</key>
+		<key>main.js:479</key>
 		<string>-doDebugClick</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -40,7 +40,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>b7ef6903b991ac41</string>
+		<string>4d328a21b991ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
