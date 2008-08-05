@@ -40,7 +40,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>c86045e4b091ac41</string>
+		<string>b7ef6903b991ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -50,15 +50,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.20694445073604584</real>
+		<real>0.32152777910232544</real>
 		<key>percent-y</key>
-		<real>0.21888889372348785</real>
+		<real>0.16222222149372101</real>
 		<key>pos-x</key>
-		<integer>656</integer>
+		<integer>463</integer>
 		<key>pos-y</key>
-		<integer>197</integer>
+		<integer>146</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -129,8 +129,8 @@
 	<array>
 		<array>
 			<integer>0</integer>
-			<integer>0</integer>
-			<integer>12</integer>
+			<integer>1</integer>
+			<integer>2</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
@@ -144,7 +144,7 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>front</string>
+		<string>back</string>
 		<string>error_view</string>
 	</array>
 </dict>

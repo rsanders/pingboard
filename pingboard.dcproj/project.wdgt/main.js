@@ -147,7 +147,7 @@ function openPingFM(event)
 }
 
 
-function getApiKey(event)
+function openAppKeyPage(event)
 {
     widget.openURL("http://ping.fm/key/");
 }
@@ -174,19 +174,19 @@ var pingprefs = {
     },
 }
 
-function setApiKey(value)
+function setAppKey(value)
 {
-    pingprefs.setPref("pingfm_apikey", value);
+    pingprefs.setPref("pingfm_appkey", value);
 }
 
-function getApiKey()
+function getAppKey()
 {
-    return pingprefs.setPref("pingfm_apikey");
+    return pingprefs.setPref("pingfm_appkey");
 }
 
 function savePrefs()
 {
-    pingprefs.setPref("pingfm_apikey", pingview.getAppKey());
+    pingprefs.setPref("pingfm_appkey", pingview.getAppKey());
     pingprefs.setPref("debug", pingview.getDebug());
 }
 
@@ -201,7 +201,7 @@ function configDone(event)
 
 function populatePrefs()
 {
-    pingview.setAppKey(pingprefs.getPref("pingfm_apikey"));
+    pingview.setAppKey(pingprefs.getPref("pingfm_appkey"));
     pingview.setDebug(pingprefs.getPref("debug"));
 }
 
@@ -328,7 +328,7 @@ var pingfm = {
 function setupPingFM()
 {
     pingfm.api_key = '62efb891fc6ae7200a2699c566503735';
-    pingfm.user_app_key = pingprefs.getPref('pingfm_apikey');
+    pingfm.user_app_key = pingprefs.getPref('pingfm_appkey');
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
 }
 
@@ -404,11 +404,11 @@ var pingview = {
   },
 
   getAppKey: function() {
-    return jQuery('#api_key').val();
+    return jQuery('#app_key').val();
   },
   
   setAppKey: function(val) {
-    jQuery('#api_key').val(val).change();
+    jQuery('#app_key').val(val);
   },
   
   resetPost: function(val) {

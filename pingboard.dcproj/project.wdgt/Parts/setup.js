@@ -7,7 +7,7 @@
 var dashcodePartSpecs = {
     "ApiKeyTitle": { "creationFunction": "CreateText", "text": "Enter your personal Ping.FM API Key below; click the button at right if you don't know your API Key." },
     "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "Done" },
-    "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "getApiKey", "rightImageWidth": 5, "text": "Get Key" },
+    "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "openAppKeyPage", "rightImageWidth": 5, "text": "Get Key" },
     "button_getKey1": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "validateUser", "rightImageWidth": 5, "text": "Test" },
     "character_count": { "creationFunction": "CreateText", "text": "0" },
     "done": { "creationFunction": "CreateGlassButton", "onclick": "configDone", "text": "Done" },

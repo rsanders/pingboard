@@ -171,16 +171,6 @@ body {
     height: auto;
 }
 
-#api_key {
-    position: absolute;
-    color: black;
-    font-family: HelveticaNeue;
-    font-size: 10pt;
-    left: 29px;
-    width: 404px;
-    top: 87px;
-}
-
 #character_count {
     color: black;
     font-family: HelveticaNeue;
@@ -376,4 +366,14 @@ body {
     bottom: 110px;
     height: auto;
     text-align: center;
+}
+
+#app_key {
+    position: absolute;
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    left: 29px;
+    width: 404px;
+    top: 87px;
 }
