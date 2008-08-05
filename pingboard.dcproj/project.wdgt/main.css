@@ -13,9 +13,9 @@ body {
     display: block;
     top: 0px;
     left: 0px;
-    bottom: 0px;
     right: 0px;
     width: auto;
+    bottom: 0px;
     height: auto;
 }
 
@@ -191,8 +191,8 @@ body {
     margin-top: 0px;
     top: 185px;
     text-align: right;
-    left: 241px;
-    right: 209px;
+    left: 234px;
+    right: 216px;
     width: auto;
     bottom: 23px;
     height: auto;

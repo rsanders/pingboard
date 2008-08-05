@@ -10,7 +10,7 @@
 		<string>-doPost</string>
 		<key>main.js:342</key>
 		<string>-setPostType</string>
-		<key>main.js:385</key>
+		<key>main.js:386</key>
 		<string>-doDebugClick</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -36,7 +36,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>0f6425d97791ac41</string>
+		<string>dc2b03c57e91ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -48,13 +48,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.23472222685813904</real>
+		<real>0.31319445371627808</real>
 		<key>percent-y</key>
-		<real>0.21888889372348785</real>
+		<real>0.15888889133930206</real>
 		<key>pos-x</key>
-		<integer>616</integer>
+		<integer>503</integer>
 		<key>pos-y</key>
-		<integer>197</integer>
+		<integer>143</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -120,13 +120,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>0</integer>
-			<integer>2</integer>
-			<integer>0</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>
@@ -138,7 +132,7 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>error_pane</string>
+		<string>front</string>
 		<string>error_view</string>
 	</array>
 </dict>

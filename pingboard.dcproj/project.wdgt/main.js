@@ -151,7 +151,7 @@ function getApiKey(event)
 }
 
 
-function postTextChange(event)
+function postTextChange()
 {
     var count = jQuery('#post_text').val().length;
     jQuery('#character_count').text(String(count));
@@ -357,6 +357,7 @@ var pingview = {
   
   setPostBody: function(val) {
     jQuery('#post_text').val(val);
+    postTextChange();
   },
   
   getDebug: function() {
