@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Breakpoints</key>
+	<dict>
+		<key>main.js:301</key>
+		<string>-setupPingFM</string>
+		<key>main.js:308</key>
+		<string>-doPost</string>
+		<key>main.js:315</key>
+		<string>-setPostType</string>
+		<key>main.js:361</key>
+		<string>-doDebugClick</string>
+	</dict>
+	<key>ContentSplitViewGeometry</key>
+	<dict>
+		<key>ContentSplitViewConfig</key>
+		<integer>8</integer>
+		<key>SplitViewConfig</key>
+		<integer>3</integer>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {1195, 342}}</string>
+			<string>{{0, 352}, {1195, 421}}</string>
+		</array>
+	</dict>
+	<key>ContentViewType</key>
+	<integer>0</integer>
+	<key>Dashboard Widget Prefs</key>
+	<dict>
+		<key>id</key>
+		<string>2c633b7e5c91ac41</string>
+		<key>in-layer</key>
+		<true/>
+		<key>path</key>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.pingboard.dcprojcyzvmx/pingboard.dcproj/project.wdgt/</string>
+		<key>percent-offset-x</key>
+		<integer>0</integer>
+		<key>percent-offset-y</key>
+		<integer>0</integer>
+		<key>percent-type</key>
+		<integer>4</integer>
+		<key>percent-x</key>
+		<real>0.3229166567325592</real>
+		<key>percent-y</key>
+		<real>0.31555554270744324</real>
+		<key>pos-x</key>
+		<integer>465</integer>
+		<key>pos-y</key>
+		<integer>388</integer>
+		<key>rosetta</key>
+		<false/>
+	</dict>
+	<key>DeploymentOptions</key>
+	<dict>
+		<key>Save</key>
+		<true/>
+		<key>SavePath</key>
+		<string>/Users/Shared/vitrue/src/opensource/pingboard</string>
+	</dict>
+	<key>Design time language</key>
+	<string>en.lproj</string>
+	<key>MainSplitViewGeometry</key>
+	<dict>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {244, 794}}</string>
+			<string>{{245, 0}, {1196, 794}}</string>
+		</array>
+	</dict>
+	<key>MainWindowFrame</key>
+	<string>0 63 1440 815 0 0 1440 878 </string>
+	<key>NavigatorSplitViewGeometry</key>
+	<dict>
+		<key>ContentSplitViewConfig</key>
+		<integer>5</integer>
+		<key>SplitViewConfig</key>
+		<integer>3</integer>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {246, 390}}</string>
+			<string>{{0, 400}, {246, 373}}</string>
+		</array>
+	</dict>
+	<key>Objects view expanded items</key>
+	<array>
+		<array>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>1</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>1</integer>
+			<integer>7</integer>
+		</array>
+	</array>
+	<key>Objects view last selections</key>
+	<array/>
+	<key>Opened Steps</key>
+	<array>
+		<integer>0</integer>
+		<integer>1</integer>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
+	</array>
+	<key>Visible StackLayout Views</key>
+	<array>
+		<string>front</string>
+	</array>
+</dict>
+</plist>
