@@ -15,6 +15,8 @@ function load()
     setupPingFM();
 
     setupUI();
+    
+    pingdb.initialize();
 }
 
 //
@@ -254,6 +256,8 @@ var pingfm = {
      args.post_method = this.post_method;
      args.body = jQuery('#post_text').val();
 
+     pingdb.addPing(args.body, args.post_method);
+
      this.doRequest('user.post', args, 
             function(data) {
                 console.log("Success on user.post");
@@ -332,7 +336,7 @@ function setupPingFM()
 function doPost(event)
 {
     pingfm.postMessage();
-    pingview.setPostBody('');
+    pingview.resetPost();
 }
 
 
@@ -343,12 +347,42 @@ function setPostType(event)
 }
 
 var pingview = {
+  historyNum: -1,
+
+  showPrevHistory: function() {
+    this.showHistory(Math.min(this.historyNum+1, pingdb.countPings()));
+  },
+  
+  showNextHistory: function() {
+    this.showHistory(Math.max(-1, this.historyNum-1));
+  },
+  
+  showHistory: function(num) {
+    var ping;
+    if (num == -1) {
+        ping = {message:'', destination: 'default'};
+        showNum = '';
+    }
+    else {
+        ping = pingdb.getPing(num);
+        showNum = String(num+1);
+    }
+    
+    this.historyNum = num;
+
+    if (ping) {
+        this.setPostBody(ping.message);
+        this.setPostMethod(ping.destination);
+        jQuery('#historyNum').text(showNum);
+    }
+  },
+
   getPostMethod: function() {
     return jQuery('select', jQuery('#post_type')).val();
   },
   
   setPostMethod: function(val) {
-    jQuery('select', jQuery('#post_type')).val(val);
+    jQuery('select', jQuery('#post_type')).val(val).change();
   },
   
   getPostBody: function() {
@@ -356,8 +390,8 @@ var pingview = {
   },
   
   setPostBody: function(val) {
-    jQuery('#post_text').val(val);
-    postTextChange();
+    jQuery('#post_text').val(val).change();
+    // postTextChange();
   },
   
   getDebug: function() {
@@ -366,6 +400,7 @@ var pingview = {
   
   setDebug: function(val) {
     jQuery('#debug_button').get(0).checked = val;
+    jQuery('#debug_button').change();
   },
 
   getAppKey: function() {
@@ -373,13 +408,66 @@ var pingview = {
   },
   
   setAppKey: function(val) {
-    jQuery('#api_key').val(val);
+    jQuery('#api_key').val(val).change();
+  },
+  
+  resetPost: function(val) {
+      this.setPostBody('');
+      this.showHistory(-1);
   },
   
   version: '0.1',
 };
 
+/**
+ *
+ *
+ * See http://webkit.org/misc/DatabaseExample.html
+ */ 
+var pingdb = {
+    db: null,
+    
+    initialized: false,
+    
+    available: true,
+    
+    initialize: function() {
+        if (this.initialized)
+            return true;
 
+        this.db = [];
+
+        this.initialized = true;
+        return true;
+    },
+    
+    clear: function() {
+        this.db = [];
+    },
+    
+    addPing: function(message, destination) {
+        if (! destination) { destination = 'default' };
+        this.db.unshift( {message: message, destination: destination, when: new Date()} );
+    },
+    
+    listPings: function(count) {
+        if (! count) count = 10;
+        return this.db;
+    },
+    
+    getPing: function(num) {
+        if (this.db.length <= num)
+            return null;
+        else
+            return this.db[num];
+    },
+    
+    countPings: function() {
+        return this.db.length;
+    },
+    
+    version: '0.1'
+}
 
 function doDebugClick(event)
 {
@@ -389,4 +477,14 @@ function doDebugClick(event)
 function setupUI()
 {
     
+}
+
+function showPrevHistory()
+{
+    pingview.showPrevHistory();
+}
+
+function showNextHistory()
+{
+    pingview.showNextHistory();
 }
