@@ -1,3 +1,47 @@
+commit 2696f6fe49448fc7ce94bfe53dd144ba6b2ec039
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:24:31 2008 -0400
+
+    fix automator path
+
+commit 0564fc26f3a0c404ed54c1a37c944cf026f3cb24
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:23:21 2008 -0400
+
+    added version text on backside
+    
+    renamed to capital Pingboard
+
+commit 33625821dd97d35179ba9c82e3deb0ced52f8cd9
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 15:54:03 2008 -0400
+
+    clear custom triggers after a user change
+
+commit d8bd4102f590ed349a6cb0d5a8aea34987a7e3f9
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 15:48:15 2008 -0400
+
+    handle custom triggers
+
+commit 785df286a2fd1395adbfd0d3d4cde22b2453b5e4
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 15:11:00 2008 -0400
+
+    add a stock title for blog posts
+
+commit 644b9624353cd401e0aeb931ed4edc8e6cf118e7
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 15:08:29 2008 -0400
+
+    named all the keys and key fields appropriately
+
+commit 689d2d7c4648236a7bfa413e659f52b96768c6f7
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 14:52:29 2008 -0400
+
+    support message history
+
 commit d6a032eb62ffb707eb10e1259e043721f00cf94e
 Author: Robert Sanders <robert@vitrue.com>
 Date:   Tue Aug 5 13:20:56 2008 -0400
