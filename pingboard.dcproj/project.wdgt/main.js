@@ -457,7 +457,7 @@ var pingview = {
       this.showHistory(-1);
   },
   
-  version: '0.1',
+  version: '0.2',
 };
 
 /**
@@ -507,7 +507,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.1'
+    version: '0.2'
 }
 
 function doDebugClick(event)

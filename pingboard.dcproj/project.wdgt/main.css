@@ -37,8 +37,8 @@ body {
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 0px;
     width: auto;
+    bottom: 0px;
     height: auto;
 }
 
@@ -211,7 +211,7 @@ body {
     margin-top: 0px;
     top: 132px;
     left: 29px;
-    width: 38px;
+    width: 61px;
     bottom: 74px;
     height: auto;
 }
@@ -224,10 +224,10 @@ body {
     right: auto;
     bottom: auto;
     margin-top: 0px;
-    left: 78px;
     top: 132px;
     height: 53px;
     width: 240px;
+    left: 100px;
 }
 
 #debug_input {
@@ -376,4 +376,21 @@ body {
     left: 29px;
     width: 404px;
     top: 87px;
+}
+
+#versionField {
+    color: black;
+    font-size: 10pt;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    left: 380px;
+    text-align: right;
+    top: 156px;
+    right: 21px;
+    width: auto;
+    bottom: 53px;
+    height: auto;
+    font-family: HelveticaNeue-LightItalic;
 }

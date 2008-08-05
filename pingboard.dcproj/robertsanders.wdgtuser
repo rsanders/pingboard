@@ -40,11 +40,11 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>3a074f62cb91ac41</string>
+		<string>096e0c39d591ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -54,15 +54,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.3055555522441864</real>
+		<real>0.27708333730697632</real>
 		<key>percent-y</key>
-		<real>0.17777778208255768</real>
+		<real>0.20111110806465149</real>
 		<key>pos-x</key>
-		<integer>440</integer>
+		<integer>555</integer>
 		<key>pos-y</key>
-		<integer>160</integer>
+		<integer>181</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -72,6 +72,8 @@
 		<true/>
 		<key>SavePath</key>
 		<string>/Users/Shared/vitrue/src/opensource/pingboard</string>
+		<key>WidgetDeployName</key>
+		<string>Pingboard.wdgt</string>
 	</dict>
 	<key>Design time language</key>
 	<string>en.lproj</string>
@@ -132,9 +134,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>4</integer>
+			<integer>5</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

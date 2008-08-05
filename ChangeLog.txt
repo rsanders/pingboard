@@ -1,0 +1,23 @@
+commit d6a032eb62ffb707eb10e1259e043721f00cf94e
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 13:20:56 2008 -0400
+
+    fix automator workflow, though apparently it's impossible to use relative paths.  wtf?
+
+commit 14a2fdda9b4de2a69fe434f28fee900c4f8ba8fc
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 13:04:45 2008 -0400
+
+    clear char count after posting
+
+commit c7f0cf0abce64efdf8ffcb1212cdd6d7158434c7
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 12:58:04 2008 -0400
+
+    added error panel, DMG-making Automator workflow
+
+commit 0baedd47f413ab9a63502906b5a8667d2f7f6391
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 11:55:20 2008 -0400
+
+    moved from google code to github

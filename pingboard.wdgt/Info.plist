@@ -7,24 +7,24 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>pingboard</string>
+	<string>Pingboard</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.robertsanders.widget.pingboard</string>
+	<string>org.esquimaux.widget.Pingboard</string>
 	<key>CFBundleName</key>
-	<string>pingboard</string>
+	<string>Pingboard</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>0.2</string>
 	<key>CloseBoxInsetX</key>
 	<integer>15</integer>
 	<key>CloseBoxInsetY</key>
 	<integer>15</integer>
 	<key>Height</key>
-	<integer>228</integer>
+	<integer>230</integer>
 	<key>MainHTML</key>
 	<string>main.html</string>
 	<key>Width</key>
-	<integer>482</integer>
+	<integer>486</integer>
 </dict>
 </plist>

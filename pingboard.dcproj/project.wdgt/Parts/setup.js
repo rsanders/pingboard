@@ -5,7 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "ApiKeyTitle": { "creationFunction": "CreateText", "text": "Enter your personal Ping.FM API Key below; click the button at right if you don't know your API Key." },
+    "ApiKeyTitle": { "creationFunction": "CreateText", "text": "GET YOUR KEY" },
     "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "Done" },
     "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "openAppKeyPage", "rightImageWidth": 5, "text": "Get Key" },
     "button_getKey1": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "validateUser", "rightImageWidth": 5, "text": "Test" },
@@ -21,5 +21,6 @@ var dashcodePartSpecs = {
     "text": { "creationFunction": "CreateText", "text": "Error!" },
     "text1": { "creationFunction": "CreateText", "text": "for Ping.fm" },
     "text2": { "creationFunction": "CreateText", "text": "of 160" },
-    "title": { "creationFunction": "CreateText", "text": "Pingboard" }
+    "title": { "creationFunction": "CreateText", "text": "Pingboard" },
+    "versionField": { "creationFunction": "CreateText", "text": "Version 0.2" }
 };

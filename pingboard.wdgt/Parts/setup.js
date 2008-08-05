@@ -5,13 +5,22 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "done": { "creationFunction": "CreateGlassButton", "onclick": "showFront", "text": "Done" },
+    "ApiKeyTitle": { "creationFunction": "CreateText", "text": "GET YOUR KEY" },
+    "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "Done" },
+    "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "openAppKeyPage", "rightImageWidth": 5, "text": "Get Key" },
+    "button_getKey1": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "validateUser", "rightImageWidth": 5, "text": "Test" },
+    "character_count": { "creationFunction": "CreateText", "text": "0" },
+    "done": { "creationFunction": "CreateGlassButton", "onclick": "configDone", "text": "Done" },
     "helloText": { "creationFunction": "CreateText", "text": "Hello, World!" },
-    "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
-    "post_submit": { "creationFunction": "CreateButton", "leftImageWidth": 10, "rightImageWidth": 10, "text": "Post" },
-    "post_type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 10, "name": "post_type", "options": [["Default", " "], ["Status", "@s"], ["Micro-blog", "@m"], ["Blog", "@b"]], "rightImageWidth": 16 },
-    "text": { "creationFunction": "CreateText", "text": "0" },
+    "historyNum": { "creationFunction": "CreateText" },
+    "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
+    "next": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showNextHistory", "rightImageWidth": 5 },
+    "post_submit": { "creationFunction": "CreateButton", "leftImageWidth": 10, "onclick": "doPost", "rightImageWidth": 10, "text": "Post" },
+    "post_type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 10, "name": "post_type_button", "onchange": "setPostType", "options": [["Default", "default"], ["Status", "status"], ["Micro-blog", "microblog"], ["Blog", "blog"]], "rightImageWidth": 16 },
+    "prev": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showPrevHistory", "rightImageWidth": 5 },
+    "text": { "creationFunction": "CreateText", "text": "Error!" },
     "text1": { "creationFunction": "CreateText", "text": "for Ping.fm" },
     "text2": { "creationFunction": "CreateText", "text": "of 160" },
-    "title": { "creationFunction": "CreateText", "text": "Pingboard" }
+    "title": { "creationFunction": "CreateText", "text": "Pingboard" },
+    "versionField": { "creationFunction": "CreateText", "text": "Version 0.2" }
 };

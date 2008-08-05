@@ -1,0 +1,19 @@
+**** 0.2        Aug 5, 2008
+
+Post history - allows paging through "pings" posted
+in this run of the widget, editing, and re-posting.  
+(There is no persistence between runs/reboots.)
+
+Added support for custom triggers.
+
+Supply a fixed title for blog posts.
+
+**** 0.1        Aug 4, 2008
+
+Basic functionality
+
+
+----------------------------------
+Robert Sanders
+http://code.google.com/p/pingboard
+
