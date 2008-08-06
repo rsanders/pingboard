@@ -277,7 +277,7 @@ var pingfm = {
                             entry.date = new Date();
                             entry.date.setTime( parseInt(jQuery('date', this).attr('unix') || "0") );
                             entry.services = me._parseServices(jQuery('services', this));
-                            entry.body = base64.decode(jQuery('body', this).text());
+                            entry.body = Base64.decode(jQuery('body', this).text());
                             parsed.push( entry );
                         }
                     );

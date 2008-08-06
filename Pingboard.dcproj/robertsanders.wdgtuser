@@ -64,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>feb6ef4f6c94ac41</string>
+		<string>d2fe87c17194ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -114,7 +114,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>358 146 1440 815 0 0 1680 1028 </string>
+	<string>316 140 1440 815 0 0 1680 1028 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
