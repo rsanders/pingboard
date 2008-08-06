@@ -212,6 +212,88 @@ var pingfm = {
         );
    },
    
+  /*
+  <messages>
+    <message id="12345" method="blog">
+      <date rfc="Tue, 15 Apr 2008 13:56:18 -0500" unix="1234567890" />
+      <services>
+        <service id="blogger" name="Blogger"/>
+      </services>
+      <content>
+        <title>SnVzdCBoYW5naW4nIG91dCE=</title>
+        <body>R29pbmcgdG8gdGhlIHN0b3JlLg==</body>
+      </content>
+    </message>
+    <message id="12345" method="microblog">
+      <date rfc="Tue, 15 Apr 2008 13:56:18 -0500" unix="1234567890" />
+      <services>
+        <service id="twitter" name="Twitter"/>
+      </services>
+      <content>
+        <body>R29pbmcgdG8gdGhlIHN0b3JlLg==</body>
+      </content>
+    </message>
+    <message id="12345" method="status">
+      <date rfc="Tue, 15 Apr 2008 13:56:18 -0500" unix="1234567890" />
+      <services>
+        <service id="twitter" name="Twitter"/>
+        <service id="facebook" name="Facebook"/>
+      </services>
+      <content>
+        <body>aXMgdGVzdGluZyBQaW5nLmZtIQ==</body>
+      </content>
+    </message>
+    ...
+  </messages>
+  */
+  
+   _parseServices: function(list) {
+      var services = [];
+      jQuery('service', list).each(function(i) { 
+          var id = jQuery(this).attr('id');
+          var name = jQuery(this).attr('name');
+          services[id] = { id: id, name: name };
+       } );
+      return services;
+   },
+  
+   getLatest: function(limit, order, success, failure) {
+     var args = this.getBaseArgs();
+
+     if (!limit) limit = 25;
+     if (!order) order = 'DESC';
+
+     var me = this;
+     this.doRequest('user.latest', args, 
+            function(xml) {
+                me.latestxml = xml;
+                var parsed = [];
+                if (xml) {
+                    jQuery('message', xml).each( function(i) {
+                            var entry = {
+                                 id:      jQuery(this).attr('id'),
+                                 method:  jQuery(this).attr('method'),
+                              };
+                            entry.date = new Date();
+                            entry.date.setTime( parseInt(jQuery('date', this).attr('unix') || "0") );
+                            entry.services = me._parseServices(jQuery('services', this));
+                            entry.body = base64.decode(jQuery('body', this).text());
+                            parsed.push( entry );
+                        }
+                    );
+                }
+                me.latestinfo = parsed;
+                me.log("Success on user.latest");
+                success( parsed, xml );
+            },
+            function(data, error) {
+                me.log("Failure on user.latest");
+                if (failure) {
+                    failure(data, error);
+                }
+            }
+        );
+   },
 
       doRequest: function(method, args, success, failure, httpmethod) {
         if (! httpmethod) {

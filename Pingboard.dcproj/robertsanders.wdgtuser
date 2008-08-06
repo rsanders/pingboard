@@ -6,7 +6,9 @@
 	<dict>
 		<key>lib/pingfm.js:134</key>
 		<string>postMessage</string>
-		<key>lib/pingfm.js:262</key>
+		<key>lib/pingfm.js:285</key>
+		<string>getLatest</string>
+		<key>lib/pingfm.js:344</key>
 		<string>_makejQueryFailureHandler</string>
 		<key>main.js:154</key>
 		<string>-openPingFM</string>
@@ -53,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 331}}</string>
-			<string>{{0, 341}, {1195, 432}}</string>
+			<string>{{0, 0}, {1195, 342}}</string>
+			<string>{{0, 352}, {1195, 421}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -62,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>3d0e2ba75c94ac41</string>
+		<string>feb6ef4f6c94ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -74,13 +76,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.3363095223903656</real>
+		<real>0.092261902987957001</real>
 		<key>percent-y</key>
-		<real>0.17619048058986664</real>
+		<real>0.083809524774551392</real>
 		<key>pos-x</key>
-		<integer>629</integer>
+		<integer>1039</integer>
 		<key>pos-y</key>
-		<integer>185</integer>
+		<integer>88</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -112,7 +114,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>138 144 1440 815 0 0 1680 1028 </string>
+	<string>358 146 1440 815 0 0 1680 1028 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -159,7 +161,7 @@
 		<array>
 			<integer>0</integer>
 			<integer>0</integer>
-			<integer>1</integer>
+			<integer>14</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

@@ -436,3 +436,17 @@ body {
     bottom: 68px;
     height: auto;
 }
+
+#history_button {
+    font-family: HelveticaNeue-Bold;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    right: auto;
+    margin-top: 0px;
+    top: 185px;
+    width: 21px;
+    left: 345px;
+    bottom: 25px;
+    height: auto;
+}

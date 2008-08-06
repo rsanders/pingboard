@@ -569,3 +569,8 @@ function showNextHistory()
 {
     pingview.showNextHistory();
 }
+
+function showLatestPosts(event)
+{
+    pingfm.getLatest();
+}

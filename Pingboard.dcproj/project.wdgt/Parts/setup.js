@@ -13,6 +13,7 @@ var dashcodePartSpecs = {
     "character_count": { "creationFunction": "CreateText", "text": "0" },
     "done": { "creationFunction": "CreateGlassButton", "onclick": "configDone", "text": "Done" },
     "helloText": { "creationFunction": "CreateText", "text": "Hello, World!" },
+    "history_button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showLatestPosts", "rightImageWidth": 5, "text": "H" },
     "historyNum": { "creationFunction": "CreateText" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
     "name_display": { "creationFunction": "CreateText" },
