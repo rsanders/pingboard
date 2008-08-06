@@ -1,3 +1,19 @@
+**** 0.3        Aug 6, 2008
+
+Save draft of currently composed post when scrolling back 
+through history.
+
+Save current post type in prefs; default to it until explicitly 
+changed.
+
+Use per-widget-instance prefs to allow for multiple instances 
+in the dashboard.
+
+Allow the first line of any post to be interpreted as the title
+when using a blog-style post or trigger.  If there is only one line,
+use a stock title.
+
+
 **** 0.2        Aug 5, 2008
 
 Post history - allows paging through "pings" posted

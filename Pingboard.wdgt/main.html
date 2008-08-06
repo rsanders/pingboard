@@ -33,20 +33,23 @@
         <div id="prev"></div>
         <div id="next"></div>
         <div id="historyNum"></div>
+        <div id="name_display"></div>
     </div>
     <div id="back">
         <img id="backImg" src="Images/back.png" alt="">
-        <div id="done"></div>
         <input type="text" name="" value="" id="app_key">
+        <div id="account_name_label"></div>
+        <input type="text" name="" value="" id="account_name" maxlength="20">
+        <div id="done"></div>
+        <div id="debug_input">
+            <input type="checkbox" name="Checkbox" id="debug_button" onchange="doDebugClick(event)">
+            <div id="debug_text" onclick="doDebugClick(event)">Debug</div>
+        </div>
         <div id="ApiKeyTitle" onclick="openPingFM(event)"></div>
         <div id="button_getKey"></div>
         <div id="button_getKey1"></div>
-        <textarea id="back_test_output"></textarea>
-        <div id="debug_input">
-            <input type="checkbox" name="Checkbox" checked="checked" id="debug_button" onchange="doDebugClick(event)">
-            <div id="debug_text" onclick="doDebugClick(event)">Debug</div>
-        </div>
-        <div id="versionField"></div>
+        <textarea id="back_test_output" disabled="disabled"></textarea>
+        <div id="version"></div>
     </div>
     <div id="error_pane">
         <img id="errorImg1" src="Images/front%201.png" alt="">

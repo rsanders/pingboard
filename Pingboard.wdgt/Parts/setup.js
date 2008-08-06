@@ -5,6 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
+    "account_name_label": { "creationFunction": "CreateText", "text": "Account Name (optional)" },
     "ApiKeyTitle": { "creationFunction": "CreateText", "text": "GET YOUR KEY" },
     "button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "Done" },
     "button_getKey": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "openAppKeyPage", "rightImageWidth": 5, "text": "Get Key" },
@@ -14,13 +15,14 @@ var dashcodePartSpecs = {
     "helloText": { "creationFunction": "CreateText", "text": "Hello, World!" },
     "historyNum": { "creationFunction": "CreateText" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
+    "name_display": { "creationFunction": "CreateText" },
     "next": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showNextHistory", "rightImageWidth": 5 },
     "post_submit": { "creationFunction": "CreateButton", "leftImageWidth": 10, "onclick": "doPost", "rightImageWidth": 10, "text": "Post" },
     "post_type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 10, "name": "post_type_button", "onchange": "setPostType", "options": [["Default", "default"], ["Status", "status"], ["Micro-blog", "microblog"], ["Blog", "blog"]], "rightImageWidth": 16 },
     "prev": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showPrevHistory", "rightImageWidth": 5 },
     "text": { "creationFunction": "CreateText", "text": "Error!" },
-    "text1": { "creationFunction": "CreateText", "text": "for Ping.fm" },
-    "text2": { "creationFunction": "CreateText", "text": "of 160" },
+    "text1": { "creationFunction": "CreateText", "text": "Ping.fm" },
+    "text2": { "creationFunction": "CreateText", "text": "/ 160" },
     "title": { "creationFunction": "CreateText", "text": "Pingboard" },
-    "versionField": { "creationFunction": "CreateText", "text": "Version 0.2" }
+    "version": { "creationFunction": "CreateText", "text": "Version 0.3" }
 };

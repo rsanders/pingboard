@@ -5,7 +5,7 @@
 	<key>Breakpoints</key>
 	<dict>
 		<key>main.js:154</key>
-		<string>openPingFM</string>
+		<string>-openPingFM</string>
 		<key>main.js:345</key>
 		<string>-postMessage</string>
 		<key>main.js:429</key>
@@ -19,11 +19,11 @@
 		<key>main.js:532</key>
 		<string>-setPostType</string>
 		<key>main.js:583</key>
-		<string>showHistory</string>
+		<string>-showHistory</string>
 		<key>main.js:620</key>
 		<string>-setPostMethod</string>
 		<key>main.js:636</key>
-		<string>saveDraftPing</string>
+		<string>-saveDraftPing</string>
 		<key>main.js:726</key>
 		<string>-addPing</string>
 		<key>main.js:751</key>
@@ -60,11 +60,11 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>3335c1c30e94ac41</string>
+		<string>b83f6fcb0f94ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -159,9 +159,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>4</integer>
+			<integer>5</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
