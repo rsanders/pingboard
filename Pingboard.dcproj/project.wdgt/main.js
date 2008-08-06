@@ -554,7 +554,7 @@ var pingview = {
   // for direct app / UI use
 
   showPrevHistory: function() {
-    this.showHistory(Math.min(this.historyNum+1, pingdb.countPings()));
+    this.showHistory(Math.min(this.historyNum+1, pingdb.countPings()-1));
   },
   
   showNextHistory: function() {
@@ -563,6 +563,12 @@ var pingview = {
   
   showHistory: function(num) {
     var ping;
+    
+    if (num > pingdb.countPings())
+    {
+        num = -1;
+    }
+    
     if (num == -1) {
         ping = {message:'', destination: 'default'};
         showNum = '';

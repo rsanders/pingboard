@@ -5,7 +5,7 @@
 	<key>Breakpoints</key>
 	<dict>
 		<key>main.js:343</key>
-		<string>postMessage</string>
+		<string>-postMessage</string>
 		<key>main.js:427</key>
 		<string>-getTriggers</string>
 		<key>main.js:433</key>
@@ -16,21 +16,21 @@
 		<string>-doPost</string>
 		<key>main.js:528</key>
 		<string>-setPostType</string>
-		<key>main.js:589</key>
+		<key>main.js:595</key>
 		<string>-setPostMethod</string>
-		<key>main.js:672</key>
+		<key>main.js:678</key>
 		<string>-addPing</string>
-		<key>main.js:697</key>
+		<key>main.js:703</key>
 		<string>-doDebugClick</string>
-		<key>main.js:718</key>
+		<key>main.js:724</key>
 		<string>-handleTriggers</string>
-		<key>main.js:729</key>
+		<key>main.js:735</key>
 		<string>-handleTriggers</string>
-		<key>main.js:737</key>
+		<key>main.js:743</key>
 		<string>-handleTriggers</string>
-		<key>main.js:741</key>
+		<key>main.js:747</key>
 		<string>-handleTriggers</string>
-		<key>main.js:761</key>
+		<key>main.js:767</key>
 		<string>-setupUI</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -56,7 +56,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>4e6230d6f293ac41</string>
+		<string>37398434f393ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
