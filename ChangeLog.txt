@@ -1,3 +1,60 @@
+commit 2425d4c74cf9c7bac9725d9c9498376483ba1953
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Wed Aug 6 12:32:40 2008 -0400
+
+    built version of 0.3 + CHANGES update
+
+commit 43dd1fd60d52e1b602ce6c91b66f1ff6c5d7912a
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Wed Aug 6 12:26:50 2008 -0400
+
+    save draft when scrolling through history
+
+commit 7f78a9b2062ab5925ec64b1c92333a109d1a5e38
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Wed Aug 6 11:27:39 2008 -0400
+
+    fix off-by-one history limit error
+
+commit d77f56703f1e006ff0593bd046a6e98a6d9edd2e
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Wed Aug 6 11:25:29 2008 -0400
+
+    support title parsing for any blog-type custom trigger
+    refactored view dependencies out of pingfm class
+
+commit 4cea9013588c179ff1fae402a25fef208c39cd0a
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Wed Aug 6 10:29:01 2008 -0400
+
+    accept account name to distinguish multiple instances
+    use per-instance configuration to allow multiple instances
+    show config screen when first installed
+
+commit cd29a547838a277924558e907c3873e3557e8f54
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:34:58 2008 -0400
+
+    added back uppercase files.  sigh
+
+commit 44810d0e501ca7e06b05fec84c4d242c05259d46
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:34:36 2008 -0400
+
+    removed lowercase files
+
+commit 500456d5c4977c43495908934567ef59388260f8
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:32:50 2008 -0400
+
+    fixed untracked files?
+
+commit b977649895175a28181741626bae469b49269aa3
+Author: Robert Sanders <robert@vitrue.com>
+Date:   Tue Aug 5 16:32:00 2008 -0400
+
+    updated changelog
+
 commit 2696f6fe49448fc7ce94bfe53dd144ba6b2ec039
 Author: Robert Sanders <robert@vitrue.com>
 Date:   Tue Aug 5 16:24:31 2008 -0400
