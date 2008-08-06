@@ -4,41 +4,39 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
+		<key>lib/pingfm.js:134</key>
+		<string>postMessage</string>
+		<key>lib/pingfm.js:262</key>
+		<string>_makejQueryFailureHandler</string>
 		<key>main.js:154</key>
 		<string>-openPingFM</string>
-		<key>main.js:345</key>
-		<string>-postMessage</string>
-		<key>main.js:429</key>
-		<string>-getTriggers</string>
-		<key>main.js:435</key>
-		<string>-getTriggers</string>
-		<key>main.js:509</key>
+		<key>main.js:257</key>
 		<string>-setupPingFM</string>
-		<key>main.js:524</key>
+		<key>main.js:260</key>
+		<string>-setupPingFM</string>
+		<key>main.js:275</key>
 		<string>-doPost</string>
-		<key>main.js:532</key>
+		<key>main.js:283</key>
 		<string>-setPostType</string>
-		<key>main.js:583</key>
+		<key>main.js:334</key>
 		<string>-showHistory</string>
-		<key>main.js:620</key>
+		<key>main.js:371</key>
 		<string>-setPostMethod</string>
-		<key>main.js:636</key>
+		<key>main.js:387</key>
 		<string>-saveDraftPing</string>
-		<key>main.js:726</key>
+		<key>main.js:477</key>
 		<string>-addPing</string>
-		<key>main.js:751</key>
+		<key>main.js:502</key>
 		<string>-doDebugClick</string>
-		<key>main.js:772</key>
+		<key>main.js:523</key>
 		<string>-handleTriggers</string>
-		<key>main.js:783</key>
+		<key>main.js:530</key>
 		<string>-handleTriggers</string>
-		<key>main.js:791</key>
+		<key>main.js:534</key>
 		<string>-handleTriggers</string>
-		<key>main.js:795</key>
-		<string>-handleTriggers</string>
-		<key>main.js:816</key>
+		<key>main.js:555</key>
 		<string>-setupUI</string>
-		<key>main.js:823</key>
+		<key>main.js:562</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -60,11 +58,11 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>b83f6fcb0f94ac41</string>
+		<string>3d0e2ba75c94ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -76,9 +74,9 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.2256944477558136</real>
+		<real>0.3363095223903656</real>
 		<key>percent-y</key>
-		<real>0.20555555820465088</real>
+		<real>0.17619048058986664</real>
 		<key>pos-x</key>
 		<integer>629</integer>
 		<key>pos-y</key>
@@ -98,7 +96,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>659 49 720 539 0 0 1440 878 </string>
+	<string>-781 295 720 539 -1440 243 1440 900 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -114,11 +112,11 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>-1 63 1440 815 0 0 1440 878 </string>
+	<string>138 144 1440 815 0 0 1680 1028 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
-		<integer>9</integer>
+		<integer>5</integer>
 		<key>SplitViewConfig</key>
 		<integer>3</integer>
 		<key>_collapsingFrameDimension</key>
@@ -159,7 +157,9 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>5</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>1</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
