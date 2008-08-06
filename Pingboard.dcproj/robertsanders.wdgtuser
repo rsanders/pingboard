@@ -4,34 +4,42 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:343</key>
+		<key>main.js:154</key>
+		<string>openPingFM</string>
+		<key>main.js:345</key>
 		<string>-postMessage</string>
-		<key>main.js:427</key>
+		<key>main.js:429</key>
 		<string>-getTriggers</string>
-		<key>main.js:433</key>
+		<key>main.js:435</key>
 		<string>-getTriggers</string>
-		<key>main.js:507</key>
+		<key>main.js:509</key>
 		<string>-setupPingFM</string>
-		<key>main.js:520</key>
+		<key>main.js:524</key>
 		<string>-doPost</string>
-		<key>main.js:528</key>
+		<key>main.js:532</key>
 		<string>-setPostType</string>
-		<key>main.js:595</key>
+		<key>main.js:583</key>
+		<string>showHistory</string>
+		<key>main.js:620</key>
 		<string>-setPostMethod</string>
-		<key>main.js:678</key>
+		<key>main.js:636</key>
+		<string>saveDraftPing</string>
+		<key>main.js:726</key>
 		<string>-addPing</string>
-		<key>main.js:703</key>
+		<key>main.js:751</key>
 		<string>-doDebugClick</string>
-		<key>main.js:724</key>
+		<key>main.js:772</key>
 		<string>-handleTriggers</string>
-		<key>main.js:735</key>
+		<key>main.js:783</key>
 		<string>-handleTriggers</string>
-		<key>main.js:743</key>
+		<key>main.js:791</key>
 		<string>-handleTriggers</string>
-		<key>main.js:747</key>
+		<key>main.js:795</key>
 		<string>-handleTriggers</string>
-		<key>main.js:767</key>
+		<key>main.js:816</key>
 		<string>-setupUI</string>
+		<key>main.js:823</key>
+		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
@@ -47,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 203}}</string>
-			<string>{{0, 213}, {1195, 560}}</string>
+			<string>{{0, 0}, {1195, 331}}</string>
+			<string>{{0, 341}, {1195, 432}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -56,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>37398434f393ac41</string>
+		<string>3335c1c30e94ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -68,13 +76,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.097916670143604279</real>
+		<real>0.2256944477558136</real>
 		<key>percent-y</key>
-		<real>0.070000000298023224</real>
+		<real>0.20555555820465088</real>
 		<key>pos-x</key>
-		<integer>813</integer>
+		<integer>629</integer>
 		<key>pos-y</key>
-		<integer>63</integer>
+		<integer>185</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -149,7 +157,13 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>4</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>
@@ -161,7 +175,7 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>back</string>
+		<string>front</string>
 		<string>error_view</string>
 	</array>
 </dict>

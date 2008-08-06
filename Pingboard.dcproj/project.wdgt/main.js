@@ -227,7 +227,8 @@ function configDone(event)
     
     savePrefs();
     setupPingFM();
-    setupUI();
+
+    setTimeout("setupUI();", 200);
 
     return showFront(event);
 }
@@ -289,13 +290,14 @@ var pingfm = {
    
    validateUser: function() {
      var args = this.getBaseArgs();
+     var me = this;
      this.doRequest('user.validate', args, 
             function(data) {
-                console.log("Success on user.validate");
+                me.log("Success on user.validate");
                 jQuery('#back_test_output').val("User is valid: " + jQuery('message', data).text());
             },
             function(data, error) {
-                console.log("Failure on user.validate");
+                me.log("Failure on user.validate: " + error);
                 jQuery('#back_test_output').val( error);
             }
         );
@@ -375,7 +377,7 @@ var pingfm = {
    },
    
    log: function(msg) {
-     if (this.view && view.log) view.log(msg);
+     if (this.view && this.view.log) this.view.log(msg);
      if (this.debug)
         console.log(msg);
    },
@@ -383,13 +385,13 @@ var pingfm = {
    showError: function(error) {
      if (this.debug) 
         console.log(error);
-     if (this.view && view.showError) view.showError(error);
+     if (this.view && this.view.showError) this.view.showError(error);
    },
 
    showResult: function(msg) {
      if (this.debug) 
         console.log(msg);
-     if (this.view && view.showResult) view.showResult(msg);
+     if (this.view && this.view.showResult) this.view.showResult(msg);
    },
 
    getTriggerInfo: function() {
@@ -506,6 +508,8 @@ function setupPingFM()
     pingfm.api_key = '62efb891fc6ae7200a2699c566503735';
     pingfm.user_app_key = pingprefs.getPref('pingfm_appkey');
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
+    
+    pingfm.view = pingview;
 }
 
 
@@ -525,11 +529,19 @@ function doPost(event)
 // this is not a saved pref
 function setPostType(event)
 {
-    pingfm.post_method = event.target.value;
+    var type = event.target.value;
+    
+    // change default
+    pingfm.post_method = type;
+
+    // store for later
+    pingprefs.setPref("post_type", type);
 }
 
 var pingview = {
   historyNum: -1,
+  
+  draftping: null,
 
   // for use by pingfm
   
@@ -561,8 +573,16 @@ var pingview = {
     this.showHistory(Math.max(-1, this.historyNum-1));
   },
   
-  showHistory: function(num) {
+  showHistory: function(num, suppressDraft) {
     var ping;
+    var showNum;
+    if (num == this.historyNum)
+        return;
+    
+    // save draft
+    if (this.historyNum == -1 && ! suppressDraft) {
+        this.saveDraftPing();
+    }
     
     if (num > pingdb.countPings())
     {
@@ -570,7 +590,10 @@ var pingview = {
     }
     
     if (num == -1) {
-        ping = {message:'', destination: 'default'};
+        if (this.draftping)
+            ping = this.draftping;
+        else
+            ping = {message:''};
         showNum = '';
     }
     else {
@@ -582,7 +605,9 @@ var pingview = {
 
     if (ping) {
         this.setPostBody(ping.message);
-        this.setPostMethod(ping.destination);
+        if (ping.destination) {
+            this.setPostMethod(ping.destination);
+        }
         jQuery('#historyNum').text(showNum);
     }
   },
@@ -592,7 +617,8 @@ var pingview = {
   },
   
   setPostMethod: function(val) {
-    jQuery('select', jQuery('#post_type')).val(val).change();
+    jQuery('select', jQuery('#post_type')).val(val);
+    jQuery('select', jQuery('#post_type')).change();
   },
   
   getPostBody: function() {
@@ -600,8 +626,20 @@ var pingview = {
   },
   
   setPostBody: function(val) {
-    jQuery('#post_text').val(val).change();
+    jQuery('#post_text').val(val);
+    jQuery('#post_text').change();
+    // this.saveDraftPing();
     // postTextChange();
+  },
+  
+  saveDraftPing: function() {
+    var ping = {
+        message: this.getPostBody(),
+        destination: this.getPostMethod(),
+        when: new Date()
+    };
+    
+    this.draftping = ping;
   },
   
   getDebug: function() {
@@ -636,13 +674,23 @@ var pingview = {
   
   resetPost: function(val) {
       this.setPostBody('');
-      this.showHistory(-1);
+
+      // don't save draft
+      this.showHistory(-1, true);
+      // this.selectPreferredPostType();
   },
   
   setVersion: function(version) {
     if (! version) version = this.version;
     
     jQuery('#version').val(String(version));
+  },
+
+  selectPreferredPostType: function() {
+    if (pingprefs.getPref("post_type"))
+    {
+        pingview.setPostMethod(pingprefs.getPref("post_type"));
+    }
   },
   
   version: '0.3',
@@ -751,6 +799,7 @@ function handleTriggers(triggers)
     }
 
     jQuery('#post_type').get(0).object.setOptions(options, false);
+    pingview.selectPreferredPostType();
     jQuery('#post_type').change();
 }
 
@@ -768,6 +817,8 @@ function setupUI()
     else name = dashcode.getLocalizedString("Account: ") + name;
 
     pingview.setNameDisplay( name );
+    
+    pingview.selectPreferredPostType();
 }
 
 function showPrevHistory()
