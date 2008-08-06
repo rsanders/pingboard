@@ -70,11 +70,11 @@ body {
     position: absolute;
     margin-top: 0px;
     top: 19px;
-    left: 381px;
     font-style: italic;
     font-family: 'Helvetica Neue';
     font-size: 10pt;
-    right: 31px;
+    left: 415px;
+    right: 22px;
     width: auto;
     bottom: 189px;
     height: auto;
@@ -88,13 +88,13 @@ body {
     margin-top: 0px;
     top: 19px;
     left: 40px;
-    right: 199px;
-    width: auto;
-    bottom: 186px;
-    height: auto;
     font-size: 15pt;
     font-family: 'Helvetica Neue';
     text-shadow: rgb(0, 0, 255) 0px 0px 0px;
+    right: 259px;
+    width: auto;
+    bottom: 186px;
+    height: auto;
 }
 
 #post_type {
@@ -149,9 +149,9 @@ body {
     right: auto;
     margin-top: 0px;
     width: 81px;
-    top: 36px;
     left: 358px;
-    bottom: 170px;
+    top: 47px;
+    bottom: 159px;
     height: auto;
 }
 
@@ -197,9 +197,9 @@ body {
     bottom: auto;
     margin-top: 0px;
     left: 28px;
-    height: 128px;
-    top: 48px;
     width: 408px;
+    height: 111px;
+    top: 65px;
 }
 
 #button_getKey1 {
@@ -209,10 +209,10 @@ body {
     position: absolute;
     right: auto;
     margin-top: 0px;
-    top: 132px;
     left: 29px;
     width: 61px;
-    bottom: 74px;
+    top: 180px;
+    bottom: 26px;
     height: auto;
 }
 
@@ -224,10 +224,10 @@ body {
     right: auto;
     bottom: auto;
     margin-top: 0px;
-    top: 132px;
-    height: 53px;
-    width: 240px;
-    left: 100px;
+    left: 110px;
+    height: 48px;
+    top: 154px;
+    width: 283px;
 }
 
 #debug_input {
@@ -331,9 +331,9 @@ body {
     right: auto;
     margin-top: 0px;
     width: 24px;
-    top: 48px;
     left: 444px;
-    bottom: 162px;
+    top: 65px;
+    bottom: 145px;
     height: auto;
 }
 
@@ -378,19 +378,61 @@ body {
     top: 87px;
 }
 
-#versionField {
+#version {
     color: black;
     font-size: 10pt;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    left: 380px;
     text-align: right;
-    top: 156px;
+    font-family: HelveticaNeue-LightItalic;
+    left: 380px;
+    top: 17px;
     right: 21px;
     width: auto;
-    bottom: 53px;
+    bottom: 192px;
     height: auto;
-    font-family: HelveticaNeue-LightItalic;
+}
+
+#account_name {
+    position: absolute;
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    left: 110px;
+    width: 236px;
+    top: 121px;
+}
+
+#name_display {
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    top: 19px;
+    left: 234px;
+    right: 91px;
+    width: auto;
+    bottom: 189px;
+    height: auto;
+}
+
+#account_name_label {
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    top: 118px;
+    left: 29px;
+    right: 385px;
+    width: auto;
+    bottom: 68px;
+    height: auto;
 }

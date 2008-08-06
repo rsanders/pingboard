@@ -13,9 +13,9 @@
 	<key>CFBundleName</key>
 	<string>pingboard</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2</string>
+	<string>0.3</string>
 	<key>CFBundleVersion</key>
-	<string>0.2</string>
+	<string>0.3</string>
 	<key>CloseBoxInsetX</key>
 	<integer>15</integer>
 	<key>CloseBoxInsetY</key>

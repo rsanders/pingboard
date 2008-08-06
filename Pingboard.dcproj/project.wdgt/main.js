@@ -46,6 +46,7 @@ function hide()
 function show()
 {
     // Restart any timers that were stopped on hide
+    setTimeout("checkConfig();", 500);
 }
 
 //
@@ -140,6 +141,13 @@ if (window.widget) {
     widget.onsync = sync;
 }
 
+function checkConfig()
+{
+    if (! pingprefs.isConfigured())
+    {
+        firstTimeConfiguration();
+    }
+}
 
 function openPingFM(event)
 {
@@ -160,17 +168,29 @@ function postTextChange()
 }
 
 var pingprefs = {
+    _makekey: function(key) {
+        return widget.identifier + "-" + key;
+    },
+    
     setPref: function(key, value) {
-        widget.setPreferenceForKey(value, key);
+        widget.setPreferenceForKey(value, this._makekey(key) );
     },
     
     getPref: function(key, defval) {
-        var res = widget.preferenceForKey(key);
+        var res = widget.preferenceForKey( this._makekey(key) );
         if (res == undefined) {
             return defval;
         } else {
             return res;
         }
+    },
+    
+    isConfigured: function() {
+        return this.getPref("configured") == "true";
+    },
+    
+    setConfigured: function(val) {
+        this.setPref("configured", val ? "true" : "false");
     },
 }
 
@@ -188,6 +208,16 @@ function savePrefs()
 {
     pingprefs.setPref("pingfm_appkey", pingview.getAppKey());
     pingprefs.setPref("debug", pingview.getDebug());
+    pingprefs.setPref("name", pingview.getAccountName());
+    
+    pingprefs.setPref("configured", "true");
+}
+
+function populatePrefs()
+{
+    pingview.setAppKey(pingprefs.getPref("pingfm_appkey"));
+    pingview.setDebug(pingprefs.getPref("debug"));
+    pingview.setAccountName(pingprefs.getPref("name"));
 }
 
 function configDone(event)
@@ -202,17 +232,15 @@ function configDone(event)
     return showFront(event);
 }
 
-
-function populatePrefs()
-{
-    pingview.setAppKey(pingprefs.getPref("pingfm_appkey"));
-    pingview.setDebug(pingprefs.getPref("debug"));
-}
-
 function doShowBack(event)
 {
     populatePrefs();
     showBack(event);
+}
+
+function firstTimeConfiguration()
+{
+    showBack();
 }
 
 
@@ -255,6 +283,16 @@ var pingfm = {
         );
    },
    
+   _getTitle: function(body) {
+     if (!body) return null;
+     var lines = body.split("\n");
+     if (lines.length > 1) {
+        return lines[0];
+     } else {
+        return null;
+     }
+   },
+   
    postMessage: function() {
      var args = this.getBaseArgs();
      args.post_method = this.post_method;
@@ -273,7 +311,10 @@ var pingfm = {
      }
      
      if (args.post_method == 'blog') {
-        args.title = 'Blog Post from Pingboard';
+        args.title = this._getTitle(args.body);
+        if (! args.title) {
+            args.title = "Blog Post from Ping.FM";
+        }
      }
 
      // keep history
@@ -451,13 +492,32 @@ var pingview = {
   setAppKey: function(val) {
     jQuery('#app_key').val(val);
   },
+
+  // for the config
+  getAccountName: function() {
+    return jQuery('#account_name').val();
+  },
+  
+  setAccountName: function(val) {
+    jQuery('#account_name').val(val);
+  },
+  
+  setNameDisplay: function(val) {
+    jQuery('#name_display').text(val);
+  },
   
   resetPost: function(val) {
       this.setPostBody('');
       this.showHistory(-1);
   },
   
-  version: '0.2',
+  setVersion: function(version) {
+    if (! version) version = this.version;
+    
+    jQuery('#version').val(String(version));
+  },
+  
+  version: '0.3',
 };
 
 /**
@@ -507,7 +567,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.2'
+    version: '0.3'
 }
 
 function doDebugClick(event)
@@ -556,7 +616,18 @@ function handleTriggers(triggers)
 
 function setupUI()
 {
-    pingfm.getTriggers(handleTriggers, function() { handleTriggers(null); });
+    // get custom triggers if the user is configured
+    if (pingprefs.isConfigured()) {
+        pingfm.getTriggers(handleTriggers, function() { handleTriggers(null); });
+    }
+    
+    pingview.setVersion( dashcode.getLocalizedString("Version") + pingfm.version );
+    
+    var name = pingprefs.getPref("name");
+    if (!name)  name = "";
+    else name = dashcode.getLocalizedString("Account: ") + name;
+
+    pingview.setNameDisplay( name );
 }
 
 function showPrevHistory()

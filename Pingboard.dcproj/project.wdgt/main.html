@@ -33,20 +33,23 @@
         <div apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 2; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-on: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; image-include-custom: 1; image-custom-image-path: smallup.png; image-custom-center: 1; image-custom-resize: 2; shadow-include-shadow: 0;" id="prev"></div>
         <div apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 2; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-on: 1; shine-strength: 0.40; shine-alpha-level: 0.67; shine-height: 0.40; glass-arc-height: -0.70; image-include-custom: 1; image-custom-image-path: smalldown.png; image-custom-center: 1; image-custom-resize: 2; shadow-include-shadow: 0;" id="next"></div>
         <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="historyNum"></div>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="ellipsis" id="name_display"></div>
     </div>
     <div id="back">
         <img id="backImg" src="Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
-        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
         <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="app_key">
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="account_name_label"></div>
+        <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="account_name" maxlength="20">
+        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
+        <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="debug_input" apple-group="checkboxbutton" apple-default-image-visibility="hidden">
+            <input type="checkbox" name="Checkbox" id="debug_button" apple-group="checkboxbutton" onchange="doDebugClick(event)">
+            <div id="debug_text" onclick="doDebugClick(event)" apple-default-image-visibility="hidden">Debug</div>
+        </div>
         <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="ApiKeyTitle" onclick="openPingFM(event)"></div>
         <div apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="button_getKey"></div>
         <div apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 1; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 1,1,1,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0.529399991,0.529399991,0.529399991,1; image-border-width: 1; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 0;" id="button_getKey1"></div>
-        <textarea apple-part="com.apple.Dashcode.part.textarea" id="back_test_output"></textarea>
-        <div apple-part="com.apple.Dashcode.part.checkboxbutton" id="debug_input" apple-group="checkboxbutton">
-            <input type="checkbox" name="Checkbox" checked="checked" id="debug_button" apple-group="checkboxbutton" onchange="doDebugClick(event)">
-            <div id="debug_text" onclick="doDebugClick(event)" apple-default-image-visibility="hidden">Debug</div>
-        </div>
-        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="versionField"></div>
+        <textarea apple-part="com.apple.Dashcode.part.textarea" id="back_test_output" disabled="disabled"></textarea>
+        <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="version"></div>
     </div>
     <div id="error_pane" apple-part-locked="true" apple-default-image-visibility="hidden" apple-css-background-fill="blank">
         <img id="errorImg1" src="Images/front%201.png" alt="" apple-locked="false" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 1; image-shape: 3; image-opacity: 1.00; image-top-color: 1.0000,1.0000,1.0000; image-bottom-color: 0.6154,0.6154,0.6154; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.5294,0.5294,0.5294; image-border-width: 1; shine-strength: 0.9; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">

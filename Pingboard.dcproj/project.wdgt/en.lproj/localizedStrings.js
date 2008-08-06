@@ -5,11 +5,13 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
+    "Account Name (optional)": "Account Name (optional)",
+    "Account: ": "Account: ",
     "Debug": "Debug",
     "Done": "Done",
     "Error!": "Error!",
     "Get Key": "Get Key",
-    "GET YOUR KEY": "Enter your personal Ping.FM API Key below; click the button at right if you don't know your API Key.",
+    "GET YOUR KEY": "Enter your personal Ping.FM Application Key below; click the button at right if you don't know your Application Key.",
     "Post": "Post",
     "Validate": "Validate"
 };

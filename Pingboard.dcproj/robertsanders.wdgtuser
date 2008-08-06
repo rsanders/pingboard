@@ -4,22 +4,24 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:372</key>
+		<key>main.js:413</key>
 		<string>-setupPingFM</string>
-		<key>main.js:379</key>
-		<string>-doPost</string>
-		<key>main.js:387</key>
+		<key>main.js:420</key>
+		<string>doPost</string>
+		<key>main.js:428</key>
 		<string>-setPostType</string>
-		<key>main.js:426</key>
+		<key>main.js:467</key>
 		<string>-setPostMethod</string>
-		<key>main.js:490</key>
+		<key>main.js:550</key>
 		<string>-addPing</string>
-		<key>main.js:515</key>
+		<key>main.js:575</key>
 		<string>-doDebugClick</string>
-		<key>main.js:536</key>
+		<key>main.js:596</key>
 		<string>-handleTriggers</string>
-		<key>main.js:546</key>
+		<key>main.js:606</key>
 		<string>-handleTriggers</string>
+		<key>main.js:627</key>
+		<string>-setupUI</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
@@ -40,29 +42,29 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>096e0c39d591ac41</string>
+		<string>560e7d10d593ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.pingboard.dcprojEGbMbk/pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojrOc3qQ/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.27708333730697632</real>
+		<real>0.03541666641831398</real>
 		<key>percent-y</key>
-		<real>0.20111110806465149</real>
+		<real>0.17222222685813904</real>
 		<key>pos-x</key>
-		<integer>555</integer>
+		<integer>903</integer>
 		<key>pos-y</key>
-		<integer>181</integer>
+		<integer>515</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -78,7 +80,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>298 141 720 539 0 0 1440 878 </string>
+	<string>659 49 720 539 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -130,13 +132,14 @@
 			<integer>0</integer>
 			<integer>1</integer>
 		</array>
-	</array>
-	<key>Objects view last selections</key>
-	<array>
 		<array>
+			<integer>0</integer>
+			<integer>1</integer>
 			<integer>5</integer>
 		</array>
 	</array>
+	<key>Objects view last selections</key>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>
@@ -148,7 +151,7 @@
 	</array>
 	<key>Visible StackLayout Views</key>
 	<array>
-		<string>front</string>
+		<string>back</string>
 		<string>error_view</string>
 	</array>
 </dict>
