@@ -4,23 +4,33 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>main.js:413</key>
+		<key>main.js:343</key>
+		<string>postMessage</string>
+		<key>main.js:427</key>
+		<string>-getTriggers</string>
+		<key>main.js:433</key>
+		<string>-getTriggers</string>
+		<key>main.js:507</key>
 		<string>-setupPingFM</string>
-		<key>main.js:420</key>
-		<string>doPost</string>
-		<key>main.js:428</key>
+		<key>main.js:520</key>
+		<string>-doPost</string>
+		<key>main.js:528</key>
 		<string>-setPostType</string>
-		<key>main.js:467</key>
+		<key>main.js:589</key>
 		<string>-setPostMethod</string>
-		<key>main.js:550</key>
+		<key>main.js:672</key>
 		<string>-addPing</string>
-		<key>main.js:575</key>
+		<key>main.js:697</key>
 		<string>-doDebugClick</string>
-		<key>main.js:596</key>
+		<key>main.js:718</key>
 		<string>-handleTriggers</string>
-		<key>main.js:606</key>
+		<key>main.js:729</key>
 		<string>-handleTriggers</string>
-		<key>main.js:627</key>
+		<key>main.js:737</key>
+		<string>-handleTriggers</string>
+		<key>main.js:741</key>
+		<string>-handleTriggers</string>
+		<key>main.js:761</key>
 		<string>-setupUI</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -37,8 +47,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 342}}</string>
-			<string>{{0, 352}, {1195, 421}}</string>
+			<string>{{0, 0}, {1195, 203}}</string>
+			<string>{{0, 213}, {1195, 560}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -46,7 +56,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>560e7d10d593ac41</string>
+		<string>4e6230d6f293ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -56,15 +66,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.03541666641831398</real>
+		<real>0.097916670143604279</real>
 		<key>percent-y</key>
-		<real>0.17222222685813904</real>
+		<real>0.070000000298023224</real>
 		<key>pos-x</key>
-		<integer>903</integer>
+		<integer>813</integer>
 		<key>pos-y</key>
-		<integer>515</integer>
+		<integer>63</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>

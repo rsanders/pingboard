@@ -254,12 +254,30 @@ function validateUser(event)
 }
 
 var pingfm = {
+   // the base URL for the Ping.FM API
    baseurl: "http://api.ping.fm/v1/",
+   
+   // whether to omit the cache-buster; should usually be true
    allowCache: true,
+   
+   // API key for this app; shared for all users
    api_key: null,
+   
+   // per-user application key
    user_app_key: null,
+   
+   // whether to pass the debug flag to Ping.FM (simulates posting)
    debug: 0,
+   
+   // default method if not specified
    post_method: 'default',
+   
+   // should be a view object with showError, showResult, showNotice, log
+   view: null,
+
+   // custom trigger information
+   triggerxml: null,
+   triggerinfo: [],
    
    getBaseArgs: function() {
      return { 
@@ -283,23 +301,46 @@ var pingfm = {
         );
    },
    
+   // split a body into a body and title if there are any newlines,
+   // return an object with body and title properties
    _getTitle: function(body) {
-     if (!body) return null;
+     if (!body) return {body: null, title: null};
      var lines = body.split("\n");
      if (lines.length > 1) {
-        return lines[0];
+        return {body: lines.slice(1).join("\n"), title: lines[0]};
      } else {
-        return null;
+        return {body: body, title: null};
      }
    },
    
-   postMessage: function() {
+   // expects # prefix for custom triggers
+   _getPostType: function(name) {
+     if (name[0] == '#') {
+        name = name.substring(1);
+        var info = this.triggerinfo[name];
+        if (info) {
+            return info.method;
+        } else {
+            // XXX - can we determine this?
+            return "status";
+        }
+     } else {
+        return name;
+     }
+   },
+   
+   postMessage: function(body, method, title) {
      var args = this.getBaseArgs();
-     args.post_method = this.post_method;
-     args.body = jQuery('#post_text').val();
+     args.body = body;
+     
+     // default
+     if (! method) method = this.post_method;
 
-     // default posting method
+     // default posting API call; use user.tpost for custom triggers
      var apimethod = 'user.post';
+
+     // should always return "status", "blog", or "microblog" 
+     var post_type = this._getPostType(method);
 
      // custom trigger
      if (this.post_method[0] == '#') {
@@ -310,41 +351,92 @@ var pingfm = {
         apimethod = 'user.post';
      }
      
-     if (args.post_method == 'blog') {
-        args.title = this._getTitle(args.body);
-        if (! args.title) {
-            args.title = "Blog Post from Ping.FM";
+     if (post_type == 'blog' && !title) {
+        var parts = this._getTitle(args.body);
+        if (! parts.title) {
+            parts.title = "Blog Post from Ping.FM";
         }
+        args.body = parts.body;
+        args.title = parts.title;
      }
 
-     // keep history
-     pingdb.addPing(args.body, args.post_method);
+     var me = this;
 
      this.doRequest(apimethod, args, 
             function(data) {
-                console.log("Success on user.post");
-                jQuery('#back_test_output').val("Posting succeeded: " + jQuery('message', data).text());
+                me.log("Success on user.post");
+                me.showResult("Posting succeeded: " + jQuery('message', data).text());
             },
             function(data, error) {
-                console.log("Failure on user.post");
-                jQuery('#back_test_output').val( error);
-                showError(error);
+                me.log("Failure on user.post");
+                me.showError(error);
             }
         );
    },
    
+   log: function(msg) {
+     if (this.view && view.log) view.log(msg);
+     if (this.debug)
+        console.log(msg);
+   },
+   
+   showError: function(error) {
+     if (this.debug) 
+        console.log(error);
+     if (this.view && view.showError) view.showError(error);
+   },
+
+   showResult: function(msg) {
+     if (this.debug) 
+        console.log(msg);
+     if (this.view && view.showResult) view.showResult(msg);
+   },
+
+   getTriggerInfo: function() {
+     return this.triggerinfo;
+   },
+
+    /*
+      <triggers>
+        <trigger id="twt" method="microblog">
+          <services>
+            <service id="twitter" name="Twitter"/>
+          </services>
+        </trigger>
+        <trigger id="fb" method="status">
+          <services>
+            <service id="facebook" name="Facebook"/>
+          </services>
+        </trigger>
+        ...
+      </triggers>
+    */
+
    getTriggers: function(success, failure) {
      var args = this.getBaseArgs();
 
+     var me = this;
      this.doRequest('user.triggers', args, 
             function(data) {
-                console.log("Success on user.triggers");
-                success( jQuery('triggers', data).get(0) );
+                me.triggerxml = data;
+                var triggerinfo = [];
+                if (data) {
+                    jQuery('trigger', data).each( function(i) {
+                            var id = jQuery(this).attr('id');
+                            var method = jQuery(this).attr('method');
+                            var services = [];
+                            jQuery('service', this).each(function(i) { services.push(jQuery(this).attr('id')); } );
+                            triggerinfo[id] = {id: id, method: method, services: services};
+                        }
+                    );
+                }
+                me.triggerinfo = triggerinfo;
+                me.log("Success on user.triggers");
+                success( triggerinfo );
             },
             function(data, error) {
-                console.log("Failure on user.triggers");
-                jQuery('#back_test_output').val( error);
-                showError(error);
+                me.log("Failure on user.triggers");
+                me.showError(error);
                 if (failure) {
                     failure(data, error);
                 }
@@ -374,10 +466,11 @@ var pingfm = {
 
   _makejQuerySuccessHandler: function(success, failure) {
     var api = this;
+    var me = this;
     return function (data, status) {
       if (jQuery('rsp', data).attr('status') != 'OK')
       {
-        console.log("status is bad");
+        me.log("status is bad");
         if (failure) {
           var errorText = jQuery('message', data).text();
           failure({ responseXML: data, responseText: "<error>" + errorText + "</error>" },
@@ -387,7 +480,7 @@ var pingfm = {
       }
       else
       {
-        console.log("status is good");
+        me.log("status is good");
         if (success) {
           success(data, status);
         }
@@ -396,8 +489,9 @@ var pingfm = {
   },
 
   _makejQueryFailureHandler: function(callback) {
+    var me = this;
     return function (response, status, error) {
-      console.log("in hard failure");
+      me.log("in hard failure");
       if (callback) {
         callback(response, "Hard failure: " + status, error);
       }
@@ -417,7 +511,13 @@ function setupPingFM()
 
 function doPost(event)
 {
-    pingfm.postMessage();
+    var method = pingview.getPostMethod();
+    var body = jQuery('#post_text').val();
+
+    // keep history
+    pingdb.addPing(body, method);
+
+    pingfm.postMessage(body, method);
     pingview.resetPost();
 }
 
@@ -430,6 +530,28 @@ function setPostType(event)
 
 var pingview = {
   historyNum: -1,
+
+  // for use by pingfm
+  
+  log: function(msg) {
+    console.log(msg);
+  },
+  
+  showError: function(msg) {
+    jQuery('#back_test_output').val( error);
+    console.log("ERROR: " + msg);
+    showError(msg);
+  },
+  
+  showNotice: function(msg) {
+    alert(msg);
+  },
+  
+  showResult: function(msg) {
+    console.log("RESULT: " + msg);
+  },
+  
+  // for direct app / UI use
 
   showPrevHistory: function() {
     this.showHistory(Math.min(this.historyNum+1, pingdb.countPings()));
@@ -600,6 +722,7 @@ function handleTriggers(triggers)
             ['Blog', 'blog']
         ];
     
+    /*
     if (triggers) {
         jQuery('trigger', triggers).each( function(i) {
                 var id = jQuery(this).attr('id');
@@ -608,6 +731,17 @@ function handleTriggers(triggers)
                 options.push([id + " [" + method + "]", "#" + id]);
             }
         );
+    }
+    */
+    
+    if (triggers) {
+        for (name in triggers)
+        {
+            var trigger = triggers[name];
+            if (typeof(trigger) == 'function') continue;
+            
+            options.push([trigger.id + " [" + trigger.method + "]", "#" + trigger.id]);
+        }
     }
 
     jQuery('#post_type').get(0).object.setOptions(options, false);
