@@ -462,31 +462,51 @@ var pingview = {
 
     item.style.display = "none";
   },
+
+  isScrolldownExposed: function() {
+    var item = document.getElementById("scrolldown");
+
+    return item.style.display != "none";
+  },
+  
+  renderDate: function(date) {
+    return date.toString();
+  },
+  
+   /* id, method, date, services, body */
+  renderMessage: function(item) {
+    var itemhtml = '<div>';
+    itemhtml += '<span class="message_body">' + item.body + '</span>';
+    itemhtml += '<span class="message_method">[' + item.method + ']</span>';
+    itemhtml += '<span class="message_timestamp">' + this.renderDate(item.date) + '</span>';
+
+    itemhtml += '</div>';
+
+    return itemhtml;
+  },
   
   renderMessagelist: function(list) {
     var container = document.getElementById("msglist");
     
     var count = list.length;
-    container.innerHTML = "";
     
     var html = '';
     
-    /* id, method, date, services, body */
+
     var item, idx;
+    var sep = "";
     for (idx in list) {
         item = list[idx];
         if (typeof item == 'function') continue;
         
-        var itemhtml = '<div>';
-        
-        itemhtml += '<span>' + item.body + '</span>';
-        
-        itemhtml += '</div>';
-        
-        html += itemhtml;
+        html += sep + this.renderMessage(item);
+        sep = "<hr/>";
     }
     
     container.innerHTML = html;
+    
+    jQuery('#msglist').change();
+    jQuery('#scrollArea').get(0).object.refresh();
   },
   
   // reset for execution of the next comment
@@ -622,13 +642,17 @@ function showNextHistory()
 
 function showLatestPosts(event)
 {
-    pingfm.getLatest(10, null, function(parsed, xml) {
-        console.log("got latest!");
-        pingview.renderMessagelist(parsed);
+    if (pingview.isScrolldownExposed())
+    {
+        pingview.hideScrolldown();
+    } else {
         pingview.exposeScrolldown();
-      }
-    );
-    
+        pingfm.getLatest(10, null, function(parsed, xml) {
+            console.log("got latest!");
+            pingview.renderMessagelist(parsed);
+          }
+        );
+    }
 }
 
 function hideScrolldown(event)

@@ -26,19 +26,19 @@
 		<string>-setPostMethod</string>
 		<key>main.js:394</key>
 		<string>-saveDraftPing</string>
-		<key>main.js:527</key>
-		<string>-addPing</string>
-		<key>main.js:552</key>
-		<string>-doDebugClick</string>
-		<key>main.js:573</key>
-		<string>-handleTriggers</string>
-		<key>main.js:580</key>
-		<string>-handleTriggers</string>
-		<key>main.js:584</key>
-		<string>-handleTriggers</string>
-		<key>main.js:605</key>
-		<string>-setupUI</string>
-		<key>main.js:612</key>
+		<key>main.js:547</key>
+		<string>-</string>
+		<key>main.js:572</key>
+		<string>-</string>
+		<key>main.js:593</key>
+		<string>-</string>
+		<key>main.js:600</key>
+		<string>-</string>
+		<key>main.js:604</key>
+		<string>-</string>
+		<key>main.js:625</key>
+		<string>-</string>
+		<key>main.js:632</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -55,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 555}}</string>
-			<string>{{0, 565}, {1195, 208}}</string>
+			<string>{{0, 0}, {1195, 447}}</string>
+			<string>{{0, 457}, {1195, 316}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -64,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>52d138ccf294ac41</string>
+		<string>6c7a48b80095ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -74,15 +74,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>4</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.15595237910747528</real>
+		<real>0.20892857015132904</real>
 		<key>percent-y</key>
-		<real>0.20761904120445251</real>
+		<real>0.10952381044626236</real>
 		<key>pos-x</key>
-		<integer>262</integer>
+		<integer>839</integer>
 		<key>pos-y</key>
-		<integer>338</integer>
+		<integer>115</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -209,6 +209,13 @@
 			<integer>0</integer>
 			<integer>0</integer>
 		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
 	</array>
 	<key>Objects view last selections</key>
 	<array>
@@ -216,7 +223,7 @@
 			<integer>0</integer>
 			<integer>0</integer>
 			<integer>0</integer>
-			<integer>1</integer>
+			<integer>0</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

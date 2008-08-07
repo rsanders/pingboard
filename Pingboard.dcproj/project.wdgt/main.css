@@ -443,25 +443,28 @@ body {
     -khtml-margin-bottom-collapse: separate;
     position: relative;
     visibility: visible;
-    margin-top: 0px;
     margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 4px;
+    margin-right: 3px;
     width: auto;
-    min-height: 246px;
+    min-height: 232px;
     height: auto;
-    margin-right: 5px;
-    margin-left: 0px;
 }
 
 #msglist {
-    margin-top: 0px;
     -khtml-margin-top-collapse: separate;
     -khtml-margin-bottom-collapse: separate;
     visibility: visible;
-    width: auto;
-    min-height: 246px;
-    height: auto;
-    margin-left: 0px;
-    margin-right: 23px;
+    min-height: 233px;
+    height: 234px;
+    width: 401px;
+    right: 25px;
+    margin-left: auto;
+    top: 0px;
+    margin-bottom: auto;
+    bottom: -2px;
+    margin-top: auto;
 }
 
 #scrolldown_close {
@@ -470,16 +473,13 @@ body {
     text-align: center;
     -khtml-margin-top-collapse: separate;
     -khtml-margin-bottom-collapse: separate;
-    position: absolute;
-    opacity: 0.31;
     height: 16px;
     width: 17px;
-    right: 32px;
-    margin-left: auto;
-    left: 386px;
+    margin-top: 0px;
+    position: absolute;
+    bottom: auto;
+    opacity: 1;
+    top: 236px;
+    left: 427px;
     margin-right: auto;
-    top: 0px;
-    margin-bottom: auto;
-    bottom: 230px;
-    margin-top: auto;
 }
