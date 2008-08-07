@@ -55,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 447}}</string>
-			<string>{{0, 457}, {1195, 316}}</string>
+			<string>{{0, 0}, {1195, 330}}</string>
+			<string>{{0, 340}, {1195, 433}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -64,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>9cddea1a0495ac41</string>
+		<string>b02035cf0695ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -74,15 +74,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>1</integer>
+		<integer>4</integer>
 		<key>percent-x</key>
-		<real>0.32440477609634399</real>
+		<real>0.35297620296478271</real>
 		<key>percent-y</key>
-		<real>0.17428570985794067</real>
+		<real>0.12571428716182709</real>
 		<key>pos-x</key>
-		<integer>545</integer>
+		<integer>593</integer>
 		<key>pos-y</key>
-		<integer>183</integer>
+		<integer>424</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -218,15 +218,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>0</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>

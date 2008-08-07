@@ -360,6 +360,7 @@ var pingfm = {
       }
     };
   },
-   
-   foo: 'bar'
+
+
+  version: '0.3.1'
 };

@@ -84,9 +84,9 @@ body {
     right: auto;
     margin-top: 0px;
     top: 185px;
-    left: 28px;
     width: 156px;
     height: 22px;
+    left: 54px;
 }
 
 #post_submit {
@@ -98,8 +98,8 @@ body {
     right: auto;
     margin-top: 0px;
     top: 185px;
-    left: 386px;
     height: 22px;
+    left: 378px;
 }
 
 #text2 {
@@ -170,6 +170,7 @@ body {
     width: 408px;
     height: 111px;
     top: 65px;
+    opacity: 1;
 }
 
 #button_getKey1 {
@@ -320,8 +321,8 @@ body {
     margin-top: 0px;
     width: 24px;
     left: 444px;
-    top: 158px;
     height: 26px;
+    top: 152px;
 }
 
 #historyNum {
@@ -335,9 +336,9 @@ body {
     left: 444px;
     width: 25px;
     min-height: 15px;
-    top: 105px;
     text-align: center;
-    height: 26px;
+    top: 96px;
+    height: 23px;
 }
 
 #app_key {
@@ -412,10 +413,11 @@ body {
     position: absolute;
     right: auto;
     margin-top: 0px;
-    top: 185px;
-    width: 21px;
-    left: 345px;
-    height: 21px;
+    opacity: 1;
+    width: 34px;
+    height: 38px;
+    top: 179px;
+    left: 17px;
 }
 
 #scrolldown {

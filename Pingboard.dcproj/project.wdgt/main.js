@@ -441,7 +441,7 @@ var pingview = {
   setVersion: function(version) {
     if (! version) version = this.version;
     
-    jQuery('#version').val(String(version));
+    jQuery('#version').text(String(version));
   },
 
   selectPreferredPostType: function() {
@@ -619,7 +619,7 @@ function setupUI()
         pingfm.getTriggers(handleTriggers, function() { handleTriggers(null); });
     }
     
-    pingview.setVersion( dashcode.getLocalizedString("Version") + pingfm.version );
+    pingview.setVersion( dashcode.getLocalizedString("Version") + " " + pingview.version );
     
     var name = pingprefs.getPref("name");
     if (!name)  name = "";

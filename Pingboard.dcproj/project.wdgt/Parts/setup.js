@@ -12,7 +12,7 @@ var dashcodePartSpecs = {
     "button_getKey1": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "validateUser", "rightImageWidth": 5, "text": "Test" },
     "character_count": { "creationFunction": "CreateText", "text": "0" },
     "done": { "creationFunction": "CreateGlassButton", "onclick": "configDone", "text": "Done" },
-    "history_button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showLatestPosts", "rightImageWidth": 5, "text": "H" },
+    "history_button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showLatestPosts", "rightImageWidth": 5 },
     "historyNum": { "creationFunction": "CreateText" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
     "name_display": { "creationFunction": "CreateText" },
@@ -26,5 +26,5 @@ var dashcodePartSpecs = {
     "text1": { "creationFunction": "CreateText", "text": "Ping.fm" },
     "text2": { "creationFunction": "CreateText", "text": "/ 160" },
     "title": { "creationFunction": "CreateText", "text": "Pingboard" },
-    "version": { "creationFunction": "CreateText", "text": "Version 0.3" }
+    "version": { "creationFunction": "CreateText" }
 };
