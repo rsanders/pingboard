@@ -1,3 +1,7 @@
+**** 0.3.1      Aug 6, 2008
+
+Show up to 25 of the user's last posts in a dropdown window.
+
 **** 0.3        Aug 6, 2008
 
 Save draft of currently composed post when scrolling back 
