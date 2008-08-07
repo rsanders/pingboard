@@ -73,7 +73,7 @@ body {
     font-family: 'Helvetica Neue';
     text-shadow: rgb(0, 0, 255) 0px 0px 0px;
     height: 31px;
-    width: 191px;
+    width: 159px;
 }
 
 #post_type {
@@ -83,10 +83,10 @@ body {
     position: absolute;
     right: auto;
     margin-top: 0px;
-    top: 185px;
     width: 156px;
     height: 22px;
-    left: 54px;
+    left: 99px;
+    top: 187px;
 }
 
 #post_submit {
@@ -97,9 +97,9 @@ body {
     position: absolute;
     right: auto;
     margin-top: 0px;
-    top: 185px;
     height: 22px;
-    left: 378px;
+    top: 187px;
+    left: 28px;
 }
 
 #text2 {
@@ -110,10 +110,10 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    top: 185px;
-    left: 277px;
     height: 21px;
     width: 57px;
+    top: 49px;
+    left: 404px;
 }
 
 #button_getKey {
@@ -151,11 +151,11 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    top: 185px;
     text-align: right;
-    left: 234px;
     height: 21px;
     width: 40px;
+    top: 49px;
+    left: 361px;
 }
 
 #post_text {
@@ -385,9 +385,9 @@ body {
     position: absolute;
     margin-top: 0px;
     top: 19px;
-    left: 234px;
-    height: 31px;
     width: 165px;
+    left: 223px;
+    height: 26px;
 }
 
 #account_name_label {
@@ -417,7 +417,7 @@ body {
     width: 34px;
     height: 38px;
     top: 179px;
-    left: 17px;
+    left: 407px;
 }
 
 #scrolldown {

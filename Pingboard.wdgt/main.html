@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="lib/jquery.js" charset="utf-8"></script>
     <script type="text/javascript" src="lib/xmlutils.js" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/base64.js" charset="utf-8"></script>
+    <script type="text/javascript" src="lib/pingfm.js" charset="utf-8"></script>
     <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
     <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
     <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
@@ -17,12 +19,20 @@
     <script type="text/javascript" src="main.js" charset="utf-8"></script>
     <script type="text/javascript" src="Parts/PopupButton.js" charset="utf-8"></script>
     <script type="text/javascript" src="Parts/Button.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleScrollbar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleScrollArea.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/ScrollArea.js" charset="utf-8"></script>
 </head>
 <body onload="load();" id="error_view">
     <div id="front">
+        <div id="scrolldown" ondblclick="hideScrolldown(event)">
+            <div id="scrollArea">
+                <div id="msglist" class="content" style="position: absolute; left: 0px; top: 0px; right: 22px; bottom: 0px; overflow-x: hidden; overflow-y: hidden; ">
+                </div></div>
+            <div id="scrolldown_close"></div>
+        </div>
         <img id="frontImg" src="Images/front.png" alt="">
         <div id="info"></div>
-        <div id="helloText"></div>
         <textarea id="post_text" name="post_text" onchange="postTextChange(event)" onkeypress="postTextChange(event)"></textarea>
         <div id="post_type"></div>
         <div id="post_submit"></div>
@@ -34,6 +44,7 @@
         <div id="next"></div>
         <div id="historyNum"></div>
         <div id="name_display"></div>
+        <div id="history_button"></div>
     </div>
     <div id="back">
         <img id="backImg" src="Images/back.png" alt="">

@@ -13,5 +13,6 @@ var localizedStrings = {
     "Get Key": "Get Key",
     "GET YOUR KEY": "Enter your personal Ping.FM Application Key below; click the button at right if you don't know your Application Key.",
     "Post": "Post",
-    "Validate": "Validate"
+    "Validate": "Validate",
+    "Version": "Version"
 };
