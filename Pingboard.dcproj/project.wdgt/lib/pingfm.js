@@ -267,7 +267,9 @@ var pingfm = {
      var args = this.getBaseArgs();
 
      if (!limit) limit = 25;
-     if (!order) order = 'DESC';
+     args.limit = limit;
+
+     if (order) args.order = 'DESC';
 
      var me = this;
      this.doRequest('user.latest', args, 

@@ -6,9 +6,9 @@
 	<dict>
 		<key>lib/pingfm.js:134</key>
 		<string>-postMessage</string>
-		<key>lib/pingfm.js:291</key>
+		<key>lib/pingfm.js:293</key>
 		<string>-getLatest</string>
-		<key>lib/pingfm.js:352</key>
+		<key>lib/pingfm.js:354</key>
 		<string>-_makejQueryFailureHandler</string>
 		<key>main.js:159</key>
 		<string>-openPingFM</string>
@@ -27,17 +27,17 @@
 		<key>main.js:394</key>
 		<string>-saveDraftPing</string>
 		<key>main.js:547</key>
-		<string>-</string>
+		<string>-addPing</string>
 		<key>main.js:572</key>
-		<string>-</string>
+		<string>-doDebugClick</string>
 		<key>main.js:593</key>
-		<string>-</string>
+		<string>-handleTriggers</string>
 		<key>main.js:600</key>
-		<string>-</string>
+		<string>-handleTriggers</string>
 		<key>main.js:604</key>
-		<string>-</string>
+		<string>-handleTriggers</string>
 		<key>main.js:625</key>
-		<string>-</string>
+		<string>-setupUI</string>
 		<key>main.js:632</key>
 		<string>-</string>
 	</dict>
@@ -64,7 +64,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>6c7a48b80095ac41</string>
+		<string>9cddea1a0495ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -74,15 +74,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.20892857015132904</real>
+		<real>0.32440477609634399</real>
 		<key>percent-y</key>
-		<real>0.10952381044626236</real>
+		<real>0.17428570985794067</real>
 		<key>pos-x</key>
-		<integer>839</integer>
+		<integer>545</integer>
 		<key>pos-y</key>
-		<integer>115</integer>
+		<integer>183</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -220,6 +220,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
+			<integer>0</integer>
 			<integer>0</integer>
 			<integer>0</integer>
 			<integer>0</integer>

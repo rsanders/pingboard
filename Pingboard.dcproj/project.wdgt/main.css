@@ -457,14 +457,12 @@ body {
     -khtml-margin-bottom-collapse: separate;
     visibility: visible;
     min-height: 233px;
-    height: 234px;
-    width: 401px;
     right: 25px;
-    margin-left: auto;
     top: 0px;
-    margin-bottom: auto;
     bottom: -2px;
-    margin-top: auto;
+    width: auto;
+    height: auto;
+    left: 2px;
 }
 
 #scrolldown_close {

@@ -647,7 +647,7 @@ function showLatestPosts(event)
         pingview.hideScrolldown();
     } else {
         pingview.exposeScrolldown();
-        pingfm.getLatest(10, null, function(parsed, xml) {
+        pingfm.getLatest(25, null, function(parsed, xml) {
             console.log("got latest!");
             pingview.renderMessagelist(parsed);
           }
