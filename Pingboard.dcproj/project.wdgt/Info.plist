@@ -21,10 +21,10 @@
 	<key>CloseBoxInsetY</key>
 	<integer>15</integer>
 	<key>Height</key>
-	<integer>230</integer>
+	<integer>494</integer>
 	<key>MainHTML</key>
 	<string>main.html</string>
 	<key>Width</key>
-	<integer>486</integer>
+	<integer>490</integer>
 </dict>
 </plist>

@@ -11,7 +11,9 @@
 function load()
 {
     dashcode.setupParts();
-    
+
+    pingview.hideScrolldown();
+
     setupPingFM();
 
     setupUI();
@@ -37,6 +39,7 @@ function remove()
 function hide()
 {
     // Stop any timers to prevent CPU usage
+    pingview.preExecute();
 }
 
 //
@@ -45,6 +48,8 @@ function hide()
 //
 function show()
 {
+    pingview.preExecute();
+
     // Restart any timers that were stopped on hide
     setTimeout("checkConfig();", 500);
 }
@@ -266,6 +271,8 @@ function setupPingFM()
 
 function doPost(event)
 {
+    pingview.preExecute();
+    
     var method = pingview.getPostMethod();
     var body = jQuery('#post_text').val();
 
@@ -444,6 +451,49 @@ var pingview = {
     }
   },
   
+  exposeScrolldown: function() {
+    var item = document.getElementById("scrolldown");
+
+    item.style.display = "block";
+  },
+  
+  hideScrolldown: function() {
+    var item = document.getElementById("scrolldown");
+
+    item.style.display = "none";
+  },
+  
+  renderMessagelist: function(list) {
+    var container = document.getElementById("msglist");
+    
+    var count = list.length;
+    container.innerHTML = "";
+    
+    var html = '';
+    
+    /* id, method, date, services, body */
+    var item, idx;
+    for (idx in list) {
+        item = list[idx];
+        if (typeof item == 'function') continue;
+        
+        var itemhtml = '<div>';
+        
+        itemhtml += '<span>' + item.body + '</span>';
+        
+        itemhtml += '</div>';
+        
+        html += itemhtml;
+    }
+    
+    container.innerHTML = html;
+  },
+  
+  // reset for execution of the next comment
+  preExecute: function() {
+    this.hideScrolldown();
+  },
+  
   version: '0.3.1',
 };
 
@@ -572,5 +622,16 @@ function showNextHistory()
 
 function showLatestPosts(event)
 {
-    pingfm.getLatest();
+    pingfm.getLatest(10, null, function(parsed, xml) {
+        console.log("got latest!");
+        pingview.renderMessagelist(parsed);
+        pingview.exposeScrolldown();
+      }
+    );
+    
+}
+
+function hideScrolldown(event)
+{
+    pingview.hideScrolldown();
 }

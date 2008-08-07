@@ -5,40 +5,40 @@
 	<key>Breakpoints</key>
 	<dict>
 		<key>lib/pingfm.js:134</key>
-		<string>postMessage</string>
-		<key>lib/pingfm.js:285</key>
-		<string>getLatest</string>
-		<key>lib/pingfm.js:344</key>
-		<string>_makejQueryFailureHandler</string>
-		<key>main.js:154</key>
+		<string>-postMessage</string>
+		<key>lib/pingfm.js:291</key>
+		<string>-getLatest</string>
+		<key>lib/pingfm.js:352</key>
+		<string>-_makejQueryFailureHandler</string>
+		<key>main.js:159</key>
 		<string>-openPingFM</string>
-		<key>main.js:257</key>
+		<key>main.js:262</key>
 		<string>-setupPingFM</string>
-		<key>main.js:260</key>
+		<key>main.js:265</key>
 		<string>-setupPingFM</string>
-		<key>main.js:275</key>
+		<key>main.js:282</key>
 		<string>-doPost</string>
-		<key>main.js:283</key>
+		<key>main.js:290</key>
 		<string>-setPostType</string>
-		<key>main.js:334</key>
+		<key>main.js:341</key>
 		<string>-showHistory</string>
-		<key>main.js:371</key>
+		<key>main.js:378</key>
 		<string>-setPostMethod</string>
-		<key>main.js:387</key>
+		<key>main.js:394</key>
 		<string>-saveDraftPing</string>
-		<key>main.js:477</key>
+		<key>main.js:527</key>
 		<string>-addPing</string>
-		<key>main.js:502</key>
+		<key>main.js:552</key>
 		<string>-doDebugClick</string>
-		<key>main.js:523</key>
+		<key>main.js:573</key>
 		<string>-handleTriggers</string>
-		<key>main.js:530</key>
+		<key>main.js:580</key>
 		<string>-handleTriggers</string>
-		<key>main.js:534</key>
+		<key>main.js:584</key>
 		<string>-handleTriggers</string>
-		<key>main.js:555</key>
+		<key>main.js:605</key>
 		<string>-setupUI</string>
-		<key>main.js:562</key>
+		<key>main.js:612</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -55,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 342}}</string>
-			<string>{{0, 352}, {1195, 421}}</string>
+			<string>{{0, 0}, {1195, 555}}</string>
+			<string>{{0, 565}, {1195, 208}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -64,25 +64,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>d2fe87c17194ac41</string>
+		<string>52d138ccf294ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojrOc3qQ/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojBIIQEm/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>4</integer>
 		<key>percent-x</key>
-		<real>0.092261902987957001</real>
+		<real>0.15595237910747528</real>
 		<key>percent-y</key>
-		<real>0.083809524774551392</real>
+		<real>0.20761904120445251</real>
 		<key>pos-x</key>
-		<integer>1039</integer>
+		<integer>262</integer>
 		<key>pos-y</key>
-		<integer>88</integer>
+		<integer>338</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -114,7 +114,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>316 140 1440 815 0 0 1680 1028 </string>
+	<string>78 121 1440 815 0 0 1680 1028 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -155,13 +155,68 @@
 			<integer>1</integer>
 			<integer>5</integer>
 		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>15</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>14</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>14</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>14</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>14</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>14</integer>
+			<integer>1</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>1</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
 	</array>
 	<key>Objects view last selections</key>
 	<array>
 		<array>
 			<integer>0</integer>
 			<integer>0</integer>
-			<integer>14</integer>
+			<integer>0</integer>
+			<integer>1</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

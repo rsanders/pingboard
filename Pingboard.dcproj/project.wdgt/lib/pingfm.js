@@ -257,6 +257,12 @@ var pingfm = {
       return services;
    },
   
+   /**
+    * Returns an array of items that are objects containing these properties:
+    * 
+    * id, method, date, services, body
+    *
+    */
    getLatest: function(limit, order, success, failure) {
      var args = this.getBaseArgs();
 
@@ -284,7 +290,9 @@ var pingfm = {
                 }
                 me.latestinfo = parsed;
                 me.log("Success on user.latest");
-                success( parsed, xml );
+                if (success) {
+                    success( parsed, xml );
+                }
             },
             function(data, error) {
                 me.log("Failure on user.latest");

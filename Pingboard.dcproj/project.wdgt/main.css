@@ -13,10 +13,8 @@ body {
     display: block;
     top: 0px;
     left: 0px;
-    right: 0px;
-    width: auto;
-    bottom: 0px;
-    height: auto;
+    height: 230px;
+    width: 486px;
 }
 
 #info {
@@ -25,6 +23,8 @@ body {
     bottom: 18px;
     width: 13px;
     height: 13px;
+    top: 200px;
+    left: 455px;
 }
 
 #back {
@@ -36,31 +36,14 @@ body {
     display: block;
     top: 0px;
     left: 0px;
-    right: 0px;
-    width: auto;
-    bottom: 0px;
-    height: auto;
+    height: 230px;
+    width: 486px;
 }
 
 #done {
     position: absolute;
-    right: 21px;
-    bottom: 21px;
-    margin-left: auto;
-    margin-top: auto;
-}
-
-#helloText {
-    position: absolute;
-    top: 85px;
-    left: 94px;
-    right: 95px;
-    width: 91px;
-    color: black;
-    font-family: HelveticaNeue-Bold;
-    font-size: 11pt;
-    margin-left: auto;
-    margin-right: auto;
+    left: 415px;
+    top: 186px;
 }
 
 #text1 {
@@ -74,10 +57,8 @@ body {
     font-family: 'Helvetica Neue';
     font-size: 10pt;
     left: 415px;
-    right: 22px;
-    width: auto;
-    bottom: 189px;
-    height: auto;
+    width: 53px;
+    height: 25px;
 }
 
 #title {
@@ -91,10 +72,8 @@ body {
     font-size: 15pt;
     font-family: 'Helvetica Neue';
     text-shadow: rgb(0, 0, 255) 0px 0px 0px;
-    right: 259px;
-    width: auto;
-    bottom: 186px;
-    height: auto;
+    height: 31px;
+    width: 191px;
 }
 
 #post_type {
@@ -107,8 +86,7 @@ body {
     top: 185px;
     left: 28px;
     width: 156px;
-    bottom: 23px;
-    height: auto;
+    height: 22px;
 }
 
 #post_submit {
@@ -121,8 +99,7 @@ body {
     margin-top: 0px;
     top: 185px;
     left: 386px;
-    bottom: 23px;
-    height: auto;
+    height: 22px;
 }
 
 #text2 {
@@ -135,10 +112,8 @@ body {
     margin-top: 0px;
     top: 185px;
     left: 277px;
-    right: 156px;
-    width: auto;
-    bottom: 23px;
-    height: auto;
+    height: 21px;
+    width: 57px;
 }
 
 #button_getKey {
@@ -151,8 +126,7 @@ body {
     width: 81px;
     left: 358px;
     top: 47px;
-    bottom: 159px;
-    height: auto;
+    height: 24px;
 }
 
 #ApiKeyTitle {
@@ -165,10 +139,8 @@ body {
     margin-top: 0px;
     left: 29px;
     top: 36px;
-    right: 137px;
-    width: auto;
-    bottom: 147px;
-    height: auto;
+    width: 320px;
+    height: 47px;
 }
 
 #character_count {
@@ -182,10 +154,8 @@ body {
     top: 185px;
     text-align: right;
     left: 234px;
-    right: 216px;
-    width: auto;
-    bottom: 23px;
-    height: auto;
+    height: 21px;
+    width: 40px;
 }
 
 #post_text {
@@ -212,8 +182,7 @@ body {
     left: 29px;
     width: 61px;
     top: 180px;
-    bottom: 26px;
-    height: auto;
+    height: 24px;
 }
 
 #back_test_output {
@@ -258,19 +227,20 @@ body {
 #text {
     text-overflow: ellipsis;
     overflow: hidden;
-    position: relative;
     -khtml-margin-top-collapse: separate;
     -khtml-margin-bottom-collapse: separate;
-    margin-left: 23px;
     font-size: 21pt;
     font-family: Georgia;
     color: rgb(255, 0, 0);
     text-align: center;
-    margin-right: 129px;
-    margin-top: 7px;
-    width: auto;
-    min-height: 38px;
-    height: auto;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    top: 13px;
+    left: 38px;
+    height: 30px;
+    width: 266px;
 }
 
 #button {
@@ -282,18 +252,20 @@ body {
     margin-top: 0px;
     height: 25px;
     width: 85px;
-    top: 188px;
-    left: 382px;
+    top: 173px;
+    left: 374px;
 }
 
 #error_pane {
-    width: 100%;
     display: none;
     position: relative;
-    min-height: 232px;
-    height: auto;
     opacity: 1;
     background-repeat: no-repeat;
+    margin-left: 0px;
+    width: auto;
+    margin-right: 0px;
+    min-height: 494px;
+    height: auto;
     background-position: 50% 50%;
 }
 
@@ -304,7 +276,6 @@ body {
     display: block;
     -khtml-margin-top-collapse: separate;
     -khtml-margin-bottom-collapse: separate;
-    height: 166px;
     position: absolute;
     top: 45px;
     right: auto;
@@ -312,15 +283,19 @@ body {
     margin-top: 0px;
     width: 329px;
     left: 26px;
+    height: 151px;
 }
 
 #errorImg1 {
-    position: absolute;
     display: block;
-    width: 495px;
-    height: 247px;
-    left: -4px;
-    top: -11px;
+    margin-top: 0px;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    position: relative;
+    height: 230px;
+    margin-bottom: 230px;
+    margin-left: 0px;
+    width: 486px;
 }
 
 #prev {
@@ -333,8 +308,7 @@ body {
     width: 24px;
     left: 444px;
     top: 65px;
-    bottom: 145px;
-    height: auto;
+    height: 26px;
 }
 
 #next {
@@ -347,8 +321,7 @@ body {
     width: 24px;
     left: 444px;
     top: 158px;
-    bottom: 52px;
-    height: auto;
+    height: 26px;
 }
 
 #historyNum {
@@ -363,9 +336,8 @@ body {
     width: 25px;
     min-height: 15px;
     top: 105px;
-    bottom: 110px;
-    height: auto;
     text-align: center;
+    height: 26px;
 }
 
 #app_key {
@@ -389,10 +361,8 @@ body {
     font-family: HelveticaNeue-LightItalic;
     left: 380px;
     top: 17px;
-    right: 21px;
-    width: auto;
-    bottom: 192px;
-    height: auto;
+    width: 85px;
+    height: 21px;
 }
 
 #account_name {
@@ -415,10 +385,8 @@ body {
     margin-top: 0px;
     top: 19px;
     left: 234px;
-    right: 91px;
-    width: auto;
-    bottom: 189px;
-    height: auto;
+    height: 31px;
+    width: 165px;
 }
 
 #account_name_label {
@@ -447,6 +415,71 @@ body {
     top: 185px;
     width: 21px;
     left: 345px;
-    bottom: 25px;
+    height: 21px;
+}
+
+#scrolldown {
+    position: absolute;
+    margin-top: 0px;
+    height: 246px;
+    left: 23px;
+    background-color: rgb(168, 168, 168);
+    -webkit-border-top-left-radius: 12px 12px;
+    -webkit-border-top-right-radius: 12px 12px;
+    -webkit-border-bottom-left-radius: 12px 12px;
+    -webkit-border-bottom-right-radius: 12px 12px;
+    border-width: 5px;
+    border-color: rgb(211, 211, 211);
+    border-style: ridge;
+    width: 435px;
+    top: 213px;
+}
+
+#scrollArea {
+    color: black;
+    font-family: HelveticaNeue;
+    font-size: 10pt;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    position: relative;
+    visibility: visible;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: auto;
+    min-height: 246px;
     height: auto;
+    margin-right: 5px;
+    margin-left: 0px;
+}
+
+#msglist {
+    margin-top: 0px;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    visibility: visible;
+    width: auto;
+    min-height: 246px;
+    height: auto;
+    margin-left: 0px;
+    margin-right: 23px;
+}
+
+#scrolldown_close {
+    font-family: HelveticaNeue-Bold;
+    font-size: 12px;
+    text-align: center;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    position: absolute;
+    opacity: 0.31;
+    height: 16px;
+    width: 17px;
+    right: 32px;
+    margin-left: auto;
+    left: 386px;
+    margin-right: auto;
+    top: 0px;
+    margin-bottom: auto;
+    bottom: 230px;
+    margin-top: auto;
 }
