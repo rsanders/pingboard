@@ -159,6 +159,11 @@ function openPingFM(event)
     widget.openURL("http://ping.fm/");
 }
 
+function openAppSite(event)
+{
+    widget.openURL("http://code.google.com/p/pingboard");
+}
+
 
 function openAppKeyPage(event)
 {
@@ -228,7 +233,7 @@ function populatePrefs()
 function configDone(event)
 {
     // reset custom trigger list
-    handleTriggers(null);
+    makePostTypeMenu(null, null);
     
     savePrefs();
     setupPingFM();
@@ -514,7 +519,7 @@ var pingview = {
     this.hideScrolldown();
   },
   
-  version: '0.3.1',
+  version: '0.4',
 };
 
 /**
@@ -588,7 +593,15 @@ function doDebugClick(event)
   </triggers>
 */
 
-function handleTriggers(triggers)
+function handleServices(services)
+{
+    var completion = function(triggers) { makePostTypeMenu(services, triggers); };
+    
+    pingfm.getTriggers(completion, completion);
+}
+
+
+function makePostTypeMenu(services, triggers)
 {
     var options = [
             ['Default', 'default', true],
@@ -598,12 +611,26 @@ function handleTriggers(triggers)
         ];
     
     if (triggers) {
+        options.push(['----', '----']);
         for (name in triggers)
         {
             var trigger = triggers[name];
             if (typeof(trigger) == 'function') continue;
             
-            options.push([trigger.id + " [" + trigger.method + "]", "#" + trigger.id]);
+            options.push(['#' + trigger.id + " - [" + trigger.method[0] + "]", "#" + trigger.id]);
+        }
+    }
+    
+    if (services)
+    {
+        options.push(['----', '----']);
+        for (name in services)
+        {
+            var service = services[name];
+            if (typeof(service) == 'function') continue;
+            if (! service.methods || service.methods.length < 1) continue;
+            
+            options.push(['@' + service.name + ' - [' + service.methods[0][0] + ']', "@" + service.id]);
         }
     }
 
@@ -616,7 +643,7 @@ function setupUI()
 {
     // get custom triggers if the user is configured
     if (pingprefs.isConfigured()) {
-        pingfm.getTriggers(handleTriggers, function() { handleTriggers(null); });
+        pingfm.getServices(handleServices, handleServices);
     }
     
     pingview.setVersion( dashcode.getLocalizedString("Version") + " " + pingview.version );

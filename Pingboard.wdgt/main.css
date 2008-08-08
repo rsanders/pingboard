@@ -46,34 +46,21 @@ body {
     top: 186px;
 }
 
-#text1 {
-    color: black;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    top: 19px;
-    font-style: italic;
-    font-family: 'Helvetica Neue';
-    font-size: 10pt;
-    left: 415px;
-    width: 53px;
-    height: 25px;
-}
-
 #title {
-    color: black;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
     top: 19px;
-    left: 40px;
-    font-size: 15pt;
-    font-family: 'Helvetica Neue';
-    text-shadow: rgb(0, 0, 255) 0px 0px 0px;
-    height: 31px;
     width: 159px;
+    text-shadow: rgb(128, 128, 128) 4px 3px 3px;
+    font-family: 'Santa Fe LET';
+    font-size: 30pt;
+    left: 28px;
+    height: 36px;
+    opacity: 1;
+    color: rgb(0, 0, 0);
+    padding: 0px;
 }
 
 #post_type {
@@ -110,10 +97,10 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    height: 21px;
     width: 57px;
     top: 49px;
     left: 404px;
+    height: 16px;
 }
 
 #button_getKey {
@@ -152,10 +139,10 @@ body {
     position: absolute;
     margin-top: 0px;
     text-align: right;
-    height: 21px;
     width: 40px;
     top: 49px;
     left: 361px;
+    height: 16px;
 }
 
 #post_text {
@@ -379,7 +366,6 @@ body {
 #name_display {
     color: black;
     font-family: HelveticaNeue;
-    font-size: 10pt;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -388,6 +374,7 @@ body {
     width: 165px;
     left: 223px;
     height: 26px;
+    font-size: 10pt;
 }
 
 #account_name_label {
@@ -467,19 +454,16 @@ body {
     left: 2px;
 }
 
-#scrolldown_close {
-    font-family: HelveticaNeue-Bold;
-    font-size: 12px;
-    text-align: center;
-    -khtml-margin-top-collapse: separate;
-    -khtml-margin-bottom-collapse: separate;
-    height: 16px;
-    width: 17px;
-    margin-top: 0px;
+#box {
+    border-color: black;
+    border-width: 1px;
     position: absolute;
-    bottom: auto;
-    opacity: 1;
-    top: 236px;
-    left: 427px;
-    margin-right: auto;
+    margin-top: 0px;
+    width: 50px;
+    height: 25px;
+    top: 19px;
+    background-repeat: no-repeat;
+    background-image: url(Images/pingfm-logo-50.gif);
+    left: 411px;
+    background-position: 50% 50%;
 }

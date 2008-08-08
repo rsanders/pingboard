@@ -32,6 +32,10 @@ var pingfm = {
    // should be a view object with showError, showResult, showNotice, log
    view: null,
 
+   // services information
+   servicexml: null,
+   serviceinfo: [],
+
    // custom trigger information
    triggerxml: null,
    triggerinfo: [],
@@ -104,6 +108,17 @@ var pingfm = {
      if (this.post_method[0] == '#') {
         args.trigger = this.post_method.substring(1);
         apimethod = 'user.tpost';
+     }
+     else if (this.post_method[0] == '@') {
+        args.service = this.post_method.substring(1);
+        apimethod = 'user.post';
+
+        // use first defined method, default to microblog
+        args.post_method = this.serviceinfo[args.service].methods.length > 0 ? 
+                   this.serviceinfo[args.service].methods[0] :
+                   "microblog";
+
+        if (args.post_method == 'blog') post_type = 'blog';
      } else {
         args.post_method = this.post_method;
         apimethod = 'user.post';
@@ -211,7 +226,55 @@ var pingfm = {
             }
         );
    },
-   
+
+   getServiceInfo: function() {
+     return this.serviceinfo;
+   },
+
+    /*
+        <?xml version="1.0"?>
+        <rsp status="OK">
+          <transaction>12345</transaction>
+          <method>user.services</method>
+          <services>
+            <service id="twitter" name="Twitter">
+              <methods>microblog,status</methods>
+            </service>
+            <service id="facebook" name="Facebook">
+              <methods>status</methods>
+            </service>
+            ...
+          </services>
+        </rsp>
+    */
+
+   getServices: function(success, failure) {
+     var args = this.getBaseArgs();
+
+     var me = this;
+     this.doRequest('user.services', args, 
+            function(data) {
+                me.servicexml = data;
+                var serviceinfo = [];
+                if (data) {
+                  serviceinfo = me._parseServices(jQuery('services', data));
+                }
+                me.serviceinfo = serviceinfo;
+                me.log("Success on user.services");
+                if (success) {
+                    success( serviceinfo );
+                }
+            },
+            function(data, error) {
+                me.log("Failure on user.services");
+                if (failure) {
+                    failure(data, error);
+                }
+            }
+        );
+   },
+
+
   /*
   <messages>
     <message id="12345" method="blog">
@@ -252,7 +315,12 @@ var pingfm = {
       jQuery('service', list).each(function(i) { 
           var id = jQuery(this).attr('id');
           var name = jQuery(this).attr('name');
-          services[id] = { id: id, name: name };
+          var methods = [];
+          var methodtext = jQuery('methods', this).text();
+          if (methodtext && methodtext.length > 0) {
+            methods = methodtext.split(',');
+          }
+          services[id] = { id: id, name: name, methods: methods };
        } );
       return services;
    },
@@ -362,5 +430,5 @@ var pingfm = {
   },
 
 
-  version: '0.3.1'
+  version: '0.4'
 };
