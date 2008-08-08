@@ -4,41 +4,51 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>lib/pingfm.js:134</key>
+		<key>lib/pingfm.js:113</key>
+		<string>postMessage</string>
+		<key>lib/pingfm.js:145</key>
 		<string>-postMessage</string>
-		<key>lib/pingfm.js:293</key>
+		<key>lib/pingfm.js:254</key>
+		<string>-getServices</string>
+		<key>lib/pingfm.js:258</key>
+		<string>-getServices</string>
+		<key>lib/pingfm.js:357</key>
 		<string>-getLatest</string>
-		<key>lib/pingfm.js:354</key>
+		<key>lib/pingfm.js:418</key>
 		<string>-_makejQueryFailureHandler</string>
 		<key>main.js:159</key>
 		<string>-openPingFM</string>
-		<key>main.js:262</key>
+		<key>main.js:267</key>
 		<string>-setupPingFM</string>
-		<key>main.js:265</key>
+		<key>main.js:270</key>
 		<string>-setupPingFM</string>
-		<key>main.js:282</key>
+		<key>main.js:287</key>
 		<string>-doPost</string>
-		<key>main.js:290</key>
+		<key>main.js:295</key>
 		<string>-setPostType</string>
-		<key>main.js:341</key>
+		<key>main.js:346</key>
 		<string>-showHistory</string>
-		<key>main.js:378</key>
+		<key>main.js:383</key>
 		<string>-setPostMethod</string>
-		<key>main.js:394</key>
+		<key>main.js:399</key>
 		<string>-saveDraftPing</string>
-		<key>main.js:547</key>
+		<key>main.js:552</key>
 		<string>-addPing</string>
-		<key>main.js:572</key>
+		<key>main.js:577</key>
 		<string>-doDebugClick</string>
-		<key>main.js:593</key>
-		<string>-handleTriggers</string>
-		<key>main.js:600</key>
-		<string>-handleTriggers</string>
-		<key>main.js:604</key>
-		<string>-handleTriggers</string>
-		<key>main.js:625</key>
+		<key>main.js:606</key>
+		<string>-makePostTypeMenu</string>
+		<key>main.js:613</key>
+		<string>-makePostTypeMenu</string>
+		<key>main.js:618</key>
+		<string>-makePostTypeMenu</string>
+		<key>main.js:624</key>
+		<string>-makePostTypeMenu</string>
+		<key>main.js:630</key>
+		<string>-makePostTypeMenu</string>
+		<key>main.js:652</key>
 		<string>-setupUI</string>
-		<key>main.js:632</key>
+		<key>main.js:659</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -55,34 +65,34 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 509}}</string>
-			<string>{{0, 519}, {1195, 254}}</string>
+			<string>{{0, 0}, {1195, 186}}</string>
+			<string>{{0, 196}, {1195, 577}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>bb471ebf2e98ac41</string>
+		<string>790790b2109aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojoH2CpJ/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojaEmKu2/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.25624999403953552</real>
+		<real>0.26964285969734192</real>
 		<key>percent-y</key>
-		<real>0.18222221732139587</real>
+		<real>0.16571427881717682</real>
 		<key>pos-x</key>
-		<integer>581</integer>
+		<integer>737</integer>
 		<key>pos-y</key>
-		<integer>242</integer>
+		<integer>174</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -98,7 +108,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>659 49 720 539 0 0 1440 878 </string>
+	<string>879 71 720 539 0 0 1680 1028 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -114,7 +124,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>12 63 1440 815 0 0 1440 878 </string>
+	<string>89 190 1440 815 0 0 1680 1028 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -129,8 +139,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 133}}</string>
-			<string>{{0, 143}, {246, 630}}</string>
+			<string>{{0, 0}, {246, 345}}</string>
+			<string>{{0, 355}, {246, 418}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -218,11 +228,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>5</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>
