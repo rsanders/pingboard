@@ -112,8 +112,12 @@ var pingfm = {
      else if (this.post_method[0] == '@') {
         args.service = this.post_method.substring(1);
         apimethod = 'user.post';
-        // use first defined method
-        args.post_method = this.serviceinfo[args.service].methods[0];
+
+        // use first defined method, default to microblog
+        args.post_method = this.serviceinfo[args.service].methods.length > 0 ? 
+                   this.serviceinfo[args.service].methods[0] :
+                   "microblog";
+
         if (args.post_method == 'blog') post_type = 'blog';
      } else {
         args.post_method = this.post_method;
