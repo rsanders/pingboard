@@ -22,7 +22,6 @@ var dashcodePartSpecs = {
     "prev": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showPrevHistory", "rightImageWidth": 5 },
     "scrollArea": { "autoHideScrollbars": true, "creationFunction": "CreateScrollArea", "hasVerticalScrollbar": true, "scrollbarDivSize": 18, "scrollbarMargin": 6, "spacing": 4 },
     "text": { "creationFunction": "CreateText", "text": "Error!" },
-    "text1": { "creationFunction": "CreateText", "text": "Ping.fm" },
     "text2": { "creationFunction": "CreateText", "text": "/ 140" },
     "title": { "creationFunction": "CreateText", "text": "Pingboard" },
     "version": { "creationFunction": "CreateText" }
