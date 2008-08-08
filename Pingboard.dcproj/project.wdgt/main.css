@@ -466,20 +466,3 @@ body {
     height: auto;
     left: 2px;
 }
-
-#scrolldown_close {
-    font-family: HelveticaNeue-Bold;
-    font-size: 12px;
-    text-align: center;
-    -khtml-margin-top-collapse: separate;
-    -khtml-margin-bottom-collapse: separate;
-    height: 16px;
-    width: 17px;
-    margin-top: 0px;
-    position: absolute;
-    bottom: auto;
-    opacity: 1;
-    top: 236px;
-    left: 427px;
-    margin-right: auto;
-}

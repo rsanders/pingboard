@@ -21,10 +21,9 @@ var dashcodePartSpecs = {
     "post_type": { "creationFunction": "CreatePopupButton", "leftImageWidth": 11, "name": "post_type_button", "onchange": "setPostType", "options": [["Default", "default"], ["Status", "status"], ["Micro-blog", "microblog"], ["Blog", "blog"]], "rightImageWidth": 16 },
     "prev": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showPrevHistory", "rightImageWidth": 5 },
     "scrollArea": { "autoHideScrollbars": true, "creationFunction": "CreateScrollArea", "hasVerticalScrollbar": true, "scrollbarDivSize": 18, "scrollbarMargin": 6, "spacing": 4 },
-    "scrolldown_close": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "hideScrolldown", "rightImageWidth": 5, "text": "x" },
     "text": { "creationFunction": "CreateText", "text": "Error!" },
     "text1": { "creationFunction": "CreateText", "text": "Ping.fm" },
-    "text2": { "creationFunction": "CreateText", "text": "/ 160" },
+    "text2": { "creationFunction": "CreateText", "text": "/ 140" },
     "title": { "creationFunction": "CreateText", "text": "Pingboard" },
     "version": { "creationFunction": "CreateText" }
 };

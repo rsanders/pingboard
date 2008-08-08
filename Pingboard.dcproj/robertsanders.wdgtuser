@@ -55,8 +55,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 330}}</string>
-			<string>{{0, 340}, {1195, 433}}</string>
+			<string>{{0, 0}, {1195, 509}}</string>
+			<string>{{0, 519}, {1195, 254}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -64,25 +64,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>d235cb1d0e95ac41</string>
+		<string>bb471ebf2e98ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojBIIQEm/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojoH2CpJ/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>4</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.23452380299568176</real>
+		<real>0.25624999403953552</real>
 		<key>percent-y</key>
-		<real>0.051428571343421936</real>
+		<real>0.18222221732139587</real>
 		<key>pos-x</key>
-		<integer>394</integer>
+		<integer>581</integer>
 		<key>pos-y</key>
-		<integer>502</integer>
+		<integer>242</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -98,7 +98,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>-781 295 720 539 -1440 243 1440 900 </string>
+	<string>659 49 720 539 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -114,7 +114,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>78 121 1440 815 0 0 1680 1028 </string>
+	<string>12 63 1440 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -129,8 +129,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 390}}</string>
-			<string>{{0, 400}, {246, 373}}</string>
+			<string>{{0, 0}, {246, 133}}</string>
+			<string>{{0, 143}, {246, 630}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
