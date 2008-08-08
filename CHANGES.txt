@@ -1,3 +1,10 @@
+**** 0.4        Aug 8, 2008
+
+Allow posting directly to a specific service rather than a method or 
+trigger.
+
+Some UI tweaks.
+
 **** 0.3.1      Aug 6, 2008
 
 Show up to 25 of the user's last posts in a dropdown window.
