@@ -5,16 +5,16 @@
 	<key>Breakpoints</key>
 	<dict>
 		<key>lib/pingfm.js:113</key>
-		<string>postMessage</string>
-		<key>lib/pingfm.js:145</key>
 		<string>-postMessage</string>
-		<key>lib/pingfm.js:254</key>
-		<string>-getServices</string>
+		<key>lib/pingfm.js:149</key>
+		<string>-postMessage</string>
 		<key>lib/pingfm.js:258</key>
 		<string>-getServices</string>
-		<key>lib/pingfm.js:357</key>
+		<key>lib/pingfm.js:262</key>
+		<string>-getServices</string>
+		<key>lib/pingfm.js:361</key>
 		<string>-getLatest</string>
-		<key>lib/pingfm.js:418</key>
+		<key>lib/pingfm.js:422</key>
 		<string>-_makejQueryFailureHandler</string>
 		<key>main.js:159</key>
 		<string>-openPingFM</string>
@@ -74,7 +74,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>790790b2109aac41</string>
+		<string>b0c8ff24159aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -84,15 +84,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.26964285969734192</real>
+		<real>0.24940475821495056</real>
 		<key>percent-y</key>
-		<real>0.16571427881717682</real>
+		<real>0.23428571224212646</real>
 		<key>pos-x</key>
-		<integer>737</integer>
+		<integer>771</integer>
 		<key>pos-y</key>
-		<integer>174</integer>
+		<integer>310</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
