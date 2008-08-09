@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: don't allow selection of spacers in dropdown list
+desc: nm
+type: :bugfix
+component: pingboard
+release: 
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-09 17:45:06.589623 Z
+references: []
+
+id: 23d4888bd6dad9dc808f26b976a6179573c8d9eb
+log_events: 
+- - 2008-08-09 17:45:07.854245 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
