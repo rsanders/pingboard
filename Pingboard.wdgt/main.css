@@ -9,21 +9,33 @@ body {
 }
 
 .message_services {
-   position: absolute;
-   right: 0;
-   text-align: right; /* depends on element width */
+    position: absolute;
+    right: 0px;
+    text-align: right; /* depends on element width */
 }
 
-.svcicon {
-   margin-top: 3px;
-   margin-right: 2px;
-   margin-left: 2px;
+.message_services .svcicon {
+    margin-top: 3px;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 .message_timestamp {
-   font-weight: bold;
-   font-style: italic;
+    font-weight: bold;
+    font-style: italic;
 }
+
+#svciconbox .svcicon {
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.counter_text {
+    opacity: 0.8;
+}
+
+/* std apple stuff */
 
 #frontImg {
     position: absolute;
@@ -40,8 +52,8 @@ body {
     bottom: 18px;
     width: 13px;
     height: 13px;
-    top: 200px;
     left: 455px;
+    top: 19px;
 }
 
 #back {
@@ -87,10 +99,10 @@ body {
     position: absolute;
     right: auto;
     margin-top: 0px;
-    width: 156px;
     height: 22px;
     left: 99px;
     top: 187px;
+    width: 136px;
 }
 
 #post_submit {
@@ -114,10 +126,10 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    width: 57px;
-    top: 49px;
-    left: 404px;
     height: 16px;
+    top: 49px;
+    width: 34px;
+    left: 404px;
 }
 
 #button_getKey {
@@ -156,10 +168,10 @@ body {
     position: absolute;
     margin-top: 0px;
     text-align: right;
-    width: 40px;
-    top: 49px;
-    left: 361px;
     height: 16px;
+    top: 49px;
+    width: 42px;
+    left: 357px;
 }
 
 #post_text {
@@ -326,7 +338,7 @@ body {
     width: 24px;
     left: 444px;
     height: 26px;
-    top: 152px;
+    top: 94px;
 }
 
 #historyNum {
@@ -337,12 +349,12 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    left: 444px;
     width: 25px;
     min-height: 15px;
     text-align: center;
-    top: 96px;
-    height: 23px;
+    height: 21px;
+    left: 444px;
+    top: 122px;
 }
 
 #app_key {
@@ -387,11 +399,11 @@ body {
     overflow: hidden;
     position: absolute;
     margin-top: 0px;
-    top: 19px;
     width: 165px;
-    left: 223px;
     height: 26px;
     font-size: 10pt;
+    left: 242px;
+    top: 16px;
 }
 
 #account_name_label {
@@ -419,9 +431,9 @@ body {
     margin-top: 0px;
     opacity: 1;
     width: 34px;
-    height: 38px;
-    top: 179px;
-    left: 407px;
+    left: 439px;
+    height: 36px;
+    top: 142px;
 }
 
 #scrolldown {
@@ -478,9 +490,23 @@ body {
     margin-top: 0px;
     width: 50px;
     height: 25px;
-    top: 19px;
     background-repeat: no-repeat;
     background-image: url(Images/pingfm-logo-50.gif);
-    left: 411px;
+    top: 40px;
+    left: 171px;
     background-position: 50% 50%;
+}
+
+#svciconbox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    opacity: 0.8;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 24px;
+    top: 187px;
+    width: 225px;
+    left: 244px;
 }

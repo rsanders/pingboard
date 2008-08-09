@@ -296,6 +296,8 @@ function setPostType(event)
     
     // change default
     pingfm.post_method = type;
+    
+    pingview.showPostTypeIcons(type);
 
     // store for later
     pingprefs.setPref("post_type", type);
@@ -454,6 +456,9 @@ var pingview = {
     {
         pingview.setPostMethod(pingprefs.getPref("post_type"));
     }
+
+    var type = pingview.getPostMethod();
+    this.showPostTypeIcons(type);
   },
   
   exposeScrolldown: function() {
@@ -478,6 +483,45 @@ var pingview = {
     return prettyDate(date);
   },
   
+  renderServiceIcon: function(service) {
+    // fake it 'till you make it
+    if (typeof service != 'object') {
+        service = { id: service, name: service, methods: ['microblog'] };
+    }
+    
+    return '<img class="svcicon" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
+  },
+  
+  truncateText: function(text, max, ellipsis) {
+    if (typeof ellipsis != 'string') ellipsis = '…';
+    
+    if (text.length > max) {
+        text = text.substring(0, max-1).replace(/\s+\w+$/, '') + ellipsis;
+    }
+    
+    return text;
+  },
+
+  showPostTypeIcons: function(type) {
+    var services;
+    if (!type) type = pingview.getPostMethod();
+    
+    if (type == 'default') {
+        services = [];
+    } else {
+        services = pingfm.getServicesFor(type);
+    }
+    
+    pingview.setServiceIcons('#svciconbox', services);
+  },
+
+  setServiceIcons: function(destination, services) {
+    if (! services) services = [];
+    var html = this.renderServices(services);
+    
+    jQuery(destination).html(html);
+  },
+  
   renderServices: function(svclist) {
     var text = '';
     var svc;
@@ -485,7 +529,7 @@ var pingview = {
         svc = svclist[idx];
         if (typeof svc == 'function') continue;
         
-        text += '<img class="svcicon" src="svcicons/' + svc.id + '.png" alt="' + svc.name + '"/>';
+        text += this.renderServiceIcon(svc);
     }
     
     return text;
@@ -494,7 +538,7 @@ var pingview = {
    /* id, method, date, services, body */
   renderMessage: function(item) {
     var itemhtml = '<div class="message">';
-    itemhtml += '<div class="message_body">' + item.body + '</div>';
+    itemhtml += '<div class="message_body">' + this.truncateText(item.body, 160) + '</div>';
     itemhtml += '<div class="message_metadata">';
     itemhtml += '<span class="message_timestamp">' + this.renderDate(item.date) + '</span>';
     itemhtml += '<span class="message_services">' + this.renderServices(item.services) + '</span>';
@@ -534,7 +578,7 @@ var pingview = {
     this.hideScrolldown();
   },
   
-  version: '0.4.1',
+  version: '0.4.2',
 };
 
 /**
@@ -652,6 +696,7 @@ function makePostTypeMenu(services, triggers)
     jQuery('#post_type').get(0).object.setOptions(options, false);
     pingview.selectPreferredPostType();
     jQuery('#post_type').change();
+
 }
 
 function setupUI()

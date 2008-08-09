@@ -82,7 +82,7 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
@@ -242,14 +242,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>8</integer>
-		</array>
-		<array>
-			<integer>0</integer>
-			<integer>0</integer>
-			<integer>7</integer>
+			<integer>5</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
