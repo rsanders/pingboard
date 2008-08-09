@@ -4,5 +4,33 @@ version: "0.4"
 components: 
 - !ditz.rubyforge.org,2008-03-06/component 
   name: pingboard
-releases: []
-
+releases: 
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: "0.5"
+  status: :unreleased
+  release_time: 
+  log_events: 
+  - - 2008-08-09 17:46:17.391909 Z
+    - Robert Sanders <robert@esquimaux.org>
+    - created
+    - persistent local storage? and multi-svc posting
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: "0.6"
+  status: :unreleased
+  release_time: 
+  log_events: 
+  - - 2008-08-09 18:19:08.494595 Z
+    - Robert Sanders <robert@esquimaux.org>
+    - created
+    - include better blog editor
+- !ditz.rubyforge.org,2008-03-06/release 
+  name: 0.4.2
+  status: :unreleased
+  release_time: 
+  log_events: 
+  - - 2008-08-09 18:19:59.789819 Z
+    - Robert Sanders <robert@esquimaux.org>
+    - created
+    - |-
+      better UI for service info
+      indication for debug status
