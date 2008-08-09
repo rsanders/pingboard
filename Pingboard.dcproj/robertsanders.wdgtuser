@@ -60,7 +60,7 @@
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
-		<integer>8</integer>
+		<integer>24</integer>
 		<key>SplitViewConfig</key>
 		<integer>3</integer>
 		<key>_collapsingFrameDimension</key>
@@ -76,11 +76,11 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>9d107a72639aac41</string>
+		<string>0f99b2c1639aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -236,7 +236,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>0</integer>
+			<integer>5</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

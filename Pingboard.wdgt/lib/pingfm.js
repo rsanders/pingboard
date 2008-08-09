@@ -351,7 +351,7 @@ var pingfm = {
                                  method:  jQuery(this).attr('method'),
                               };
                             entry.date = new Date();
-                            entry.date.setTime( parseInt(jQuery('date', this).attr('unix') || "0") );
+                            entry.date.setTime( parseInt(jQuery('date', this).attr('unix') || "0") * 1000 );
                             entry.services = me._parseServices(jQuery('services', this));
                             entry.body = Base64.decode(jQuery('body', this).text());
                             parsed.push( entry );
@@ -430,5 +430,5 @@ var pingfm = {
   },
 
 
-  version: '0.4'
+  version: '0.4.1'
 };

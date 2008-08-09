@@ -8,6 +8,23 @@ body {
     margin: 0px;
 }
 
+.message_services {
+   position: absolute;
+   right: 0;
+   text-align: right; /* depends on element width */
+}
+
+.svcicon {
+   margin-top: 3px;
+   margin-right: 2px;
+   margin-left: 2px;
+}
+
+.message_timestamp {
+   font-weight: bold;
+   font-style: italic;
+}
+
 #frontImg {
     position: absolute;
     display: block;

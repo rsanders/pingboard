@@ -475,16 +475,31 @@ var pingview = {
   },
   
   renderDate: function(date) {
-    return date.toString();
+    return prettyDate(date);
+  },
+  
+  renderServices: function(svclist) {
+    var text = '';
+    var svc;
+    for (idx in svclist) {
+        svc = svclist[idx];
+        if (typeof svc == 'function') continue;
+        
+        text += '<img class="svcicon" src="svcicons/' + svc.id + '.png" alt="' + svc.name + '"/>';
+    }
+    
+    return text;
   },
   
    /* id, method, date, services, body */
   renderMessage: function(item) {
-    var itemhtml = '<div>';
-    itemhtml += '<span class="message_body">' + item.body + '</span>';
-    itemhtml += '<span class="message_method">[' + item.method + ']</span>';
+    var itemhtml = '<div class="message">';
+    itemhtml += '<div class="message_body">' + item.body + '</div>';
+    itemhtml += '<div class="message_metadata">';
     itemhtml += '<span class="message_timestamp">' + this.renderDate(item.date) + '</span>';
-
+    itemhtml += '<span class="message_services">' + this.renderServices(item.services) + '</span>';
+    // itemhtml += '<span class="message_method">[' + item.method[0] + ']</span>';
+    itemhtml += '</div>';
     itemhtml += '</div>';
 
     return itemhtml;
@@ -519,7 +534,7 @@ var pingview = {
     this.hideScrolldown();
   },
   
-  version: '0.4',
+  version: '0.4.1',
 };
 
 /**
