@@ -293,7 +293,15 @@ function doPost(event)
 function setPostType(event)
 {
     var type = event.target.value;
-    
+
+    // separator entry -- reject
+    if (type[0] == '-') {
+        setTimeout(function() { 
+                pingview.setPostMethod(pingprefs.getPref("post_type", "default"));
+            }, 200);
+        return;
+    }
+
     // change default
     pingfm.post_method = type;
     
