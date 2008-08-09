@@ -31,6 +31,12 @@ body {
     margin-left: 2px;
 }
 
+.counter_text {
+    opacity: 0.8;
+}
+
+/* std apple stuff */
+
 #frontImg {
     position: absolute;
     display: block;
@@ -499,8 +505,8 @@ body {
     opacity: 0.8;
     text-overflow: ellipsis;
     overflow: hidden;
-    top: 181px;
-    height: 33px;
-    left: 239px;
-    width: 51px;
+    height: 24px;
+    top: 187px;
+    width: 225px;
+    left: 244px;
 }

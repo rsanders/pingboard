@@ -33,7 +33,7 @@
 		<key>main.js:287</key>
 		<string>-doPost</string>
 		<key>main.js:295</key>
-		<string>-setPostType</string>
+		<string>setPostType</string>
 		<key>main.js:348</key>
 		<string>-showHistory</string>
 		<key>main.js:385</key>
@@ -86,7 +86,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>ec6bc5cf089cac41</string>
+		<string>9bfefcd1109cac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -96,15 +96,15 @@
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.24722221493721008</real>
+		<real>0.21944443881511688</real>
 		<key>percent-y</key>
-		<real>0.11444444209337234</real>
+		<real>0.22111110389232635</real>
 		<key>pos-x</key>
-		<integer>594</integer>
+		<integer>634</integer>
 		<key>pos-y</key>
-		<integer>303</integer>
+		<integer>199</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -244,7 +244,12 @@
 		<array>
 			<integer>0</integer>
 			<integer>0</integer>
-			<integer>15</integer>
+			<integer>8</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>7</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
