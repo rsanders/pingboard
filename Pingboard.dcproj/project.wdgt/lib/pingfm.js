@@ -231,6 +231,43 @@ var pingfm = {
      return this.serviceinfo;
    },
 
+   /**
+    * Return an array of service objects for a given trigger/method, 
+    * expressed with the usual bare (post type), '@' (service), or
+    * '#' (trigger) format.
+    *
+    */
+   getServicesFor: function(type) {
+     var sigil = type[0];
+     var services = [];
+     var svcnamelist = [];
+     if (sigil == '@') {
+        svcnamelist.push(type.substring(1));
+     } else if (sigil == '#') {
+        var tmp = this.triggerinfo[type.substring(1)].services;
+        svcnamelist = svcnamelist.concat(this.triggerinfo[type.substring(1)].services);
+     } else {
+         var svcname;
+         for (svcname in this.serviceinfo) {
+            var svc = this.serviceinfo[ svcname ];
+            if (typeof svc == 'function') continue;
+
+            // check that the method is supported for this service
+            if (jQuery.grep(svc.methods, function(o){return o == type;}).length > 0) {
+                svcnamelist.push(svc.id);
+            }
+         } 
+     }
+     
+     var idx;
+     for (idx = 0; idx < svcnamelist.length; idx++) {
+        services.push( this.serviceinfo[ svcnamelist[idx] ] );
+     }
+
+      
+     return services;
+   },
+
     /*
         <?xml version="1.0"?>
         <rsp status="OK">

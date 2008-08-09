@@ -296,6 +296,8 @@ function setPostType(event)
     
     // change default
     pingfm.post_method = type;
+    
+    pingview.showPostTypeIcons(type);
 
     // store for later
     pingprefs.setPref("post_type", type);
@@ -454,6 +456,9 @@ var pingview = {
     {
         pingview.setPostMethod(pingprefs.getPref("post_type"));
     }
+
+    var type = pingview.getPostMethod();
+    this.showPostTypeIcons(type);
   },
   
   exposeScrolldown: function() {
@@ -495,6 +500,26 @@ var pingview = {
     }
     
     return text;
+  },
+
+  showPostTypeIcons: function(type) {
+    var services;
+    if (!type) type = pingview.getPostMethod();
+    
+    if (type == 'default') {
+        services = [];
+    } else {
+        services = pingfm.getServicesFor(type);
+    }
+    
+    pingview.setServiceIcons('#svciconbox', services);
+  },
+
+  setServiceIcons: function(destination, services) {
+    if (! services) services = [];
+    var html = this.renderServices(services);
+    
+    jQuery(destination).html(html);
   },
   
   renderServices: function(svclist) {
@@ -671,6 +696,7 @@ function makePostTypeMenu(services, triggers)
     jQuery('#post_type').get(0).object.setOptions(options, false);
     pingview.selectPreferredPostType();
     jQuery('#post_type').change();
+
 }
 
 function setupUI()
