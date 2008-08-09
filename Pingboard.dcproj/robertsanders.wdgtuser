@@ -80,25 +80,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>844be7245d9aac41</string>
+		<string>9d107a72639aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
 		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojxi4PTw/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
-		<integer>244</integer>
+		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.0</real>
+		<real>0.18611110746860504</real>
 		<key>percent-y</key>
-		<real>0.10555555671453476</real>
+		<real>0.12999999523162842</real>
 		<key>pos-x</key>
-		<integer>1194</integer>
+		<integer>682</integer>
 		<key>pos-y</key>
-		<integer>95</integer>
+		<integer>117</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
