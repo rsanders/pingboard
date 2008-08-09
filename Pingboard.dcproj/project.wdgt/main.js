@@ -485,7 +485,7 @@ var pingview = {
         svc = svclist[idx];
         if (typeof svc == 'function') continue;
         
-        text += '<img class="svcicon" src="svcicons/' + svc.id + '.png" />';
+        text += '<img class="svcicon" src="svcicons/' + svc.id + '.png" alt="' + svc.name + '"/>';
     }
     
     return text;
