@@ -478,6 +478,25 @@ var pingview = {
     return prettyDate(date);
   },
   
+  renderServiceIcon: function(service) {
+    // fake it 'till you make it
+    if (typeof service != 'object') {
+        service = { id: service, name: service, methods: ['microblog'] };
+    }
+    
+    return '<img class="svcicon" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
+  },
+  
+  truncateText: function(text, max, ellipsis) {
+    if (typeof ellipsis != 'string') ellipsis = '…';
+    
+    if (text.length > max) {
+        text = text.substring(0, max-1).replace(/\s+\w+$/, '') + ellipsis;
+    }
+    
+    return text;
+  },
+  
   renderServices: function(svclist) {
     var text = '';
     var svc;
@@ -485,7 +504,7 @@ var pingview = {
         svc = svclist[idx];
         if (typeof svc == 'function') continue;
         
-        text += '<img class="svcicon" src="svcicons/' + svc.id + '.png" alt="' + svc.name + '"/>';
+        text += this.renderServiceIcon(svc);
     }
     
     return text;
@@ -494,7 +513,7 @@ var pingview = {
    /* id, method, date, services, body */
   renderMessage: function(item) {
     var itemhtml = '<div class="message">';
-    itemhtml += '<div class="message_body">' + item.body + '</div>';
+    itemhtml += '<div class="message_body">' + this.truncateText(item.body, 160) + '</div>';
     itemhtml += '<div class="message_metadata">';
     itemhtml += '<span class="message_timestamp">' + this.renderDate(item.date) + '</span>';
     itemhtml += '<span class="message_services">' + this.renderServices(item.services) + '</span>';
