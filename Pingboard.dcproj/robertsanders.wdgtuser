@@ -8,19 +8,19 @@
 		<string>-postMessage</string>
 		<key>lib/pingfm.js:149</key>
 		<string>-postMessage</string>
-		<key>lib/pingfm.js:244</key>
+		<key>lib/pingfm.js:247</key>
 		<string>-getServicesFor</string>
-		<key>lib/pingfm.js:268</key>
+		<key>lib/pingfm.js:271</key>
 		<string>-getServicesFor</string>
-		<key>lib/pingfm.js:295</key>
+		<key>lib/pingfm.js:298</key>
 		<string>-getServices</string>
-		<key>lib/pingfm.js:299</key>
+		<key>lib/pingfm.js:302</key>
 		<string>-getServices</string>
-		<key>lib/pingfm.js:390</key>
+		<key>lib/pingfm.js:393</key>
 		<string>-getLatest</string>
-		<key>lib/pingfm.js:398</key>
+		<key>lib/pingfm.js:401</key>
 		<string>-getLatest</string>
-		<key>lib/pingfm.js:459</key>
+		<key>lib/pingfm.js:462</key>
 		<string>-_makejQueryFailureHandler</string>
 		<key>lib/pretty.js:29</key>
 		<string>-prettyDate</string>
@@ -33,7 +33,7 @@
 		<key>main.js:287</key>
 		<string>-doPost</string>
 		<key>main.js:295</key>
-		<string>setPostType</string>
+		<string>-setPostType</string>
 		<key>main.js:348</key>
 		<string>-showHistory</string>
 		<key>main.js:385</key>
@@ -48,19 +48,19 @@
 		<string>-addPing</string>
 		<key>main.js:636</key>
 		<string>-doDebugClick</string>
-		<key>main.js:665</key>
+		<key>main.js:666</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:672</key>
+		<key>main.js:673</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:677</key>
+		<key>main.js:678</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:683</key>
+		<key>main.js:684</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:689</key>
+		<key>main.js:690</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:712</key>
+		<key>main.js:714</key>
 		<string>-setupUI</string>
-		<key>main.js:719</key>
+		<key>main.js:721</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -77,16 +77,16 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 420}}</string>
-			<string>{{0, 430}, {1195, 343}}</string>
+			<string>{{0, 0}, {1195, 194}}</string>
+			<string>{{0, 204}, {1195, 569}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>9bfefcd1109cac41</string>
+		<string>2cb82fd6169cac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -98,13 +98,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.21944443881511688</real>
+		<real>0.15763889253139496</real>
 		<key>percent-y</key>
-		<real>0.22111110389232635</real>
+		<real>0.081111110746860504</real>
 		<key>pos-x</key>
-		<integer>634</integer>
+		<integer>723</integer>
 		<key>pos-y</key>
-		<integer>199</integer>
+		<integer>73</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -240,11 +240,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>5</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>

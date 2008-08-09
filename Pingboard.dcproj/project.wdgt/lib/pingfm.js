@@ -216,7 +216,9 @@ var pingfm = {
                 }
                 me.triggerinfo = triggerinfo;
                 me.log("Success on user.triggers");
-                success( triggerinfo );
+                if (success) {
+                    success( triggerinfo );
+                }
             },
             function(data, error) {
                 me.log("Failure on user.triggers");
@@ -238,6 +240,7 @@ var pingfm = {
     *
     */
    getServicesFor: function(type) {
+     if (! type || type.length == 0) return [];
      var sigil = type[0];
      var services = [];
      var svcnamelist = [];

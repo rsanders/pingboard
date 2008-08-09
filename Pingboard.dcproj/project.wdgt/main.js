@@ -233,7 +233,7 @@ function populatePrefs()
 function configDone(event)
 {
     // reset custom trigger list
-    makePostTypeMenu(null, null);
+    // makePostTypeMenu(null, null);
     
     savePrefs();
     setupPingFM();
@@ -654,9 +654,10 @@ function doDebugClick(event)
 
 function handleServices(services)
 {
-    var completion = function(triggers) { makePostTypeMenu(services, triggers); };
-    
-    pingfm.getTriggers(completion, completion);
+    var goodcompletion = function(triggers) { makePostTypeMenu(services, triggers); };
+    var badcompletion = function(triggers) { makePostTypeMenu(services, null); };    
+
+    pingfm.getTriggers(goodcompletion, badcompletion);
 }
 
 
@@ -694,8 +695,9 @@ function makePostTypeMenu(services, triggers)
     }
 
     jQuery('#post_type').get(0).object.setOptions(options, false);
-    pingview.selectPreferredPostType();
     jQuery('#post_type').change();
+    
+    setTimeout('pingview.selectPreferredPostType();', 300);
 
 }
 
@@ -703,7 +705,7 @@ function setupUI()
 {
     // get custom triggers if the user is configured
     if (pingprefs.isConfigured()) {
-        pingfm.getServices(handleServices, handleServices);
+        pingfm.getServices(handleServices, function() { handleServices(null); });
     }
     
     pingview.setVersion( dashcode.getLocalizedString("Version") + " " + pingview.version );
@@ -714,7 +716,7 @@ function setupUI()
 
     pingview.setNameDisplay( name );
     
-    pingview.selectPreferredPostType();
+    // pingview.selectPreferredPostType();
 }
 
 function showPrevHistory()
