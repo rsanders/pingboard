@@ -12,10 +12,14 @@
 		<string>-getServices</string>
 		<key>lib/pingfm.js:262</key>
 		<string>-getServices</string>
+		<key>lib/pingfm.js:353</key>
+		<string>-getLatest</string>
 		<key>lib/pingfm.js:361</key>
 		<string>-getLatest</string>
 		<key>lib/pingfm.js:422</key>
 		<string>-_makejQueryFailureHandler</string>
+		<key>lib/pretty.js:25</key>
+		<string>-prettyDate</string>
 		<key>main.js:159</key>
 		<string>-openPingFM</string>
 		<key>main.js:267</key>
@@ -32,23 +36,25 @@
 		<string>-setPostMethod</string>
 		<key>main.js:399</key>
 		<string>-saveDraftPing</string>
-		<key>main.js:552</key>
+		<key>main.js:496</key>
+		<string>-renderMessage</string>
+		<key>main.js:567</key>
 		<string>-addPing</string>
-		<key>main.js:577</key>
+		<key>main.js:592</key>
 		<string>-doDebugClick</string>
-		<key>main.js:606</key>
+		<key>main.js:621</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:613</key>
+		<key>main.js:628</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:618</key>
+		<key>main.js:633</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:624</key>
+		<key>main.js:639</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:630</key>
+		<key>main.js:645</key>
 		<string>-makePostTypeMenu</string>
-		<key>main.js:652</key>
+		<key>main.js:667</key>
 		<string>-setupUI</string>
-		<key>main.js:659</key>
+		<key>main.js:674</key>
 		<string>-</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -70,29 +76,29 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>b0c8ff24159aac41</string>
+		<string>c3110c31539aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojaEmKu2/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojxi4PTw/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.24940475821495056</real>
+		<real>0.02222222276031971</real>
 		<key>percent-y</key>
-		<real>0.23428571224212646</real>
+		<real>0.018888888880610466</real>
 		<key>pos-x</key>
-		<integer>771</integer>
+		<integer>918</integer>
 		<key>pos-y</key>
-		<integer>310</integer>
+		<integer>17</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -108,7 +114,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>879 71 720 539 0 0 1680 1028 </string>
+	<string>659 49 720 539 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -124,7 +130,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>89 190 1440 815 0 0 1680 1028 </string>
+	<string>2 63 1440 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -230,7 +236,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>5</integer>
+			<integer>0</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
