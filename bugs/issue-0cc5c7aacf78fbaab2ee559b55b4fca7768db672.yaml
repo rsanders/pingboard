@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: pingboard
+desc: use ajax queue for all API requests
+type: :bugfix
+component: pingboard
+release: 
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-09 17:38:24.769685 Z
+references: []
+
+id: 0cc5c7aacf78fbaab2ee559b55b4fca7768db672
+log_events: 
+- - 2008-08-09 17:39:27.410846 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
