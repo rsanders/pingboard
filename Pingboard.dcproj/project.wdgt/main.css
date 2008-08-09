@@ -19,6 +19,11 @@ body {
    margin-left: 2px;
 }
 
+.message_timestamp {
+   font-weight: bold;
+   font-style: italic;
+}
+
 #frontImg {
     position: absolute;
     display: block;

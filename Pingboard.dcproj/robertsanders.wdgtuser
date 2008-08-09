@@ -18,7 +18,7 @@
 		<string>-getLatest</string>
 		<key>lib/pingfm.js:422</key>
 		<string>-_makejQueryFailureHandler</string>
-		<key>lib/pretty.js:25</key>
+		<key>lib/pretty.js:29</key>
 		<string>-prettyDate</string>
 		<key>main.js:159</key>
 		<string>-openPingFM</string>
@@ -80,25 +80,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>630b49e8569aac41</string>
+		<string>844be7245d9aac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
 		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojxi4PTw/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
-		<integer>0</integer>
+		<integer>244</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.04374999925494194</real>
+		<real>0.0</real>
 		<key>percent-y</key>
-		<real>0.028888888657093048</real>
+		<real>0.10555555671453476</real>
 		<key>pos-x</key>
-		<integer>887</integer>
+		<integer>1194</integer>
 		<key>pos-y</key>
-		<integer>26</integer>
+		<integer>95</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
