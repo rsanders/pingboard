@@ -1,3 +1,7 @@
+**** 0.4.1      Aug 8, 2008
+
+Cosmetic tweaks to the message list.
+
 **** 0.4        Aug 8, 2008
 
 Allow posting directly to a specific service rather than a method or 
