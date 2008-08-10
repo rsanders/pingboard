@@ -182,14 +182,25 @@ var pingprefs = {
         return widget.identifier + "-" + key;
     },
     
-    setPref: function(key, value) {
+    setPref: function(key, value, useglobal) {
         widget.setPreferenceForKey(value, this._makekey(key) );
+        if (useglobal) {
+            widget.setPreferenceForKey(value, key);
+        }
     },
     
-    getPref: function(key, defval) {
+    getPref: function(key, defval, useglobal) {
         var res = widget.preferenceForKey( this._makekey(key) );
         if (res == undefined) {
-            return defval;
+            if (useglobal) {
+                if (widget.preferenceForKey( key ) != undefined) {
+                    return widget.preferenceForKey( key );
+                } else {
+                    return defval;
+                }
+            } else {
+                return defval;
+            }
         } else {
             return res;
         }
@@ -204,19 +215,9 @@ var pingprefs = {
     },
 }
 
-function setAppKey(value)
-{
-    pingprefs.setPref("pingfm_appkey", value);
-}
-
-function getAppKey()
-{
-    return pingprefs.setPref("pingfm_appkey");
-}
-
 function savePrefs()
 {
-    pingprefs.setPref("pingfm_appkey", pingview.getAppKey());
+    pingprefs.setPref("pingfm_appkey", pingview.getAppKey(), true);
     pingprefs.setPref("debug", pingview.getDebug());
     pingprefs.setPref("name", pingview.getAccountName());
     
@@ -225,7 +226,7 @@ function savePrefs()
 
 function populatePrefs()
 {
-    pingview.setAppKey(pingprefs.getPref("pingfm_appkey"));
+    pingview.setAppKey(pingprefs.getPref("pingfm_appkey", undefined, true));
     pingview.setDebug(pingprefs.getPref("debug"));
     pingview.setAccountName(pingprefs.getPref("name"));
 }
@@ -233,7 +234,7 @@ function populatePrefs()
 function configDone(event)
 {
     // reset custom trigger list
-    makePostTypeMenu(null, null);
+    // makePostTypeMenu(null, null);
     
     savePrefs();
     setupPingFM();
@@ -251,7 +252,7 @@ function doShowBack(event)
 
 function firstTimeConfiguration()
 {
-    showBack();
+    doShowBack();
 }
 
 
@@ -267,7 +268,7 @@ function validateUser(event)
 function setupPingFM()
 {
     pingfm.api_key = '62efb891fc6ae7200a2699c566503735';
-    pingfm.user_app_key = pingprefs.getPref('pingfm_appkey');
+    pingfm.user_app_key = pingprefs.getPref('pingfm_appkey', undefined, true);
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
     
     pingfm.view = pingview;
@@ -293,7 +294,15 @@ function doPost(event)
 function setPostType(event)
 {
     var type = event.target.value;
-    
+
+    // separator entry -- reject
+    if (type[0] == '-') {
+        setTimeout(function() { 
+                pingview.setPostMethod(pingprefs.getPref("post_type", "default"));
+            }, 200);
+        return;
+    }
+
     // change default
     pingfm.post_method = type;
     
@@ -483,13 +492,45 @@ var pingview = {
     return prettyDate(date);
   },
   
-  renderServiceIcon: function(service) {
+  _makeQuotable: function(str) {
+    return str.replace(/(["'])/g, '\\$1');
+
+    // ' unconfuse dashcode
+  },
+  
+  openServicePage: function(event) {
+    var id = event.target.alt;
+    var svcmeta = pingfm.getSupportedService(id);
+    if (svcmeta && svcmeta.service_url) {
+        widget.openURL(svcmeta.service_url);
+    }   
+  },
+  
+  renderServiceIcon: function(service, attributes) {
     // fake it 'till you make it
     if (typeof service != 'object') {
         service = { id: service, name: service, methods: ['microblog'] };
     }
     
-    return '<img class="svcicon" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
+    if (! attributes)       attributes = {};
+    if (! attributes.title) attributes.title = service.name;
+    if (! attributes.alt)   attributes.alt = service.id;
+    
+    attributes.src = "svcicons/" + service.id + ".png";
+    attributes.serviceid = service.id;
+    attributes.onclick = "pingview.openServicePage(event);";
+
+    var html = '<img class="svcicon" ';
+    for (name in attributes)
+    {
+        var val = attributes[name];
+        if (typeof val == 'function') continue;
+        
+        html += ' ' + name + '= "' + this._makeQuotable(val) + '" ';
+    }
+    html += ' />';
+    
+    return html;
   },
   
   truncateText: function(text, max, ellipsis) {
@@ -628,7 +669,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.3.1'
+    version: '0.4.2'
 }
 
 function doDebugClick(event)
@@ -654,9 +695,10 @@ function doDebugClick(event)
 
 function handleServices(services)
 {
-    var completion = function(triggers) { makePostTypeMenu(services, triggers); };
-    
-    pingfm.getTriggers(completion, completion);
+    var goodcompletion = function(triggers) { makePostTypeMenu(services, triggers); };
+    var badcompletion = function(triggers) { makePostTypeMenu(services, null); };    
+
+    pingfm.getTriggers(goodcompletion, badcompletion);
 }
 
 
@@ -694,8 +736,9 @@ function makePostTypeMenu(services, triggers)
     }
 
     jQuery('#post_type').get(0).object.setOptions(options, false);
-    pingview.selectPreferredPostType();
     jQuery('#post_type').change();
+    
+    setTimeout('pingview.selectPreferredPostType();', 300);
 
 }
 
@@ -703,7 +746,7 @@ function setupUI()
 {
     // get custom triggers if the user is configured
     if (pingprefs.isConfigured()) {
-        pingfm.getServices(handleServices, handleServices);
+        pingfm.getServices(handleServices, function() { handleServices(null); });
     }
     
     pingview.setVersion( dashcode.getLocalizedString("Version") + " " + pingview.version );
@@ -714,7 +757,7 @@ function setupUI()
 
     pingview.setNameDisplay( name );
     
-    pingview.selectPreferredPostType();
+    // pingview.selectPreferredPostType();
 }
 
 function showPrevHistory()

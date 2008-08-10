@@ -1,3 +1,11 @@
+**** 0.4.2      Aug 10, 2008
+
+Show service icons on the main posting screen and message history.
+
+Introduce a delay between a user.post/tpost and any requested user.latest
+operations because of a race condition in Ping.FM's service.  (Will return
+a blank list otherwise)
+
 **** 0.4.1      Aug 8, 2008
 
 Cosmetic tweaks to the message list.
