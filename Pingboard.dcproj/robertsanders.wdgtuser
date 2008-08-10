@@ -3,66 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Breakpoints</key>
-	<dict>
-		<key>lib/pingfm.js:113</key>
-		<string>-postMessage</string>
-		<key>lib/pingfm.js:149</key>
-		<string>-postMessage</string>
-		<key>lib/pingfm.js:247</key>
-		<string>-getServicesFor</string>
-		<key>lib/pingfm.js:271</key>
-		<string>-getServicesFor</string>
-		<key>lib/pingfm.js:298</key>
-		<string>-getServices</string>
-		<key>lib/pingfm.js:302</key>
-		<string>-getServices</string>
-		<key>lib/pingfm.js:393</key>
-		<string>-getLatest</string>
-		<key>lib/pingfm.js:401</key>
-		<string>-getLatest</string>
-		<key>lib/pingfm.js:462</key>
-		<string>-_makejQueryFailureHandler</string>
-		<key>lib/pretty.js:29</key>
-		<string>-prettyDate</string>
-		<key>main.js:159</key>
-		<string>-openPingFM</string>
-		<key>main.js:267</key>
-		<string>-setupPingFM</string>
-		<key>main.js:270</key>
-		<string>-setupPingFM</string>
-		<key>main.js:287</key>
-		<string>-doPost</string>
-		<key>main.js:295</key>
-		<string>-setPostType</string>
-		<key>main.js:348</key>
-		<string>-showHistory</string>
-		<key>main.js:385</key>
-		<string>-setPostMethod</string>
-		<key>main.js:401</key>
-		<string>-saveDraftPing</string>
-		<key>main.js:519</key>
-		<string>-setServiceIcons</string>
-		<key>main.js:540</key>
-		<string>-renderMessage</string>
-		<key>main.js:611</key>
-		<string>-addPing</string>
-		<key>main.js:636</key>
-		<string>-doDebugClick</string>
-		<key>main.js:666</key>
-		<string>-makePostTypeMenu</string>
-		<key>main.js:673</key>
-		<string>-makePostTypeMenu</string>
-		<key>main.js:678</key>
-		<string>-makePostTypeMenu</string>
-		<key>main.js:684</key>
-		<string>-makePostTypeMenu</string>
-		<key>main.js:690</key>
-		<string>-makePostTypeMenu</string>
-		<key>main.js:714</key>
-		<string>-setupUI</string>
-		<key>main.js:721</key>
-		<string>-</string>
-	</dict>
+	<dict/>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -77,8 +18,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1195, 194}}</string>
-			<string>{{0, 204}, {1195, 569}}</string>
+			<string>{{0, 0}, {1195, 198}}</string>
+			<string>{{0, 208}, {1195, 565}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -86,7 +27,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>ddb2f3f6179cac41</string>
+		<string>020d8e290f9fac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -98,13 +39,13 @@
 		<key>percent-type</key>
 		<integer>2</integer>
 		<key>percent-x</key>
-		<real>0.2326388955116272</real>
+		<real>0.14791665971279144</real>
 		<key>percent-y</key>
-		<real>0.094444446265697479</real>
+		<real>0.038888890296220779</real>
 		<key>pos-x</key>
-		<integer>615</integer>
+		<integer>737</integer>
 		<key>pos-y</key>
-		<integer>85</integer>
+		<integer>35</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -136,7 +77,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>2 63 1440 815 0 0 1440 878 </string>
+	<string>0 58 1440 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -240,7 +181,12 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array/>
+	<array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+	</array>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>

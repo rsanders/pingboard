@@ -1,9 +1,9 @@
 --- !ditz.rubyforge.org,2008-03-06/project 
-name: pingboard
+name: pb
 version: "0.4"
 components: 
 - !ditz.rubyforge.org,2008-03-06/component 
-  name: pingboard
+  name: pb
 releases: 
 - !ditz.rubyforge.org,2008-03-06/release 
   name: "0.5"

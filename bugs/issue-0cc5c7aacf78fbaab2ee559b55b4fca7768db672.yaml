@@ -1,12 +1,12 @@
 --- !ditz.rubyforge.org,2008-03-06/issue 
-title: pingboard
+title: use ajax queue
 desc: use ajax queue for all API requests
 type: :bugfix
-component: pingboard
+component: pb
 release: 
 reporter: Robert Sanders <robert@esquimaux.org>
-status: :unstarted
-disposition: 
+status: :closed
+disposition: :fixed
 creation_time: 2008-08-09 17:38:24.769685 Z
 references: []
 
@@ -16,3 +16,7 @@ log_events:
   - Robert Sanders <robert@esquimaux.org>
   - created
   - ""
+- - 2008-08-10 21:08:02.116644 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - closed with disposition fixed
+  - implemented, but it doesn't solve the user.latest problem.  optional.

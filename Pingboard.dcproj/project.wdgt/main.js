@@ -669,7 +669,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.3.1'
+    version: '0.4.2'
 }
 
 function doDebugClick(event)
