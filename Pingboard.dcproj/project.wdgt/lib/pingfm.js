@@ -40,6 +40,9 @@ var pingfm = {
    triggerxml: null,
    triggerinfo: [],
    
+   // use ajax queue
+   usequeue: true,
+   
    getBaseArgs: function() {
      return { 
          api_key: this.api_key, 
@@ -413,9 +416,16 @@ var pingfm = {
         );
    },
 
-      doRequest: function(method, args, success, failure, httpmethod) {
+      doRequest: function(method, args, success, failure, httpmethod, usequeue) {
         if (! httpmethod) {
           httpmethod = 'post';
+        }
+
+        var ajax;
+        if ( (usequeue || this.usequeue) && jQuery.ajaxQueue) {
+            ajax = jQuery.ajaxQueue;
+        } else {
+            ajax = jQuery.ajax;
         }
 
         var me = this;
