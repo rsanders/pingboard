@@ -498,6 +498,14 @@ var pingview = {
     // ' unconfuse dashcode
   },
   
+  openServicePage: function(event) {
+    var id = event.target.alt;
+    var svcmeta = pingfm.getSupportedService(id);
+    if (svcmeta && svcmeta.service_url) {
+        widget.openURL(svcmeta.service_url);
+    }   
+  },
+  
   renderServiceIcon: function(service, attributes) {
     // fake it 'till you make it
     if (typeof service != 'object') {
@@ -506,10 +514,12 @@ var pingview = {
     
     if (! attributes)       attributes = {};
     if (! attributes.title) attributes.title = service.name;
-    if (! attributes.alt)   attributes.alt = service.name;
+    if (! attributes.alt)   attributes.alt = service.id;
     
     attributes.src = "svcicons/" + service.id + ".png";
-    
+    attributes.serviceid = service.id;
+    attributes.onclick = "pingview.openServicePage(event);";
+
     var html = '<img class="svcicon" ';
     for (name in attributes)
     {
