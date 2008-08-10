@@ -41,7 +41,13 @@ var pingfm = {
    triggerinfo: [],
    
    // use ajax queue
-   usequeue: true,
+   usequeue: false,
+   
+   // time of last post
+   lastpost: 0,
+   
+   // wait this many milliseconds between user.post and user.latest - fixes race in ping.fm's API
+   post_post_delay: 6000,
    
    getBaseArgs: function() {
      return { 
@@ -137,6 +143,9 @@ var pingfm = {
      }
 
      var me = this;
+
+     // record time of last post
+     this.lastpost = new Date().getTime();
 
      this.doRequest(apimethod, args, 
             function(data) {
@@ -383,7 +392,8 @@ var pingfm = {
      if (order) args.order = 'DESC';
 
      var me = this;
-     this.doRequest('user.latest', args, 
+     var executable = function() {
+       me.doRequest('user.latest', args, 
             function(xml) {
                 me.latestxml = xml;
                 var parsed = [];
@@ -414,6 +424,17 @@ var pingfm = {
                 }
             }
         );
+      };
+      
+      // wait 5 seconds from last post to get latest list
+      var timesincepost = new Date().getTime() - this.lastpost;
+      if (timesincepost < this.post_post_delay)
+      {
+        me.log("Sleeping " + (this.post_post_delay - timesincepost) + " ms");
+        setTimeout(executable, this.post_post_delay - timesincepost);
+      } else {
+        executable();
+      }
    },
 
       doRequest: function(method, args, success, failure, httpmethod, usequeue) {
