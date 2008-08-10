@@ -182,14 +182,25 @@ var pingprefs = {
         return widget.identifier + "-" + key;
     },
     
-    setPref: function(key, value) {
+    setPref: function(key, value, useglobal) {
         widget.setPreferenceForKey(value, this._makekey(key) );
+        if (useglobal) {
+            widget.setPreferenceForKey(value, key);
+        }
     },
     
-    getPref: function(key, defval) {
+    getPref: function(key, defval, useglobal) {
         var res = widget.preferenceForKey( this._makekey(key) );
         if (res == undefined) {
-            return defval;
+            if (useglobal) {
+                if (widget.preferenceForKey( key ) != undefined) {
+                    return widget.preferenceForKey( key );
+                } else {
+                    return defval;
+                }
+            } else {
+                return defval;
+            }
         } else {
             return res;
         }
@@ -204,19 +215,9 @@ var pingprefs = {
     },
 }
 
-function setAppKey(value)
-{
-    pingprefs.setPref("pingfm_appkey", value);
-}
-
-function getAppKey()
-{
-    return pingprefs.setPref("pingfm_appkey");
-}
-
 function savePrefs()
 {
-    pingprefs.setPref("pingfm_appkey", pingview.getAppKey());
+    pingprefs.setPref("pingfm_appkey", pingview.getAppKey(), true);
     pingprefs.setPref("debug", pingview.getDebug());
     pingprefs.setPref("name", pingview.getAccountName());
     
@@ -225,7 +226,7 @@ function savePrefs()
 
 function populatePrefs()
 {
-    pingview.setAppKey(pingprefs.getPref("pingfm_appkey"));
+    pingview.setAppKey(pingprefs.getPref("pingfm_appkey", undefined, true));
     pingview.setDebug(pingprefs.getPref("debug"));
     pingview.setAccountName(pingprefs.getPref("name"));
 }
@@ -251,7 +252,7 @@ function doShowBack(event)
 
 function firstTimeConfiguration()
 {
-    showBack();
+    doShowBack();
 }
 
 
@@ -267,7 +268,7 @@ function validateUser(event)
 function setupPingFM()
 {
     pingfm.api_key = '62efb891fc6ae7200a2699c566503735';
-    pingfm.user_app_key = pingprefs.getPref('pingfm_appkey');
+    pingfm.user_app_key = pingprefs.getPref('pingfm_appkey', undefined, true);
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
     
     pingfm.view = pingview;
