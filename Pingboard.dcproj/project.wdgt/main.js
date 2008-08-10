@@ -492,13 +492,35 @@ var pingview = {
     return prettyDate(date);
   },
   
-  renderServiceIcon: function(service) {
+  _makeQuotable: function(str) {
+    return str.replace(/(["'])/g, '\\$1');
+
+    // ' unconfuse dashcode
+  },
+  
+  renderServiceIcon: function(service, attributes) {
     // fake it 'till you make it
     if (typeof service != 'object') {
         service = { id: service, name: service, methods: ['microblog'] };
     }
     
-    return '<img class="svcicon" title="' + service.name + '" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
+    if (! attributes)       attributes = {};
+    if (! attributes.title) attributes.title = service.name;
+    if (! attributes.alt)   attributes.alt = service.name;
+    
+    attributes.src = "svcicons/" + service.id + ".png";
+    
+    var html = '<img class="svcicon" ';
+    for (name in attributes)
+    {
+        var val = attributes[name];
+        if (typeof val == 'function') continue;
+        
+        html += ' ' + name + '= "' + this._makeQuotable(val) + '" ';
+    }
+    html += ' />';
+    
+    return html;
   },
   
   truncateText: function(text, max, ellipsis) {
