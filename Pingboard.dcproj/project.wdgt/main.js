@@ -498,7 +498,7 @@ var pingview = {
         service = { id: service, name: service, methods: ['microblog'] };
     }
     
-    return '<img class="svcicon" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
+    return '<img class="svcicon" title="' + service.name + '" src="svcicons/' + service.id + '.png" alt="' + service.name + '"/>';
   },
   
   truncateText: function(text, max, ellipsis) {
