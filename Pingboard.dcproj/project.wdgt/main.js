@@ -619,7 +619,7 @@ var pingview = {
     this.hideScrolldown();
   },
   
-  version: '0.4.2',
+  version: '0.4.3',
 };
 
 /**
@@ -669,7 +669,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.4.2'
+    version: '0.4.3'
 }
 
 function doDebugClick(event)
