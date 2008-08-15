@@ -14,7 +14,7 @@ var dashcodePartSpecs = {
     "done": { "creationFunction": "CreateGlassButton", "onclick": "configDone", "text": "Done" },
     "history_button": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showLatestPosts", "rightImageWidth": 5 },
     "historyNum": { "creationFunction": "CreateText" },
-    "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "doShowBack" },
+    "info": { "backgroundStyle": "white", "creationFunction": "CreateInfoButton", "foregroundStyle": "black", "frontID": "front", "onclick": "doShowBack" },
     "name_display": { "creationFunction": "CreateText" },
     "next": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showNextHistory", "rightImageWidth": 5 },
     "post_submit": { "creationFunction": "CreateButton", "leftImageWidth": 11, "onclick": "doPost", "rightImageWidth": 11, "text": "Post" },

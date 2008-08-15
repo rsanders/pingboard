@@ -18,20 +18,20 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1305, 388}}</string>
-			<string>{{0, 398}, {1305, 467}}</string>
+			<string>{{0, 0}, {1305, 279}}</string>
+			<string>{{0, 289}, {1305, 484}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>2</integer>
+	<integer>5</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>c3d4e63ff0a3ac41</string>
+		<string>868f009c79acac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojsVe8Gt/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojXITDtG/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -39,13 +39,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.10476190596818924</real>
+		<real>0.2152777761220932</real>
 		<key>percent-y</key>
-		<real>0.06190476194024086</real>
+		<real>0.14666666090488434</real>
 		<key>pos-x</key>
-		<integer>1014</integer>
+		<integer>640</integer>
 		<key>pos-y</key>
-		<integer>491</integer>
+		<integer>274</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -61,7 +61,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>879 71 720 539 0 0 1680 1028 </string>
+	<string>629 -85 720 539 0 0 1440 878 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -72,12 +72,12 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {244, 886}}</string>
-			<string>{{245, 0}, {1306, 886}}</string>
+			<string>{{0, 0}, {244, 794}}</string>
+			<string>{{245, 0}, {1306, 794}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>48 121 1550 907 0 0 1680 1028 </string>
+	<string>18 63 1550 815 0 0 1440 878 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -92,8 +92,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 387}}</string>
-			<string>{{0, 397}, {246, 468}}</string>
+			<string>{{0, 0}, {246, 345}}</string>
+			<string>{{0, 355}, {246, 418}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -183,7 +183,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>2</integer>
+			<integer>5</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

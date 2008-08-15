@@ -504,30 +504,32 @@ var pingfm = {
    * return all services supported by Ping.fm as of 8/2008
    */
   configSupportedServices: function() {
-    // display_name, api_name, trigger, service_url, icon_url
+    // display_name, api_name, trigger, service_url, icon_url, capability_string
+    //    in capability_string: 'b' for blog, 'm' for micro, 's' for status - this is UNRELIABLE
     var list = [
-            ['Bebo', 'bebo', '@be', 'http://www.Bebo.com', 'svcicons/bebo.png'],
-            ['Blogger', 'blogger', '@bl', 'http://www.Blogger.com', 'svcicons/blogger.png'],
-            ['Brightkite', 'brightkite', '@bk', 'http://www.Brightkite.com', 'svcicons/brightkite.png'],
-            ['Custom URL', 'custom', '@cu', 'http://ping.fm/dashboard', 'svcicons/custom.png'],
-            ['Facebook', 'facebook', '@fb', 'http://www.Facebook.com', 'svcicons/facebook.png'],
-            ['FriendFeed', 'friendFeed', '@ff', 'http://www.FriendFeed.com', 'svcicons/friendfeed.png'],
-            ['hi5', 'hi5', '@hi', 'http://www.hi5.com', 'svcicons/hi5.png'],
-            ['Identi.ca', 'identi.ca', '@id', 'http://www.Identi.ca', 'svcicons/identi.ca.png'],
-            ['Jaiku', 'jaiku', '@jk', 'http://www.Jaiku.com', 'svcicons/jaiku.png'],
-            ['kwippy', 'kwippy', '@kw', 'http://www.kwippy.com', 'svcicons/kwippy.png'],
-            ['LinkedIn', 'linkedin', '@li', 'http://www.LinkedIn.com', 'svcicons/linkedin.png'],
-            ['LiveJournal', 'livejournal', '@lj', 'http://www.LiveJournal.com', 'svcicons/livejournal.png'],
-            ['Mashable', 'mashable', '@ma', 'http://www.Mashable.com', 'svcicons/mashable.png'],
-            ['MySpace', 'myspace', '@my', 'http://www.MySpace.com', 'svcicons/myspace.png'],
-            ['Plaxo', 'plaxo', '@px', 'http://pulse.Plaxo.com', 'svcicons/plaxo.png'],
-            ['Plurk', 'plurk', '@pl', 'http://www.Plurk.com', 'svcicons/plurk.png'],
-            ['Pownce', 'pownce', '@pn', 'http://www.Pownce.com', 'svcicons/pownce.png'],
-            ['Tumblr', 'tumblr', '@tr', 'http://www.Tumblr.com', 'svcicons/tumblr.png'],
-            ['Twitter', 'twitter', '@tt', 'http://www.Twitter.com', 'svcicons/twitter.png'],
-            ['WordPress', 'wordpress', '@wp', 'http://www.WordPress.com', 'svcicons/wordpress.png'],
-            ['Xanga', 'xanga', '@xa', 'http://www.Xanga.com', 'svcicons/xanga.png'],
-            ['Zooomr', 'zooomr', '@zo', 'http://www.Zooomr.com', 'svcicons/zooomr.png']
+            ['Bebo', 'bebo', '@be', 'http://www.Bebo.com', 'svcicons/bebo.png', 'bs'],
+            ['Blogger', 'blogger', '@bl', 'http://www.Blogger.com', 'svcicons/blogger.png', 'bms'],
+            ['Brightkite', 'brightkite', '@bk', 'http://www.Brightkite.com', 'svcicons/brightkite.png', 'ms'],
+            ['Custom URL', 'custom', '@cu', 'http://ping.fm/dashboard', 'svcicons/custom.png', 'bms'],
+            ['Facebook', 'facebook', '@fb', 'http://www.Facebook.com', 'svcicons/facebook.png', 's'],
+            ['FriendFeed', 'friendFeed', '@ff', 'http://www.FriendFeed.com', 'svcicons/friendfeed.png', 'bms'],
+            ['hi5', 'hi5', '@hi', 'http://www.hi5.com', 'svcicons/hi5.png', 'bs'],
+            ['Identi.ca', 'identi.ca', '@id', 'http://www.Identi.ca', 'svcicons/identi.ca.png', 'ms'],
+            ['Jaiku', 'jaiku', '@jk', 'http://www.Jaiku.com', 'svcicons/jaiku.png', 'ms'],
+            ['kwippy', 'kwippy', '@kw', 'http://www.kwippy.com', 'svcicons/kwippy.png', 'bms'],
+            ['LinkedIn', 'linkedin', '@li', 'http://www.LinkedIn.com', 'svcicons/linkedin.png', 's'],
+            ['LiveJournal', 'livejournal', '@lj', 'http://www.LiveJournal.com', 'svcicons/livejournal.png', 'bms'],
+            ['Mashable', 'mashable', '@ma', 'http://www.Mashable.com', 'svcicons/mashable.png', 'ms'],
+            ['MySpace', 'myspace', '@my', 'http://www.MySpace.com', 'svcicons/myspace.png', 'bms'],
+            ['Plaxo', 'plaxo', '@px', 'http://pulse.Plaxo.com', 'svcicons/plaxo.png', 'ms'],
+            ['Plurk', 'plurk', '@pl', 'http://www.Plurk.com', 'svcicons/plurk.png', 'ms'],
+            ['Pownce', 'pownce', '@pn', 'http://www.Pownce.com', 'svcicons/pownce.png', 'ms'],
+            ['Rejaw', 'rejaw', '@re', 'http://www.rejaw.com', 'svcicons/rejaw.png', 'ms'],
+            ['Tumblr', 'tumblr', '@tr', 'http://www.Tumblr.com', 'svcicons/tumblr.png', 'bms'],
+            ['Twitter', 'twitter', '@tt', 'http://www.Twitter.com', 'svcicons/twitter.png', 'ms'],
+            ['WordPress', 'wordpress', '@wp', 'http://www.WordPress.com', 'svcicons/wordpress.png', 'bms'],
+            ['Xanga', 'xanga', '@xa', 'http://www.Xanga.com', 'svcicons/xanga.png', 'bms'],
+            ['Zooomr', 'zooomr', '@zo', 'http://www.Zooomr.com', 'svcicons/zooomr.png', 'bms']
         ];
     var services = [];
     var idx;
@@ -560,5 +562,5 @@ var pingfm = {
     return null;
   },
 
-  version: '0.4.2'
+  version: '0.4.3'
 };
