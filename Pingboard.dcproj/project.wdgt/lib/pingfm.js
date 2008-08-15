@@ -524,6 +524,7 @@ var pingfm = {
             ['Plaxo', 'plaxo', '@px', 'http://pulse.Plaxo.com', 'svcicons/plaxo.png', 'ms'],
             ['Plurk', 'plurk', '@pl', 'http://www.Plurk.com', 'svcicons/plurk.png', 'ms'],
             ['Pownce', 'pownce', '@pn', 'http://www.Pownce.com', 'svcicons/pownce.png', 'ms'],
+            ['Rejaw', 'rejaw', '@re', 'http://www.rejaw.com', 'svcicons/rejaw.png', 'ms'],
             ['Tumblr', 'tumblr', '@tr', 'http://www.Tumblr.com', 'svcicons/tumblr.png', 'bms'],
             ['Twitter', 'twitter', '@tt', 'http://www.Twitter.com', 'svcicons/twitter.png', 'ms'],
             ['WordPress', 'wordpress', '@wp', 'http://www.WordPress.com', 'svcicons/wordpress.png', 'bms'],
