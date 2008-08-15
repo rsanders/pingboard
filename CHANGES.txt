@@ -1,3 +1,9 @@
+**** 0.4.3      Aug 15, 2008
+
+Added Rejaw service icon.
+
+Small cosmetic tweaks.
+
 **** 0.4.2      Aug 10, 2008
 
 Show service icons on the main posting screen and message history.
