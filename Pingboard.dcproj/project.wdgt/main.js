@@ -14,6 +14,8 @@ function load()
 
     pingview.hideScrolldown();
 
+    pingfm = new PingFMAPI();
+
     setupPingFM();
 
     setupUI();
@@ -272,6 +274,8 @@ function setupPingFM()
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
     
     pingfm.view = pingview;
+    
+    pingfm.initialize();
 }
 
 
@@ -495,7 +499,7 @@ var pingview = {
   _makeQuotable: function(str) {
     return str.replace(/(["'])/g, '\\$1');
 
-    // ' unconfuse dashcode
+    //  ' unconfuse dashcode
   },
   
   openServicePage: function(event) {
@@ -516,7 +520,14 @@ var pingview = {
     if (! attributes.title) attributes.title = service.name;
     if (! attributes.alt)   attributes.alt = service.id;
     
-    attributes.src = "svcicons/" + service.id + ".png";
+    system_service = pingfm.getSupportedService(service.id);
+    if (system_service) {
+        console.log("using system service info for " + service.id);
+        attributes.src = system_service.icon_url;
+    } else {
+        attributes.src = "svcicons/" + service.id + ".png";
+    }
+
     attributes.serviceid = service.id;
     attributes.onclick = "pingview.openServicePage(event);";
 
