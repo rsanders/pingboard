@@ -14,6 +14,8 @@ function load()
 
     pingview.hideScrolldown();
 
+    pingfm = new PingFMAPI();
+
     setupPingFM();
 
     setupUI();
@@ -272,6 +274,8 @@ function setupPingFM()
     pingfm.debug = pingprefs.getPref('debug', false) ? '1' : '0';
     
     pingfm.view = pingview;
+    
+    pingfm.initialize();
 }
 
 
@@ -282,10 +286,17 @@ function doPost(event)
     var method = pingview.getPostMethod();
     var body = jQuery('#post_text').val();
 
-    // keep history
-    pingdb.addPing(body, method);
+    exclude = pingview.getExcludes();
+    if (jQuery('#svciconbox img').length > 0 && jQuery('#svciconbox img').length <= exclude.length) {
+        pingview.showError("At least one service must be enabled to post!");
+        return false;
+    }
 
-    pingfm.postMessage(body, method);
+    // keep history
+    pingdb.addPing(body, method, {title:'', exclude: exclude});
+
+    // body, method, title, success, failure, excludes
+    pingfm.postMessage(body, method, null, null, null, exclude);
     pingview.resetPost();
 }
 
@@ -305,7 +316,8 @@ function setPostType(event)
 
     // change default
     pingfm.post_method = type;
-    
+    pingview.setExcludes([]);
+
     pingview.showPostTypeIcons(type);
 
     // store for later
@@ -316,6 +328,8 @@ var pingview = {
   historyNum: -1,
   
   draftping: null,
+  
+  excludes: new Object(),
 
   // for use by pingfm
   
@@ -353,6 +367,8 @@ var pingview = {
     if (num == this.historyNum)
         return;
     
+    var me = this;
+    
     // save draft
     if (this.historyNum == -1 && ! suppressDraft) {
         this.saveDraftPing();
@@ -367,7 +383,7 @@ var pingview = {
         if (this.draftping)
             ping = this.draftping;
         else
-            ping = {message:''};
+            ping = {message:'', excludes:[]};
         showNum = '';
     }
     else {
@@ -377,10 +393,14 @@ var pingview = {
     
     this.historyNum = num;
 
+
     if (ping) {
         this.setPostBody(ping.message);
         if (ping.destination) {
             this.setPostMethod(ping.destination);
+        }
+        if (ping.exclude) {
+            this.setExcludes(ping.exclude);
         }
         jQuery('#historyNum').text(showNum);
     }
@@ -410,7 +430,8 @@ var pingview = {
     var ping = {
         message: this.getPostBody(),
         destination: this.getPostMethod(),
-        when: new Date()
+        when: new Date(),
+        exclude: this.getExcludes()
     };
     
     this.draftping = ping;
@@ -493,9 +514,9 @@ var pingview = {
   },
   
   _makeQuotable: function(str) {
-    return str.replace(/(["'])/g, '\\$1');
+    return str.replace(/([\"\'])/g, '\\$1');
 
-    // ' unconfuse dashcode
+    //   ' unconfuse dashcode
   },
   
   openServicePage: function(event) {
@@ -516,9 +537,17 @@ var pingview = {
     if (! attributes.title) attributes.title = service.name;
     if (! attributes.alt)   attributes.alt = service.id;
     
-    attributes.src = "svcicons/" + service.id + ".png";
+    system_service = pingfm.getSupportedService(service.id);
+    if (system_service) {
+        // console.log("using system service info for " + service.id);
+        attributes.src = system_service.icon_url;
+    } else {
+        attributes.src = "svcicons/" + service.id + ".png";
+    }
+
     attributes.serviceid = service.id;
-    attributes.onclick = "pingview.openServicePage(event);";
+    if (! attributes.onclick && false)
+        attributes.onclick = "pingview.openServicePage(event);";
 
     var html = '<img class="svcicon" ';
     for (name in attributes)
@@ -554,6 +583,56 @@ var pingview = {
     }
     
     pingview.setServiceIcons('#svciconbox', services);
+    jQuery('#svciconbox img').unbind('click').
+                each(function(item) { this.title = this.title + " - click to toggle"; }).
+                bind('click', function(event) { pingview.toggleExclude(event); });
+    var idx;
+    for (idx = 0; idx < this.getExcludes().length; idx++) {
+        
+    }
+  },
+
+  getExcludes: function() {
+    var id;
+    var res = [];
+    for (id in this.excludes) {
+        var val = this.excludes[id];
+        if (typeof val == 'function') continue;
+        if (val == true) res.push(id);
+    }
+    return res;
+  },
+  
+  setExcludes: function(excludes) {
+    jQuery('#svciconbox img').css('opacity', 1.0);
+    this.excludes = {};
+    var idx;
+    for (idx = 0; idx < excludes.length; idx++) {
+        this.setExcluded(excludes[idx],  true);
+    }
+  },
+  
+  isExcluded: function(id) {
+    return this.excludes[id];
+  },
+  
+  setExcluded: function(id, value) {
+    this.excludes[id] = value;
+
+    if (!value) {
+        opacity = 1.0;
+    } else {
+        opacity = 0.2;
+    }
+    jQuery('#svciconbox [alt='+id+']').css('opacity', opacity);
+  },
+
+  toggleExclude: function(event, val) {
+    var id = event.target.alt;
+
+    // XXX - this doesn't work if invoked directly as an event handler
+    //   so wrap inside a lambda
+    this.setExcluded(id, ! this.isExcluded(id));
   },
 
   setServiceIcons: function(destination, services) {
@@ -619,7 +698,7 @@ var pingview = {
     this.hideScrolldown();
   },
   
-  version: '0.4.3',
+  version: '0.5',
 };
 
 /**
@@ -648,9 +727,18 @@ var pingdb = {
         this.db = [];
     },
     
-    addPing: function(message, destination) {
+    addPing: function(message, destination, other) {
         if (! destination) { destination = 'default' };
-        this.db.unshift( {message: message, destination: destination, when: new Date()} );
+        if (! other) other = {};
+        
+        var item = {message: message, destination: destination, when: new Date()};
+        var key;
+        for (key in other) {
+            var val = other[key];
+            if (typeof val == 'function' || item.hasOwnProperty(key)) continue;
+            item[key] = val;
+        }
+        this.db.unshift( item );
     },
     
     listPings: function(count) {
@@ -669,7 +757,7 @@ var pingdb = {
         return this.db.length;
     },
     
-    version: '0.4.3'
+    version: '0.5'
 }
 
 function doDebugClick(event)
@@ -788,4 +876,9 @@ function showLatestPosts(event)
 function hideScrolldown(event)
 {
     pingview.hideScrolldown();
+}
+
+function openHelp(event)
+{
+    widget.openURL("http://code.google.com/p/pingboard/wiki/Help");
 }

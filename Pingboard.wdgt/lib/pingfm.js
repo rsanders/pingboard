@@ -10,7 +10,11 @@
  * Version: 0.3.1
  */
 
-var pingfm = {
+var PingFMAPI = function(api_key) {
+    this.api_key = api_key;
+};
+
+PingFMAPI.prototype = {
    // the base URL for the Ping.FM API
    baseurl: "http://api.ping.fm/v1/",
    
@@ -32,7 +36,11 @@ var pingfm = {
    // should be a view object with showError, showResult, showNotice, log
    view: null,
 
-   // services information
+   // system services information
+   system_servicexml: null,
+   system_serviceinfo: [],
+
+   // user services information
    servicexml: null,
    serviceinfo: [],
 
@@ -48,6 +56,20 @@ var pingfm = {
    
    // wait this many milliseconds between user.post and user.latest - fixes race in ping.fm's API
    post_post_delay: 6000,
+   
+   proxy_rewriter: null,
+   
+   initialize: function() {
+     this.downloadServiceData();
+   },
+   
+   downloadServiceData: function() {
+     this.log("downloading initial system data...");
+     this.getSystemServices(function(data) {
+            this.serviceinfo = data;
+        }
+      );
+   },
    
    getBaseArgs: function() {
      return { 
@@ -100,12 +122,17 @@ var pingfm = {
      }
    },
    
-   postMessage: function(body, method, title, success, failure) {
+   postMessage: function(body, method, title, success, failure, exclude) {
      var args = this.getBaseArgs();
      args.body = body;
      
      // default
      if (! method) method = this.post_method;
+     
+     // list of services to exclude
+     if (exclude && exclude.length > 0) {
+        args.exclude = exclude.join(",");
+     }
 
      // default posting API call; use user.tpost for custom triggers
      var apimethod = 'user.post';
@@ -170,9 +197,11 @@ var pingfm = {
    },
    
    log: function(msg) {
-     if (this.view && this.view.log) this.view.log(msg);
-     if (this.debug)
+     if (this.view && this.view.log) {
+        this.view.log(msg);
+     } else if (this.debug) {
         console.log(msg);
+     }
    },
    
    showError: function(error) {
@@ -437,6 +466,82 @@ var pingfm = {
       }
    },
 
+    /**
+        <rsp status="OK">
+          <transaction>48a87626afa41</transaction>
+          <method>system.services</method>
+          <services>
+            <service id="bebo" name="Bebo">
+              <trigger>@be</trigger>
+              <url>http://www.bebo.com/</url>
+              <icon>http://p.ping.fm/static/icons/bebo.png</icon>
+            </service>
+            <service id="blogger" name="Blogger">
+              <trigger>@bl</trigger>
+              <url>http://www.blogger.com/</url>
+              <icon>http://p.ping.fm/static/icons/blogger.png</icon>
+            </service>
+          </services>
+        </rsp>
+     */
+    /*
+
+        var obj = { name: elt[0], id: elt[1], trigger: elt[2],
+                    service_url: elt[3], icon_url: elt[4] };
+    } 
+    */
+
+   _parseSystemServices: function(list) {
+      var services = [];
+      jQuery('service', list).each(function(i) { 
+          var id = jQuery(this).attr('id');
+          var name = jQuery(this).attr('name');
+          var trigger = jQuery('trigger', this).text();
+          var icon_url = jQuery('icon', this).text();
+          var service_url = jQuery('url', this).text();
+
+          // in current API, 'methods' is not provided for system svcs
+          var methods = [];
+          var methodtext = jQuery('methods', this).text();
+          if (methodtext && methodtext.length > 0) {
+            methods = methodtext.split(',');
+          }
+          services[id] = { id: id, name: name, methods: methods,
+                           trigger: trigger, icon_url: icon_url,
+                           service_url: service_url
+                         };
+       } );
+      return services;
+   },
+
+   getSystemServices: function(success, failure) {
+     var args = this.getBaseArgs();
+
+     var me = this;
+     this.doRequest('system.services', args, 
+            function(data) {
+                me.system_servicexml = data;
+                var system_serviceinfo = [];
+                if (data) {
+                  system_serviceinfo = me._parseSystemServices(jQuery('services', data));
+                }
+                me.system_serviceinfo = system_serviceinfo;
+                me.log("Success on system.services");
+                if (success) {
+                    success( system_serviceinfo );
+                }
+            },
+            function(data, error) {
+                me.log("Failure on system.services");
+                if (failure) {
+                    failure(data, error);
+                }
+            }
+        );
+   },
+
+    /************************** plumbing ********************************/
+
       doRequest: function(method, args, success, failure, httpmethod, usequeue) {
         if (! httpmethod) {
           httpmethod = 'post';
@@ -450,15 +555,22 @@ var pingfm = {
         }
 
         var me = this;
-        var request = jQuery.ajax({
-          url: me.baseurl + method,
+        var url = me.baseurl + method;
+        var ajaxargs = {
+          url: url,
           type: httpmethod,
           data: args,
           global: true,
           cache: me.allowCache,
           success: this._makejQuerySuccessHandler(success, failure),
           error: this._makejQueryFailureHandler(failure)
-        });
+        };
+        
+        if (this.proxy_rewriter) {
+            ajaxargs = this.proxy_rewriter(ajaxargs);
+        }
+        
+        var request = ajax(ajaxargs);
       },
 
   /**** Utility functions ****/
@@ -504,7 +616,13 @@ var pingfm = {
    * return all services supported by Ping.fm as of 8/2008
    */
   configSupportedServices: function() {
-    // display_name, api_name, trigger, service_url, icon_url, capability_string
+  
+    if (this.system_serviceinfo) {
+        // this.log("configSupportedServices using system_serviceinfo");
+        return this.system_serviceinfo;
+    }
+  
+    // name, id, trigger, service_url, icon_url, capability_string
     //    in capability_string: 'b' for blog, 'm' for micro, 's' for status - this is UNRELIABLE
     var list = [
             ['Bebo', 'bebo', '@be', 'http://www.Bebo.com', 'svcicons/bebo.png', 'bs'],
@@ -535,10 +653,10 @@ var pingfm = {
     var idx;
     for (idx = 0; idx < list.length; idx++) {
         var elt = list[idx];
-        var obj = { display_name: elt[0], api_name: elt[1], trigger: elt[2],
+        var obj = { name: elt[0], id: elt[1], trigger: elt[2],
                     service_url: elt[3], icon_url: elt[4] };
 
-        services[obj.api_name] = obj;
+        services[obj.id] = obj;
     }
     
     return services;
@@ -549,9 +667,17 @@ var pingfm = {
    * or any other property name
    */
   getSupportedService: function(value, property) {
-    if (!property)  property = 'api_name';
+    if (!property)  property = 'id';
     var idx;
-    var supported = this.configSupportedServices();
+    var supported;
+
+    if (this.system_serviceinfo && value.toLowerCase() != 'custom') {
+      // console.log("using system.services output");
+      supported = this.system_serviceinfo;
+    } else {
+      supported = this.configSupportedServices();
+    }
+
     for (idx in supported) {
         var elt = supported[idx];
         if (typeof elt == 'function') continue;
@@ -562,5 +688,11 @@ var pingfm = {
     return null;
   },
 
-  version: '0.4.3'
+  version: '0.5'
+};
+
+PingFMAPI.prototype.FlexProxyRewriter = function(ajaxargs) {
+    ajaxargs.url = url.replace(/^https?:\/\//, "http://flexproxy.eng.vitrue.com/");
+    
+    return ajaxargs;
 };
