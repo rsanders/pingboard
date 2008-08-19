@@ -877,3 +877,8 @@ function hideScrolldown(event)
 {
     pingview.hideScrolldown();
 }
+
+function openHelp(event)
+{
+    widget.openURL("http://code.google.com/p/pingboard/wiki/Help");
+}
