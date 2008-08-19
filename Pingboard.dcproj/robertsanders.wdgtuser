@@ -13,28 +13,28 @@
 		<key>lib/pingfm.js:670</key>
 		<string>-getSupportedService</string>
 		<key>main.js:318</key>
-		<string>setPostType</string>
+		<string>-setPostType</string>
 		<key>main.js:365</key>
-		<string>showHistory</string>
+		<string>-showHistory</string>
 		<key>main.js:397</key>
 		<string>-showHistory</string>
 		<key>main.js:404</key>
 		<string>-showHistory</string>
-		<key>main.js:433</key>
-		<string>saveDraftPing</string>
-		<key>main.js:474</key>
-		<string>resetPost</string>
-		<key>main.js:597</key>
+		<key>main.js:430</key>
+		<string>-saveDraftPing</string>
+		<key>main.js:471</key>
+		<string>-resetPost</string>
+		<key>main.js:596</key>
 		<string>-getExcludes</string>
-		<key>main.js:608</key>
-		<string>setExcludes</string>
-		<key>main.js:740</key>
-		<string>addPing</string>
+		<key>main.js:607</key>
+		<string>-setExcludes</string>
+		<key>main.js:731</key>
+		<string>-addPing</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
-		<integer>24</integer>
+		<integer>8</integer>
 		<key>SplitViewConfig</key>
 		<integer>3</integer>
 		<key>_collapsingFrameDimension</key>
@@ -54,7 +54,7 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>cc98e27ae2b6ac41</string>
+		<string>f5ba8d4500b7ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
@@ -66,13 +66,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.13312500715255737</real>
+		<real>0.081874996423721313</real>
 		<key>percent-y</key>
-		<real>0.23583333194255829</real>
+		<real>0.078333333134651184</real>
 		<key>pos-x</key>
-		<integer>897</integer>
+		<integer>979</integer>
 		<key>pos-y</key>
-		<integer>423</integer>
+		<integer>612</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -104,7 +104,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>30 242 1547 936 0 0 1600 1178 </string>
+	<string>34 239 1547 936 0 0 1600 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>

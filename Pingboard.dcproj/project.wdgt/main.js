@@ -400,9 +400,7 @@ var pingview = {
             this.setPostMethod(ping.destination);
         }
         if (ping.exclude) {
-            setTimeout(function() {
-                me.setExcludes(ping.exclude);
-                }, 5);
+            this.setExcludes(ping.exclude);
         }
         jQuery('#historyNum').text(showNum);
     }
@@ -413,7 +411,6 @@ var pingview = {
   },
   
   setPostMethod: function(val) {
-    this.setExcludes([]);
     jQuery('select', jQuery('#post_type')).val(val);
     jQuery('select', jQuery('#post_type')).change();
   },
@@ -586,7 +583,9 @@ var pingview = {
     }
     
     pingview.setServiceIcons('#svciconbox', services);
-    jQuery('#svciconbox img').unbind('click').each(function(item) { this.name = this.name + " - click to toggle"; }).bind('click', pingview.toggleExclude);
+    jQuery('#svciconbox img').unbind('click').
+                each(function(item) { this.title = this.title + " - click to toggle"; }).
+                bind('click', function(event) { pingview.toggleExclude(event); });
     var idx;
     for (idx = 0; idx < this.getExcludes().length; idx++) {
         
@@ -606,6 +605,7 @@ var pingview = {
   
   setExcludes: function(excludes) {
     jQuery('#svciconbox img').css('opacity', 1.0);
+    this.excludes = {};
     var idx;
     for (idx = 0; idx < excludes.length; idx++) {
         this.setExcluded(excludes[idx],  true);
@@ -619,7 +619,7 @@ var pingview = {
   setExcluded: function(id, value) {
     this.excludes[id] = value;
 
-    if (value) {
+    if (!value) {
         opacity = 1.0;
     } else {
         opacity = 0.2;
@@ -629,19 +629,10 @@ var pingview = {
 
   toggleExclude: function(event, val) {
     var id = event.target.alt;
-    var opacity = jQuery(event.target).css('opacity');
-    if (opacity < 1.0 || val == true) {
-        // enable
-        alert("Include " + id);
-        opacity = 1.0;
-        pingview.setExcluded(id, false);
-    } else {
-        // disable
-        alert("Exclude " + id);
-        opacity = 0.2;
-        pingview.setExcluded(id, true);
-    }
-    jQuery(event.target).css('opacity', opacity);
+
+    // XXX - this doesn't work if invoked directly as an event handler
+    //   so wrap inside a lambda
+    this.setExcluded(id, ! this.isExcluded(id));
   },
 
   setServiceIcons: function(destination, services) {
