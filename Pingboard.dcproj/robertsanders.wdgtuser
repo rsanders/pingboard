@@ -3,11 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>Breakpoints</key>
-	<dict/>
+	<dict>
+		<key>lib/pingfm.js:133</key>
+		<string>-postMessage</string>
+		<key>lib/pingfm.js:523</key>
+		<string>-getSystemServices</string>
+		<key>lib/pingfm.js:620</key>
+		<string>-configSupportedServices</string>
+		<key>lib/pingfm.js:670</key>
+		<string>-getSupportedService</string>
+		<key>main.js:318</key>
+		<string>setPostType</string>
+		<key>main.js:365</key>
+		<string>showHistory</string>
+		<key>main.js:397</key>
+		<string>-showHistory</string>
+		<key>main.js:404</key>
+		<string>-showHistory</string>
+		<key>main.js:433</key>
+		<string>saveDraftPing</string>
+		<key>main.js:474</key>
+		<string>resetPost</string>
+		<key>main.js:597</key>
+		<string>-getExcludes</string>
+		<key>main.js:608</key>
+		<string>setExcludes</string>
+		<key>main.js:740</key>
+		<string>addPing</string>
+	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
-		<integer>8</integer>
+		<integer>24</integer>
 		<key>SplitViewConfig</key>
 		<integer>3</integer>
 		<key>_collapsingFrameDimension</key>
@@ -18,20 +45,20 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1305, 279}}</string>
-			<string>{{0, 289}, {1305, 484}}</string>
+			<string>{{0, 0}, {1302, 257}}</string>
+			<string>{{0, 267}, {1302, 627}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>868f009c79acac41</string>
+		<string>cc98e27ae2b6ac41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojXITDtG/Pingboard.dcproj/project.wdgt/</string>
+		<string>/private/var/folders/0x/0xt8pBU1Eeu0wfCuCF6-yU+++TI/-Tmp-/Dashcode/.Pingboard.dcprojsQy91Z/Pingboard.dcproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
@@ -39,13 +66,13 @@
 		<key>percent-type</key>
 		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.2152777761220932</real>
+		<real>0.13312500715255737</real>
 		<key>percent-y</key>
-		<real>0.14666666090488434</real>
+		<real>0.23583333194255829</real>
 		<key>pos-x</key>
-		<integer>640</integer>
+		<integer>897</integer>
 		<key>pos-y</key>
-		<integer>274</integer>
+		<integer>423</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -61,7 +88,7 @@
 	<key>Design time language</key>
 	<string>en.lproj</string>
 	<key>EvaluatorFrame</key>
-	<string>629 -85 720 539 0 0 1440 878 </string>
+	<string>769 -85 720 539 0 0 1600 1178 </string>
 	<key>MainSplitViewGeometry</key>
 	<dict>
 		<key>_collapsingFrameDimension</key>
@@ -72,12 +99,12 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {244, 794}}</string>
-			<string>{{245, 0}, {1306, 794}}</string>
+			<string>{{0, 0}, {244, 915}}</string>
+			<string>{{245, 0}, {1303, 915}}</string>
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>18 63 1550 815 0 0 1440 878 </string>
+	<string>30 242 1547 936 0 0 1600 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -92,8 +119,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {246, 345}}</string>
-			<string>{{0, 355}, {246, 418}}</string>
+			<string>{{0, 0}, {246, 400}}</string>
+			<string>{{0, 410}, {246, 484}}</string>
 		</array>
 	</dict>
 	<key>Objects view expanded items</key>
@@ -181,11 +208,7 @@
 		</array>
 	</array>
 	<key>Objects view last selections</key>
-	<array>
-		<array>
-			<integer>5</integer>
-		</array>
-	</array>
+	<array/>
 	<key>Opened Steps</key>
 	<array>
 		<integer>0</integer>

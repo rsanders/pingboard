@@ -130,7 +130,7 @@ PingFMAPI.prototype = {
      if (! method) method = this.post_method;
      
      // list of services to exclude
-     if (exclude) {
+     if (exclude && exclude.length > 0) {
         args.exclude = exclude.join(",");
      }
 
@@ -618,7 +618,7 @@ PingFMAPI.prototype = {
   configSupportedServices: function() {
   
     if (this.system_serviceinfo) {
-        this.log("configSupportedServices using system_serviceinfo");
+        // this.log("configSupportedServices using system_serviceinfo");
         return this.system_serviceinfo;
     }
   
@@ -672,7 +672,7 @@ PingFMAPI.prototype = {
     var supported;
 
     if (this.system_serviceinfo && value.toLowerCase() != 'custom') {
-      console.log("using system.services output");
+      // console.log("using system.services output");
       supported = this.system_serviceinfo;
     } else {
       supported = this.configSupportedServices();
@@ -688,7 +688,7 @@ PingFMAPI.prototype = {
     return null;
   },
 
-  version: '0.4.3'
+  version: '0.5'
 };
 
 PingFMAPI.prototype.FlexProxyRewriter = function(ajaxargs) {
