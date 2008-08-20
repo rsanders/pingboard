@@ -1,0 +1,25 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: add picture posting (via twitpic-ish url)
+desc: |-
+  use twitpic or some other service to allow photo uploading
+  ping.fm may do this
+  also, will need more config area!
+type: :feature
+component: pb
+release: "0.7"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:18:27.475051 Z
+references: []
+
+id: 80de1e59b2966cb5b944aa102fce6a30f6a25476
+log_events: 
+- - 2008-08-20 03:18:29.899041 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
+- - 2008-08-20 03:20:41.766239 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - assigned to release 0.7 from unassigned
+  - ""

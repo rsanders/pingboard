@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: make sure feedback is easy and obvious
+desc: |-
+  getsatisfaction.com, google group, whatver
+  put feedback form on the widget itself?  open a web page at least
+type: :task
+component: pb
+release: "0.6"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:21:52.374041 Z
+references: []
+
+id: 413371af75596cfb0b8c9ee99e64c79b6d83dfd9
+log_events: 
+- - 2008-08-20 03:21:53.446712 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""

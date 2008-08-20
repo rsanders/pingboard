@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: update google code page with new screenshots, info, etc.
+desc: need to make this thing purtier
+type: :task
+component: pb
+release: "0.6"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:21:15.365463 Z
+references: []
+
+id: fa4d262255e8cd0dfe41a0d9e14a9c1c8ad2cbea
+log_events: 
+- - 2008-08-20 03:21:16.566399 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""

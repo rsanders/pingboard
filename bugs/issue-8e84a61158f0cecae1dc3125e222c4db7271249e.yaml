@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: write help page
+desc: write the help page on google code
+type: :task
+component: pb
+release: "0.6"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:17:21.091046 Z
+references: []
+
+id: 8e84a61158f0cecae1dc3125e222c4db7271249e
+log_events: 
+- - 2008-08-20 03:17:23.219086 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
+- - 2008-08-20 03:20:33.893469 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - assigned to release 0.6 from unassigned
+  - ""

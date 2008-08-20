@@ -1,0 +1,25 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: reorganize config/info screen
+desc: |-
+  That thing is ghastly -- too much, too jumbled
+  make room for twitpic, etc. configs
+  have a log / info screen
+type: :feature
+component: pb
+release: "0.7"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:19:09.116563 Z
+references: []
+
+id: 6d7fba3521627486f0073b653283a473e335fe32
+log_events: 
+- - 2008-08-20 03:19:10.540477 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
+- - 2008-08-20 03:20:51.349133 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - assigned to release 0.7 from unassigned
+  - ""

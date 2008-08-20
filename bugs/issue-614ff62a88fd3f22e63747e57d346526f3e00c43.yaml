@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: automatically check for updates
+desc: check a file on google code for the latest "GA" version, and open download page if not it.
+type: :feature
+component: pb
+release: "0.6"
+reporter: Robert Sanders <robert@esquimaux.org>
+status: :unstarted
+disposition: 
+creation_time: 2008-08-20 03:17:49.506788 Z
+references: []
+
+id: 614ff62a88fd3f22e63747e57d346526f3e00c43
+log_events: 
+- - 2008-08-20 03:17:51.283074 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - created
+  - ""
+- - 2008-08-20 03:20:12.781041 Z
+  - Robert Sanders <robert@esquimaux.org>
+  - assigned to release 0.6 from unassigned
+  - ""
