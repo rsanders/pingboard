@@ -1,3 +1,24 @@
+**** 0.5        Aug 19, 2008
+
+Use new system.services API to discover information about services
+supported by Ping.fm.
+
+Allow the exclusion of certain services when posting -- click the 
+service icon shown in the list, and that service (e.g., Twitter) will
+be excluded from receiving the message.
+
+Some Javascript library changes (not end-user visible):
+
+ - actually use the Ajax queue to serialize requests if enabled
+
+ - PingFMAPI is now an instantiable object (new PingFMAPI())
+
+ - A rewrite function can be supplied to transform Ajax requests
+   to e.g. use a proxy or have different arguments.  A sample
+   rewriter is supplied: FlexProxyRewriter.  This can be useful when
+   trying to use the Javascript library outside of dashboard, where
+   the same-origin limitations prevent direct access to api.ping.fm.
+
 **** 0.4.3      Aug 15, 2008
 
 Added Rejaw service icon.
